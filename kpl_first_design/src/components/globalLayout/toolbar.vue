@@ -23,16 +23,19 @@
 
             <v-divider></v-divider>
 
-            <v-list dense nav>
-                <v-list-item v-for="item in items" :key="item.title" link>
-                    <v-list-item-icon>
-                        <v-icon>{{ item.icon }}</v-icon>
-                    </v-list-item-icon>
+            <v-list dense>
+                <div v-for="item in items" :key="item.title">
+                    <v-list-item @click="onSelectPage(item.link)"
+                        :class="$route.path == item.link ? 'active' : ''">
+                        <v-list-item-icon>
+                            <v-icon>{{ item.icon }}</v-icon>
+                        </v-list-item-icon>
 
-                    <v-list-item-content>
-                        <v-list-item-title>{{ item.title }}</v-list-item-title>
-                    </v-list-item-content>
-                </v-list-item>
+                        <v-list-item-content>
+                            <v-list-item-title>{{ item.title }}</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+                </div>
             </v-list>
         </v-navigation-drawer>
     </div>
@@ -43,10 +46,10 @@ export default {
         mini: true,
         drawer: null,
         items: [
-          { title: 'Home', icon: 'home' },
-          { title: 'About Us', icon: 'supervisor_account' },
-          { title: 'Product & Services', icon: 'shopping_cart' },
-          { title: 'Contact Us', icon: 'phone' }
+          { title: 'Home', icon: 'home', link: '/home' },
+          { title: 'Contact Us', icon: 'phone', link: '/contact' },
+          { title: 'About Us', icon: 'supervisor_account', link: '/about' },
+          { title: 'Product & Services', icon: 'shopping_cart', link: '/services' }
         ]
     }),
     methods: {
@@ -57,6 +60,10 @@ export default {
         mouseOut(){
             const self = this;
             if(!self.mini) { self.mini = true; }
+        },
+        onSelectPage(data){
+            const self = this;
+            self.$router.push(data)
         }
     },
 }

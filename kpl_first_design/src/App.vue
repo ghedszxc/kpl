@@ -15,4 +15,7 @@ export default {
   .main_font{
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif !important;
   }
+  .active{
+    background-color: #616161;
+  }
 </style>

@@ -30,7 +30,6 @@
 export default {
     data: () => ({
         colors: [
-          'green',
           'secondary',
           'yellow darken-4',
           'red lighten-2',
@@ -42,7 +41,6 @@ export default {
           'Second',
           'Third',
           'Fourth',
-          'Fifth',
         ]
     })
 }
