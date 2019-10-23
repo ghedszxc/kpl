@@ -11,3 +11,8 @@ export default {
   })
 };
 </script>
+<style>
+  .main_font{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+  }
+</style>
