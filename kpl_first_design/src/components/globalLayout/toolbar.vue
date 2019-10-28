@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-toolbar class="green" flat>
+        <v-toolbar class="green" flat height="70">
             <!-- <v-spacer></v-spacer> -->
             <v-toolbar-title class="white--text main_font">INSERT KPL LOGO</v-toolbar-title>
 

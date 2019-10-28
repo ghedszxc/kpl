@@ -12,6 +12,11 @@
                 <div>Whitehaven Beach</div>
                 <div>Whitsunday Island, Whitsunday Islands</div>
             </v-card-text>
+            <v-card-actions>
+                <v-btn text class="orange lighten-2 white--text">
+                    Subscribe
+                </v-btn>
+            </v-card-actions>
         </v-card>
         <v-card class="ma-3">
             <v-img class="white--text align-end" height="200px"
