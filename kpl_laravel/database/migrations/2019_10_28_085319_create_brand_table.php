@@ -13,14 +13,14 @@ class CreateBrandTable extends Migration
      */
     public function up()
     {
-        Schema::create('brand', function (Blueprint $table) {
+        Schema::create('brands', function (Blueprint $table) {
             $table->increments('id');
             $table->string('brand_name');
             $table->unsignedInteger('category_id');
             $table->timestamps();
 
             $table->foreign('category_id')
-            ->references('id')->on('category')
+            ->references('id')->on('categories')
             ->onDelete('cascade')
             ->onUpdate('cascade');
         });
