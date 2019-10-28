@@ -6,7 +6,7 @@
                     <v-flex xs12 class="mt-1 mb-3">
                         <feature-product></feature-product>
                     </v-flex>
-                    <v-flex xs12 class="px-1">
+                    <v-flex xs12 class="px-2">
                         <top-product></top-product>
                     </v-flex>
                 </v-layout>
