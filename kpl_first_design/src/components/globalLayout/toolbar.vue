@@ -1,7 +1,7 @@
 <template>
     <div>
-        <v-toolbar class="green lighten-1" flat>
-            <v-spacer></v-spacer>
+        <v-toolbar class="green" flat>
+            <!-- <v-spacer></v-spacer> -->
             <v-toolbar-title class="white--text main_font">INSERT KPL LOGO</v-toolbar-title>
 
             <v-spacer></v-spacer>
@@ -16,11 +16,9 @@
                             Products
                         </v-btn>
                     </template>
-                    
-                    <!-- <product-list style="width: 1000px;"></product-list> -->
                 </v-menu>
             </v-toolbar-items>
-            <v-spacer></v-spacer>
+            <!-- <v-spacer></v-spacer> -->
         </v-toolbar>
     </div>
 </template>

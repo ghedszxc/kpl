@@ -1,16 +1,25 @@
 <template>
-    <div resize>
+    <v-app>
+        <tool-bar></tool-bar>
+        
+        <v-content>
+            <v-container>
+                <router-view></router-view>
+            </v-container>
+        </v-content>
+    </v-app>
+    <!-- <div>
         <tool-bar></tool-bar>
         <v-content>
-            <v-container fluid fill-height style="padding: 0;">
+            <v-container fluid style="padding: 0;">
                 <v-row>
                     <v-spacer></v-spacer>
-                        <router-view style="width: 55%;"></router-view>
+                        <router-view></router-view>
                     <v-spacer></v-spacer>
                 </v-row>
             </v-container>
         </v-content>
-    </div>
+    </div> -->
 </template>
 <script>
 import toolBar from './toolbar'
