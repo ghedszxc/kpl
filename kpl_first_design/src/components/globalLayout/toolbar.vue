@@ -1,72 +1,41 @@
 <template>
     <div>
-        <v-navigation-drawer 
-            permanent hide-overlay clipped app floating fixed
-            width="30%" class="green darken-1">
-            <!-- <v-list-item>
-                <v-list-item-content>
-                        <v-list-item-icon>
-                            <v-icon style="font-size: 250px;">person</v-icon>
-                        </v-list-item-icon>
-                        <v-list-item-content>
-                            <v-list-item-title>
-                                <h3 class="white--text main_font">KPL Industrial</h3>
-                            </v-list-item-title>
-                        </v-list-item-content>
-                </v-list-item-content>
-            </v-list-item> -->
-            <!-- <v-card flat class="green">
-                    <v-spacer></v-spacer>
-                <v-card-text>
-                    <v-icon style="font-size: 250px;">person</v-icon>
-                    <h3 class="white--text main_font">KPL Industrial</h3>
-                </v-card-text>
-                    <v-spacer></v-spacer>
-            </v-card> -->
-            <v-card flat class="transparent" style="border-radius: 0;">
-                <v-layout row wrap style="margin-top: 10%;">
-                    <v-flex offset-xs5>
-                        <v-icon style="font-size: 100px;" color="white">polymer</v-icon>
-                    </v-flex>
-                    <v-flex offset-xs4>
-                        <v-card-text>
-                            <span class="headline white--text main_font">KPL Industrial</span> <br>
-                            <!-- <span class="white--text">
-                                Sed turpis nunc, laoreet sit amet fermentum sed, 
-                                euismod ac justo. Class aptent taciti sociosqu.
-                            </span> -->
-                        </v-card-text>
-                    </v-flex>
-                </v-layout>
-            </v-card>
-            <!-- <v-divider></v-divider> -->
+        <v-toolbar class="green lighten-1" flat>
+            <v-spacer></v-spacer>
+            <v-toolbar-title class="white--text main_font">INSERT KPL LOGO</v-toolbar-title>
 
-            <v-list class="mt-4">
-                <div v-for="item in items" :key="item.title">
-                    <v-list-item @click="onSelectPage(item.link)">
-                        <!-- :class="$route.path == item.link ? 'active' : ''" -->
-                        <v-list-item-icon>
-                            <v-icon color="white">{{ item.icon }}</v-icon>
-                        </v-list-item-icon>
+            <v-spacer></v-spacer>
 
-                        <v-list-item-content>
-                            <v-list-item-title class="white--text">{{ item.title }}</v-list-item-title>
-                        </v-list-item-content>
-                    </v-list-item>
-                </div>
-            </v-list>
-        </v-navigation-drawer>
+            <v-toolbar-items v-for="(item, index) in items" :key="index">
+                <v-btn text class="white--text">{{item.title}}</v-btn>
+            </v-toolbar-items>
+            <v-toolbar-items>
+                <v-menu open-on-hover bottom offset-y>
+                    <template v-slot:activator="{ on }">
+                        <v-btn text class="green lighten-1" dark v-on="on">
+                            Products
+                        </v-btn>
+                    </template>
+                    
+                    <!-- <product-list style="width: 1000px;"></product-list> -->
+                </v-menu>
+            </v-toolbar-items>
+            <v-spacer></v-spacer>
+        </v-toolbar>
     </div>
 </template>
 <script>
+// import productList from "../content/products/productList"
 export default {
+    // components : {
+    //     'product-list': productList
+    // },
     data: () => ({
         drawer: null,
         items: [
           { title: 'Home', icon: 'home', link: '/' },
           { title: 'Contact Us', icon: 'phone', link: '/contact' },
-          { title: 'About Us', icon: 'supervisor_account', link: '/about' },
-          { title: 'Product & Services', icon: 'shopping_cart', link: '/services' }
+          { title: 'About Us', icon: 'supervisor_account', link: '/about' }
         ]
     }),
     methods: {

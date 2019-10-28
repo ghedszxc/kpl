@@ -1,47 +1,52 @@
 <template>
     <div>
-        <v-carousel
-            continuous cycle
-            :show-arrows="false"
-            hide-delimiter-background
-            delimiter-icon="mdi-minus"
-            height="300">
-            <v-carousel-item v-for="(slide, i) in slides" :key="i">
-                <v-sheet :color="colors[i]" height="100%" tile>
-                    <v-row class="fill-height" align="center" justify="center">
-                        <v-card flat class="transparent text-center">
-                            <v-card-text>
-                                <span>{{ slide }}</span>
-                            </v-card-text>
-                        </v-card>
-                    </v-row>
-                </v-sheet>
-            </v-carousel-item>
-        </v-carousel>
-
-        <v-parallax src="../../../public/home/pic_1.jpg" height="300">
-            <v-row align="center" justify="center">
-                <v-col class="text-center" cols="12">
-                    <h1 class="display-1 font-weight-thin mb-4">Vuetify.js</h1>
-                    <h4 class="subheading">Build your application today!</h4>
-                </v-col>
-            </v-row>
-        </v-parallax>
-
-        
-        <v-parallax src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg" height="300">
-            <v-row align="center" justify="center">
-                <v-col class="text-center" cols="12">
-                    <h1 class="display-1 font-weight-thin mb-4">Vuetify.js</h1>
-                    <h4 class="subheading">Build your application today!</h4>
-                </v-col>
-            </v-row>
-        </v-parallax>
-
+        <v-layout wrap row>
+            <v-flex xs12 sm8 class="px-3 mt-4">
+                <v-card class="mt-1">
+                    <v-carousel
+                        continuous cycle
+                        :show-arrows="false"
+                        hide-delimiter-background
+                        delimiter-icon="mdi-minus"
+                        height="300">
+                        <!-- <v-carousel-item>
+                            <v-sheet height="100%" tile>
+                                <v-row class="fill-height" align="center" justify="center">
+                                    <v-card flat class="transparent text-center">
+                                        <v-img class="white--text align-end" height="300px"
+                                            src="https://www.bidlink.net/news/wp-content/uploads/2019/08/12_ton_hydraulic_tripod_jack.jpg">
+                                            <v-card-title class="ml-3 mb-4">We are Open!</v-card-title>
+                                        </v-img>
+                                    </v-card>
+                                </v-row>
+                            </v-sheet>
+                        </v-carousel-item> -->
+                        <v-carousel-item v-for="(slide, i) in slides" :key="i">
+                            <v-sheet :color="colors[i]" height="100%" tile>
+                                <v-row class="fill-height" align="center" justify="center">
+                                    <v-card flat class="transparent text-center">
+                                        <v-card-text>
+                                            <span>{{ slide }}</span>
+                                        </v-card-text>
+                                    </v-card>
+                                </v-row>
+                            </v-sheet>
+                        </v-carousel-item>
+                    </v-carousel>
+                </v-card>
+            </v-flex>
+            <v-flex xs12 sm4 class="px-3 mt-2">
+                <product-list></product-list>
+            </v-flex>
+        </v-layout>
     </div>
 </template>
 <script>
+import productList from './product'
 export default {
+    components: {
+        'product-list': productList
+    },
     data: () => ({
         colors: [
           'secondary',

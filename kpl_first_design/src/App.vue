@@ -14,7 +14,7 @@ export default {
 <style>
   .main_font{
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif !important;
-    font-weight: 900 !important;
+    font-weight: 700 !important;
   }
   .active{
     background-color: #616161;
