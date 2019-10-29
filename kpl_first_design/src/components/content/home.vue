@@ -1,19 +1,22 @@
 <template>
     <div>
-        <v-layout wrap row>
-            <v-flex xs12 sm9 class="px-2 mt-2">
-                <feature-product></feature-product>
-            </v-flex>
-            <v-flex xs12 sm3 class="px-2 mt-2">
-                <promo-list></promo-list>
-            </v-flex>
-            <!-- <v-flex xs12 class="mt-2">
-                <top-product></top-product>
-            </v-flex> -->
-            <v-flex xs12 class="px-2 mt-2">
-                <glimpse-product></glimpse-product>
-            </v-flex>
-        </v-layout>
+        <v-card class="pa-4">
+            <v-layout wrap row  class="pa-4">
+                <v-flex xs12>
+                    <v-layout wrap row>
+                        <v-flex xs3 class="px-2 hidden-md-and-down">
+                            <glimpse-product></glimpse-product>
+                        </v-flex>
+                        <v-flex xs12 sm12 md12 lg7>
+                            <feature-product></feature-product>
+                        </v-flex>
+                        <v-flex xs2 class="px-2 hidden-md-and-down">
+                            <promo-list></promo-list>
+                        </v-flex>
+                    </v-layout>
+                </v-flex>
+            </v-layout>
+        </v-card>
     </div>
 </template>
 <script>

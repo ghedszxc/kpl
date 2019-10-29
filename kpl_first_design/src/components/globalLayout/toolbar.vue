@@ -1,21 +1,10 @@
 <template>
-    <div>
-        <v-toolbar class="green" flat height="70">
+    <div class="green">
+        <v-toolbar class="green ml-12 mr-12" flat height="50">
             <v-toolbar-title class="white--text main_font">INSERT KPL LOGO</v-toolbar-title>
             <v-spacer></v-spacer>
-
             <v-toolbar-items v-for="(item, index) in items" :key="index">
                 <v-btn text class="white--text">{{item.title}}</v-btn>
-            </v-toolbar-items>
-
-            <v-toolbar-items>
-                <v-menu open-on-hover bottom offset-y>
-                    <template v-slot:activator="{ on }">
-                        <v-btn text class="green" dark v-on="on">
-                            Products
-                        </v-btn>
-                    </template>
-                </v-menu>
             </v-toolbar-items>
         </v-toolbar>
     </div>
