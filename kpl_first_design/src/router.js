@@ -4,7 +4,6 @@ import Index from "./components/globalLayout/index";
 
 import Home from "./components/content/home";
 import About from "./components/content/about";
-import Product from "./components/content/product";
 import Contact from "./components/content/contact";
 
 Vue.use(Router);
@@ -23,10 +22,6 @@ export default new Router({
         {
           path: "/about",
           component: About
-        },
-        {
-          path: "/services",
-          component: Product
         },
         {
           path: "/contact",
