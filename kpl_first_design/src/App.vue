@@ -12,6 +12,27 @@ export default {
 };
 </script>
 <style>
+
+  html {
+    overflow-y: auto !important;
+  }
+  ::-webkit-scrollbar{
+    height:10px;
+    width:6px;
+    border-radius: 4px;
+    background: transparent;
+    transition: all 0.3s ease;
+  }
+  ::-webkit-scrollbar:hover{
+    background: #c6c7ca;
+  }
+  ::-webkit-scrollbar-thumb{
+    background:#777779;
+    border-radius: 4px;
+  }
+
+
+
   .main_font{
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif !important;
     font-weight: 700 !important;

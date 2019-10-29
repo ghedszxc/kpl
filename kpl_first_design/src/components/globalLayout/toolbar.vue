@@ -28,21 +28,24 @@
              hide-overlay clipped app floating fixed>
             <v-list dense>
                 <div v-for="(item, index) in items" :key="index">
-                    <v-list-item @click="onSelectPage(item.link)">
+                    <v-list-item @click="onSelectPage(item.link)"
+                        :class="$route.path == item.link ? 'green' : ''">
                         <v-list-item-icon>
-                            <v-icon color="grey darken-2">{{item.icon}}</v-icon>
+                            <v-icon :color="$route.path == item.link ? 'white' : 'grey darken-2'">{{item.icon}}</v-icon>
                         </v-list-item-icon>
-                        <v-list-item-title class="grey--text text--darken-2">
+                        <v-list-item-title :class="$route.path == item.link ? 'white--text' : 'grey--text text--darken-2'">
                             {{item.title}}
                         </v-list-item-title>
                     </v-list-item>
                     <v-divider class="mr-2 ml-2"></v-divider>
                 </div>
+                <glimpse-product></glimpse-product> 
             </v-list>
         </v-navigation-drawer>
     </div>
 </template>
 <script>
+import glimpseProduct from '../content/home/glimpseProduct';
 export default {
     data: () => ({
         drawer: null,
@@ -52,6 +55,9 @@ export default {
           { title: 'About Us', icon: 'supervisor_account', link: '/about' }
         ]
     }),
+    components: {
+        'glimpse-product': glimpseProduct
+    },
     methods: {
         onSelectPage(data){
             const self = this;

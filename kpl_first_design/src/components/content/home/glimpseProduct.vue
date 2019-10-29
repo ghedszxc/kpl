@@ -1,6 +1,7 @@
 <template>
     <div>
-        <v-card flat style="border-radius: 0;">
+        <!-- THIS IS TO DISPLAY LARGE VIEW -->
+        <v-card flat class="hidden-md-and-down" style="border-radius: 0;">
             <v-list dense>
                 <v-list-item>
                     <v-list-item-icon>
@@ -33,6 +34,32 @@
                 </div>
             </v-list>
         </v-card>
+
+        <!-- THIS IS TO DISPLAY SMALL VIEW -->
+        <v-list dense class="hidden-lg-and-up">
+            <v-list-item>
+                <v-list-item-icon>
+                    <v-icon color="grey darken-2">list</v-icon>
+                </v-list-item-icon>
+                <v-list-item-title class="grey--text text--darken-2">
+                    Products
+                </v-list-item-title>
+            </v-list-item>
+            <v-list-group v-for="(item, index) in sample_items" :key="index" color="green">
+                <template v-slot:activator>
+                    <v-list-item-title class="main_subheader grey-text text--darken-2">
+                        {{item.cat}}
+                    </v-list-item-title>
+                </template>
+                <v-list-item v-for="(data, key) in item.subhead" :key="key" link>
+                    <v-list-item-title>
+                        <span class="main_subheader grey-text text--darken-2 ml-4">
+                            {{data}}
+                        </span>
+                    </v-list-item-title>
+                </v-list-item>
+            </v-list-group>
+        </v-list>
     </div>
 </template>
 <script>
@@ -41,10 +68,16 @@ export default {
       fav: true,
       menu: false,
       checkbox: false,
+
+      admins: [
+        ['Management', 'people_outline'],
+        ['Settings', 'settings'],
+      ],
+
       sample_items: [
           {
               cat: 'Soap',
-              subhead: [ 'Safegaurd', 'Dove', 'Silka' ]
+              subhead: [ 'Safeguard', 'Dove', 'Silka' ]
           },
           {
               cat: 'Shampoo',
@@ -86,5 +119,8 @@ export default {
 <style scoped>
     div >>> .v-list-item__title {
         font-weight: 400 !important;
+    }
+    div >>> .v-application .primary--text {
+        color: green !important;
     }
 </style>
