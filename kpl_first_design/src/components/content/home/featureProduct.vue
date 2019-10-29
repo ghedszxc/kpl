@@ -6,7 +6,7 @@
                 :show-arrows="false"
                 hide-delimiter-background
                 delimiter-icon="mdi-minus"
-                height="300">
+                height="329">
                 <!-- <v-carousel-item>
                     <v-sheet height="100%" tile>
                         <v-row class="fill-height" align="center" justify="center">

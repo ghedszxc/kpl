@@ -1,7 +1,6 @@
 <template>
     <div>
         <v-toolbar class="green" flat height="70">
-            <!-- <v-spacer></v-spacer> -->
             <v-toolbar-title class="white--text main_font">INSERT KPL LOGO</v-toolbar-title>
 
             <v-spacer></v-spacer>
@@ -18,16 +17,11 @@
                     </template>
                 </v-menu>
             </v-toolbar-items>
-            <!-- <v-spacer></v-spacer> -->
         </v-toolbar>
     </div>
 </template>
 <script>
-// import productList from "../content/products/productList"
 export default {
-    // components : {
-    //     'product-list': productList
-    // },
     data: () => ({
         drawer: null,
         items: [

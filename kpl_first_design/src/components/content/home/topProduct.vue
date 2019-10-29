@@ -1,7 +1,7 @@
 <template>
     <div>
-        <v-layout wrap row>
-            <v-flex xs4 class="px-1">
+        <v-layout wrap row class="ma-1">
+            <v-flex xs12 sm4 class="px-1 mt-2">
                 <v-card>
                     <v-img class="white--text align-end" height="200px"
                         src="https://www.bidlink.net/news/wp-content/uploads/2019/08/12_ton_hydraulic_tripod_jack.jpg">
@@ -18,7 +18,7 @@
                     </v-card-actions>
                 </v-card>
             </v-flex>
-            <v-flex xs4 class="px-1">
+            <v-flex xs12 sm4 class="px-1 mt-2">
                 <v-card>
                     <v-img class="white--text align-end" height="200px"
                         src="https://3.imimg.com/data3/AC/LW/MY-7375549/hydax-items-full-range-500x500.jpg">
@@ -35,7 +35,7 @@
                     </v-card-actions>
                 </v-card>
             </v-flex>
-            <v-flex xs4 class="px-1">
+            <v-flex xs12 sm4 class="px-1 mt-2">
                 <v-card>
                     <v-img class="white--text align-end" height="200px"
                         src="https://dewaldfluidpower.com/wp-content/uploads/2017/10/pro-top-2.jpg">
