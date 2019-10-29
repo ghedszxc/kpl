@@ -25,7 +25,7 @@
         </v-toolbar>
 
         <v-navigation-drawer v-model="drawer" class="hidden-md-and-up"
-             hide-overlay clipped app floating fixed>
+            hide-overlay clipped app floating fixed>
             <v-list dense>
                 <div v-for="(item, index) in items" :key="index">
                     <v-list-item @click="onSelectPage(item.link)"

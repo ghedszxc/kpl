@@ -47,6 +47,10 @@ export default {
     font-weight: 400 !important;
     font-size: 13px !important;
   }
+  .small-desc-item{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+    font-size: 12px !important;
+  }
   .active{
     background-color: #616161;
   }

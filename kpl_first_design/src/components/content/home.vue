@@ -1,7 +1,7 @@
 <template>
     <div>
-        <v-card class="pa-4">
-            <v-layout wrap row  class="pa-4">
+        <v-card flat class="pa-4">
+            <v-layout wrap row class="pa-4">
                 <v-flex xs12>
                     <v-layout wrap row>
                         <v-flex xs3 class="px-2 hidden-md-and-down">
@@ -17,18 +17,23 @@
                 </v-flex>
             </v-layout>
         </v-card>
+        <!-- <v-card flat class="pa-4 mt-5"> -->
+            <div class="pa-4">
+            <top-product></top-product>
+            </div>
+        <!-- </v-card> -->
     </div>
 </template>
 <script>
 import featureProduct from './home/featureProduct'
 import glimpseProuct from './home/glimpseProduct'
-// import topProduct from './home/topProduct'
+import topProduct from './home/topProduct'
 import promoList from './home/promo'
 export default {
     components: {
         'feature-product': featureProduct,
         'glimpse-product': glimpseProuct,
-        // 'top-product': topProduct,
+        'top-product': topProduct,
         'promo-list': promoList
     }
 }

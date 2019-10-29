@@ -7,7 +7,7 @@
                 show-arrows-on-hover>
                 <v-carousel-item v-for="(slide, i) in slides" :key="i">
                     <v-sheet height="100%" tile>
-                        <v-img height="377" :src="photos[i]" class="white--text align-end">
+                        <v-img height="calc(55vh - 100px)" :src="photos[i]" class="white--text align-end">
                         <!-- <v-card-title class="main_title">{{ slide }}</v-card-title> -->
                         
                             <!-- <v-row class="fill-height" align="center" justify="center">
@@ -29,9 +29,9 @@ export default {
     data: () => ({
         colors: [ 'secondary', 'yellow darken-4', 'red lighten-2', 'orange darken-1' ],
         photos: [
-            'https://st3.depositphotos.com/1177973/18796/i/1600/depositphotos_187964538-stock-photo-plumber-items-draft.jpg',
-            'https://cdn4.vectorstock.com/i/1000x1000/93/28/modern-sale-and-promotion-banner-design-template-vector-14299328.jpg',
-            'https://www.forrich.net/wp-content/uploads/2019/03/5-Ways-to-Make-a-Customer-Satisfied-752x440.jpg'
+            'https://s.alicdn.com/@img/tfs/TB1Qqn1jkL0gK0jSZFAXXcA9pXa-990-400.jpg',
+            'https://i.alicdn.com/img/tfs/TB1TAdKeuH2gK0jSZFEXXcqMpXa-990-400.jpg',
+            'https://i.alicdn.com/img/tfs/TB11pyGg1bviK0jSZFNXXaApXXa-990-400.jpg'
         ],
         slides: [
           'Suspendisse imperdiet, felis eu hendrerit pretium, sapien mauris blandit arcu, et accumsan neque est ut erat. Vivamus eget tellus euismod, interdum nibh at, eleifend justo. Quisque placerat ante in ex tempor, ultrices bibendum nunc finibus. Etiam luctus nec eros vel pulvinar.',

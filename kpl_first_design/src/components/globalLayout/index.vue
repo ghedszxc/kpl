@@ -1,11 +1,10 @@
 <template>
-    <div>
+    <div class="grey lighten-3">
         <tool-bar></tool-bar>
         <!-- <v-content class="grey lighten-2">
             <v-container> -->
-                <router-view class="mt-3 ml-12 mr-12 grey lighten-2"
+                <router-view
                     style="height: 100%; overflow-y: hidden; overflow-x: hidden;">
-
                 </router-view>
             <!-- </v-container>
         </v-content> -->
