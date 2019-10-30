@@ -10,7 +10,7 @@
             <router-view style="height: 100%; overflow-y: hidden; overflow-x: hidden;">
             </router-view>
         </div>
-        <inquire-view></inquire-view>
+        <inquire-view v-if="$route.path == '/product'"></inquire-view>
         <v-btn color="green" rounded x-large dark v-if="$route.path == '/'"
             style="position: fixed; right: 10px; bottom: 1%;"
             @click="$router.push('/product')">
