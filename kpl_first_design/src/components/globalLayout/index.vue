@@ -1,28 +1,30 @@
 <template>
     <div class="grey lighten-3">
         <tool-bar class="mb-2"></tool-bar>
-            <div class="hidden-sm-and-down">
-                <router-view
-                    style="height: 100%; overflow-y: hidden; overflow-x: hidden; margin-left: 10%; margin-right: 10%;">
-                </router-view>
-            </div>
-            <div class="hidden-md-and-up">
-                <router-view style="height: 100%; overflow-y: hidden; overflow-x: hidden;">
-
-                </router-view>
-            </div>
-            <v-btn color="green" rounded x-large dark v-if="$route.path == '/'"
-                style="position: fixed; right: 10px; bottom: 1%;"
-                @click="$router.push('/product')">
-                Inquire Now!
-            </v-btn>
+        <div class="hidden-sm-and-down">
+            <router-view
+                style="height: 100%; overflow-y: hidden; overflow-x: hidden; margin-left: 10%; margin-right: 10%;">
+            </router-view>
+        </div>
+        <div class="hidden-md-and-up">
+            <router-view style="height: 100%; overflow-y: hidden; overflow-x: hidden;">
+            </router-view>
+        </div>
+        <inquire-view></inquire-view>
+        <v-btn color="green" rounded x-large dark v-if="$route.path == '/'"
+            style="position: fixed; right: 10px; bottom: 1%;"
+            @click="$router.push('/product')">
+            Inquire Now!
+        </v-btn>
     </div>
 </template>
 <script>
 import toolBar from './toolbar'
+import inquire from '../content/inquire/inquire'
 export default {
     components: {
-        'tool-bar': toolBar
+        'tool-bar': toolBar,
+        'inquire-view': inquire
     }
 }
 </script>
