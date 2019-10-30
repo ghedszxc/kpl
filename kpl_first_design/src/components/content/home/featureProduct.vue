@@ -27,9 +27,8 @@
 <script>
 export default {
     data: () => ({
-        colors: [ 'secondary', 'yellow darken-4', 'red lighten-2', 'orange darken-1' ],
         photos: [
-            'https://s.alicdn.com/@img/tfs/TB1Qqn1jkL0gK0jSZFAXXcA9pXa-990-400.jpg',
+            'https://i.alicdn.com/img/tfs/TB19VaCiubviK0jSZFNXXaApXXa-990-400.png',
             'https://i.alicdn.com/img/tfs/TB1TAdKeuH2gK0jSZFEXXcqMpXa-990-400.jpg',
             'https://i.alicdn.com/img/tfs/TB11pyGg1bviK0jSZFNXXaApXXa-990-400.jpg'
         ],
