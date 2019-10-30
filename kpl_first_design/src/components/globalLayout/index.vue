@@ -1,13 +1,21 @@
 <template>
     <div class="grey lighten-3">
-        <tool-bar></tool-bar>
-        <!-- <v-content class="grey lighten-2">
-            <v-container> -->
+        <tool-bar class="mb-2"></tool-bar>
+            <div class="hidden-sm-and-down">
                 <router-view
-                    style="height: 100%; overflow-y: hidden; overflow-x: hidden;">
+                    style="height: 100%; overflow-y: hidden; overflow-x: hidden; margin-left: 10%; margin-right: 10%;">
                 </router-view>
-            <!-- </v-container>
-        </v-content> -->
+            </div>
+            <div class="hidden-md-and-up">
+                <router-view style="height: 100%; overflow-y: hidden; overflow-x: hidden;">
+
+                </router-view>
+            </div>
+            <v-btn color="green" rounded x-large dark v-if="$route.path == '/'"
+                style="position: fixed; right: 10px; bottom: 1%;"
+                @click="$router.push('/product')">
+                Inquire Now!
+            </v-btn>
     </div>
 </template>
 <script>
@@ -18,3 +26,22 @@ export default {
     }
 }
 </script>
+<style scoped>
+    .v-btn {
+        animation: wiggle 2.5s infinite;
+    }
+
+    @keyframes wiggle {
+        0% { transform: rotate(1deg); }
+        10% { transform: rotate(-1deg); }
+        20% { transform: rotate(2deg); }
+        30% { transform: rotate(-2deg); }
+        40% { transform: rotate(1deg); }
+        50% { transform: rotate(-1deg); }
+        60% { transform: rotate(2deg); }
+        70% { transform: rotate(-2deg); }
+        80% { transform: rotate(1deg); }
+        90% { transform: rotate(-2deg); }
+        100% { transform: rotate(2deg); }
+    }
+</style>

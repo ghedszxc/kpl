@@ -5,6 +5,7 @@ import Index from "./components/globalLayout/index";
 import Home from "./components/content/home";
 import About from "./components/content/about";
 import Contact from "./components/content/contact";
+import Product from "./components/content/product/productManagementt";
 
 Vue.use(Router);
 
@@ -18,6 +19,10 @@ export default new Router({
         {
           path: "/",
           component: Home
+        },
+        {
+          path: "/product",
+          component: Product
         },
         {
           path: "/about",
