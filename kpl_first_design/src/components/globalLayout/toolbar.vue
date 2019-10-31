@@ -5,7 +5,7 @@
             <v-toolbar-title class="main_font hidden-sm-and-down">INSERT KPL LOGO</v-toolbar-title>
             <v-spacer></v-spacer>
             <v-toolbar-items v-for="(item, index) in items" :key="index">
-                <v-btn text>{{item.title}}</v-btn>
+                <v-btn text @click="onSelectPage(item.link)">{{item.title}}</v-btn>
             </v-toolbar-items>
         </v-toolbar>
 
