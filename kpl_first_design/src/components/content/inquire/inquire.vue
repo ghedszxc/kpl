@@ -1,8 +1,8 @@
 <template>
     <div style="position: fixed; right: 10px; bottom: 0;">
         <v-card v-if="!closeInquireBox && userForInquire">
-            <v-card-title style="height: 50px; cursor: pointer;" class="green white--text"
-                @click="showInquireBox = !showInquireBox">
+            <v-card-title class="green white--text" @click="showInquireBox = !showInquireBox"
+            style="height: 50px; cursor: pointer; border-bottom-left-radius: 0; border-bottom-right-radius: 0;">
                 <span class="overline mr-12">Inquire Module</span>
                 
                 <v-btn icon small class="ml-12">

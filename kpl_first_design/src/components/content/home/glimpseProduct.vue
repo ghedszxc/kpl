@@ -3,7 +3,7 @@
         <!-- THIS IS TO DISPLAY LARGE VIEW -->
         <v-card flat class="hidden-md-and-down" style="border-radius: 0;">
             <v-list dense>
-                <v-list-item>
+                <v-list-item @click="goTo()">
                     <v-list-item-icon>
                         <v-icon color="black">list</v-icon>
                     </v-list-item-icon>
@@ -25,7 +25,7 @@
                         <v-list dense class="pa-3">
                             <div v-for="(data, key) in item.subhead" :key="key"
                                 style="border-bottom: 1px solid #E0E0E0;">
-                                <v-list-item @click="goTo()">
+                                <v-list-item>
                                     <v-list-item-title>{{ data }}</v-list-item-title>
                                 </v-list-item>
                             </div>
@@ -37,11 +37,11 @@
 
         <!-- THIS IS TO DISPLAY SMALL VIEW -->
         <v-list dense class="hidden-lg-and-up">
-            <v-list-item>
+            <v-list-item @click="goTo()" :class="$route.path == '/product' ? 'green' : ''">
                 <v-list-item-icon>
-                    <v-icon color="grey darken-2">list</v-icon>
+                    <v-icon :color="$route.path == '/product' ? 'white' : 'grey darken-2'">list</v-icon>
                 </v-list-item-icon>
-                <v-list-item-title class="grey--text text--darken-2">
+                <v-list-item-title :class="$route.path == '/product' ? 'white--text' : 'grey--text text--darken-2'">
                     Products
                 </v-list-item-title>
             </v-list-item>
@@ -111,7 +111,10 @@ export default {
     }),
     methods: {
         goTo(){
-
+            const self = this;
+            if (self.$router.path != '/product') {
+                self.$router.push('/product')
+            }
         }
     },
 }

@@ -15,8 +15,7 @@
             <v-toolbar-title class="black--text font-weight-light">INSERT KPL LOGO</v-toolbar-title>
         </v-toolbar>
 
-        <v-navigation-drawer v-model="drawer" class="hidden-lg-and-up"
-            hide-overlay app>
+        <v-navigation-drawer v-model="drawer" class="hidden-lg-and-up" hide-overlay app>
             <v-list dense>
                 <div v-for="(item, index) in items" :key="index">
                     <v-list-item @click="onSelectPage(item.link)"

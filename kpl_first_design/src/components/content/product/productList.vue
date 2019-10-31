@@ -294,6 +294,356 @@
                     </v-card>
                 </v-hover>
             </v-flex>
+            <v-flex xs6 sm4 class="px-1 mt-2">
+                <v-hover v-slot:default="{ hover }">
+                    <v-card :elevation="hover ? 12 : 0">
+                        <v-list-item three-line>
+                            <v-list-item-avatar tile size="80" color="grey">
+                                <v-img src="http://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp"
+                                    class="white--text align-end">
+                                </v-img>
+                            </v-list-item-avatar>
+                            <v-list-item-content>
+                                <v-list-item-title>
+                                    <v-checkbox
+                                        v-model="checkbox"
+                                        color="green"
+                                        label="Headline 1"
+                                        v-if="userForInquire">
+                                    </v-checkbox>
+                                    <span v-else class="overline">Headline 1</span>
+                                </v-list-item-title>
+                                <v-list-item-subtitle class="overline">Greyhound divisely fonwderfully</v-list-item-subtitle>
+                            </v-list-item-content>
+                        </v-list-item>
+                    </v-card>
+                </v-hover>
+            </v-flex>
+            <v-flex xs6 sm4 class="px-1 mt-2">
+                <v-hover v-slot:default="{ hover }">
+                    <v-card :elevation="hover ? 12 : 0">
+                        <v-list-item three-line>
+                            <v-list-item-avatar tile size="80" color="grey">
+                                <v-img src="http://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp"
+                                    class="white--text align-end">
+                                </v-img>
+                            </v-list-item-avatar>
+                            <v-list-item-content>
+                                <v-list-item-title>
+                                    <v-checkbox
+                                        v-model="checkbox"
+                                        color="green"
+                                        label="Headline 1"
+                                        v-if="userForInquire">
+                                    </v-checkbox>
+                                    <span v-else class="overline">Headline 1</span>
+                                </v-list-item-title>
+                                <v-list-item-subtitle class="overline">Greyhound divisely fonwderfully</v-list-item-subtitle>
+                            </v-list-item-content>
+                        </v-list-item>
+                    </v-card>
+                </v-hover>
+            </v-flex>
+            <v-flex xs6 sm4 class="px-1 mt-2">
+                <v-hover v-slot:default="{ hover }">
+                    <v-card :elevation="hover ? 12 : 0">
+                        <v-list-item three-line>
+                            <v-list-item-avatar tile size="80" color="grey">
+                                <v-img src="http://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp"
+                                    class="white--text align-end">
+                                </v-img>
+                            </v-list-item-avatar>
+                            <v-list-item-content>
+                                <v-list-item-title>
+                                    <v-checkbox
+                                        v-model="checkbox"
+                                        color="green"
+                                        label="Headline 1"
+                                        v-if="userForInquire">
+                                    </v-checkbox>
+                                    <span v-else class="overline">Headline 1</span>
+                                </v-list-item-title>
+                                <v-list-item-subtitle class="overline">Greyhound divisely fonwderfully</v-list-item-subtitle>
+                            </v-list-item-content>
+                        </v-list-item>
+                    </v-card>
+                </v-hover>
+            </v-flex>
+            <v-flex xs6 sm4 class="px-1 mt-2">
+                <v-hover v-slot:default="{ hover }">
+                    <v-card :elevation="hover ? 12 : 0">
+                        <v-list-item three-line>
+                            <v-list-item-avatar tile size="80" color="grey">
+                                <v-img src="http://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp"
+                                    class="white--text align-end">
+                                </v-img>
+                            </v-list-item-avatar>
+                            <v-list-item-content>
+                                <v-list-item-title>
+                                    <v-checkbox
+                                        v-model="checkbox"
+                                        color="green"
+                                        label="Headline 1"
+                                        v-if="userForInquire">
+                                    </v-checkbox>
+                                    <span v-else class="overline">Headline 1</span>
+                                </v-list-item-title>
+                                <v-list-item-subtitle class="overline">Greyhound divisely fonwderfully</v-list-item-subtitle>
+                            </v-list-item-content>
+                        </v-list-item>
+                    </v-card>
+                </v-hover>
+            </v-flex>
+            <v-flex xs6 sm4 class="px-1 mt-2">
+                <v-hover v-slot:default="{ hover }">
+                    <v-card :elevation="hover ? 12 : 0">
+                        <v-list-item three-line>
+                            <v-list-item-avatar tile size="80" color="grey">
+                                <v-img src="http://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp"
+                                    class="white--text align-end">
+                                </v-img>
+                            </v-list-item-avatar>
+                            <v-list-item-content>
+                                <v-list-item-title>
+                                    <v-checkbox
+                                        v-model="checkbox"
+                                        color="green"
+                                        label="Headline 1"
+                                        v-if="userForInquire">
+                                    </v-checkbox>
+                                    <span v-else class="overline">Headline 1</span>
+                                </v-list-item-title>
+                                <v-list-item-subtitle class="overline">Greyhound divisely fonwderfully</v-list-item-subtitle>
+                            </v-list-item-content>
+                        </v-list-item>
+                    </v-card>
+                </v-hover>
+            </v-flex>
+            <v-flex xs6 sm4 class="px-1 mt-2">
+                <v-hover v-slot:default="{ hover }">
+                    <v-card :elevation="hover ? 12 : 0">
+                        <v-list-item three-line>
+                            <v-list-item-avatar tile size="80" color="grey">
+                                <v-img src="http://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp"
+                                    class="white--text align-end">
+                                </v-img>
+                            </v-list-item-avatar>
+                            <v-list-item-content>
+                                <v-list-item-title>
+                                    <v-checkbox
+                                        v-model="checkbox"
+                                        color="green"
+                                        label="Headline 1"
+                                        v-if="userForInquire">
+                                    </v-checkbox>
+                                    <span v-else class="overline">Headline 1</span>
+                                </v-list-item-title>
+                                <v-list-item-subtitle class="overline">Greyhound divisely fonwderfully</v-list-item-subtitle>
+                            </v-list-item-content>
+                        </v-list-item>
+                    </v-card>
+                </v-hover>
+            </v-flex>
+            <v-flex xs6 sm4 class="px-1 mt-2">
+                <v-hover v-slot:default="{ hover }">
+                    <v-card :elevation="hover ? 12 : 0">
+                        <v-list-item three-line>
+                            <v-list-item-avatar tile size="80" color="grey">
+                                <v-img src="http://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp"
+                                    class="white--text align-end">
+                                </v-img>
+                            </v-list-item-avatar>
+                            <v-list-item-content>
+                                <v-list-item-title>
+                                    <v-checkbox
+                                        v-model="checkbox"
+                                        color="green"
+                                        label="Headline 1"
+                                        v-if="userForInquire">
+                                    </v-checkbox>
+                                    <span v-else class="overline">Headline 1</span>
+                                </v-list-item-title>
+                                <v-list-item-subtitle class="overline">Greyhound divisely fonwderfully</v-list-item-subtitle>
+                            </v-list-item-content>
+                        </v-list-item>
+                    </v-card>
+                </v-hover>
+            </v-flex>
+            <v-flex xs6 sm4 class="px-1 mt-2">
+                <v-hover v-slot:default="{ hover }">
+                    <v-card :elevation="hover ? 12 : 0">
+                        <v-list-item three-line>
+                            <v-list-item-avatar tile size="80" color="grey">
+                                <v-img src="http://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp"
+                                    class="white--text align-end">
+                                </v-img>
+                            </v-list-item-avatar>
+                            <v-list-item-content>
+                                <v-list-item-title>
+                                    <v-checkbox
+                                        v-model="checkbox"
+                                        color="green"
+                                        label="Headline 1"
+                                        v-if="userForInquire">
+                                    </v-checkbox>
+                                    <span v-else class="overline">Headline 1</span>
+                                </v-list-item-title>
+                                <v-list-item-subtitle class="overline">Greyhound divisely fonwderfully</v-list-item-subtitle>
+                            </v-list-item-content>
+                        </v-list-item>
+                    </v-card>
+                </v-hover>
+            </v-flex>
+            <v-flex xs6 sm4 class="px-1 mt-2">
+                <v-hover v-slot:default="{ hover }">
+                    <v-card :elevation="hover ? 12 : 0">
+                        <v-list-item three-line>
+                            <v-list-item-avatar tile size="80" color="grey">
+                                <v-img src="http://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp"
+                                    class="white--text align-end">
+                                </v-img>
+                            </v-list-item-avatar>
+                            <v-list-item-content>
+                                <v-list-item-title>
+                                    <v-checkbox
+                                        v-model="checkbox"
+                                        color="green"
+                                        label="Headline 1"
+                                        v-if="userForInquire">
+                                    </v-checkbox>
+                                    <span v-else class="overline">Headline 1</span>
+                                </v-list-item-title>
+                                <v-list-item-subtitle class="overline">Greyhound divisely fonwderfully</v-list-item-subtitle>
+                            </v-list-item-content>
+                        </v-list-item>
+                    </v-card>
+                </v-hover>
+            </v-flex>
+            <v-flex xs6 sm4 class="px-1 mt-2">
+                <v-hover v-slot:default="{ hover }">
+                    <v-card :elevation="hover ? 12 : 0">
+                        <v-list-item three-line>
+                            <v-list-item-avatar tile size="80" color="grey">
+                                <v-img src="http://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp"
+                                    class="white--text align-end">
+                                </v-img>
+                            </v-list-item-avatar>
+                            <v-list-item-content>
+                                <v-list-item-title>
+                                    <v-checkbox
+                                        v-model="checkbox"
+                                        color="green"
+                                        label="Headline 1"
+                                        v-if="userForInquire">
+                                    </v-checkbox>
+                                    <span v-else class="overline">Headline 1</span>
+                                </v-list-item-title>
+                                <v-list-item-subtitle class="overline">Greyhound divisely fonwderfully</v-list-item-subtitle>
+                            </v-list-item-content>
+                        </v-list-item>
+                    </v-card>
+                </v-hover>
+            </v-flex>
+            <v-flex xs6 sm4 class="px-1 mt-2">
+                <v-hover v-slot:default="{ hover }">
+                    <v-card :elevation="hover ? 12 : 0">
+                        <v-list-item three-line>
+                            <v-list-item-avatar tile size="80" color="grey">
+                                <v-img src="http://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp"
+                                    class="white--text align-end">
+                                </v-img>
+                            </v-list-item-avatar>
+                            <v-list-item-content>
+                                <v-list-item-title>
+                                    <v-checkbox
+                                        v-model="checkbox"
+                                        color="green"
+                                        label="Headline 1"
+                                        v-if="userForInquire">
+                                    </v-checkbox>
+                                    <span v-else class="overline">Headline 1</span>
+                                </v-list-item-title>
+                                <v-list-item-subtitle class="overline">Greyhound divisely fonwderfully</v-list-item-subtitle>
+                            </v-list-item-content>
+                        </v-list-item>
+                    </v-card>
+                </v-hover>
+            </v-flex>
+            <v-flex xs6 sm4 class="px-1 mt-2">
+                <v-hover v-slot:default="{ hover }">
+                    <v-card :elevation="hover ? 12 : 0">
+                        <v-list-item three-line>
+                            <v-list-item-avatar tile size="80" color="grey">
+                                <v-img src="http://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp"
+                                    class="white--text align-end">
+                                </v-img>
+                            </v-list-item-avatar>
+                            <v-list-item-content>
+                                <v-list-item-title>
+                                    <v-checkbox
+                                        v-model="checkbox"
+                                        color="green"
+                                        label="Headline 1"
+                                        v-if="userForInquire">
+                                    </v-checkbox>
+                                    <span v-else class="overline">Headline 1</span>
+                                </v-list-item-title>
+                                <v-list-item-subtitle class="overline">Greyhound divisely fonwderfully</v-list-item-subtitle>
+                            </v-list-item-content>
+                        </v-list-item>
+                    </v-card>
+                </v-hover>
+            </v-flex>
+            <v-flex xs6 sm4 class="px-1 mt-2">
+                <v-hover v-slot:default="{ hover }">
+                    <v-card :elevation="hover ? 12 : 0">
+                        <v-list-item three-line>
+                            <v-list-item-avatar tile size="80" color="grey">
+                                <v-img src="http://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp"
+                                    class="white--text align-end">
+                                </v-img>
+                            </v-list-item-avatar>
+                            <v-list-item-content>
+                                <v-list-item-title>
+                                    <v-checkbox
+                                        v-model="checkbox"
+                                        color="green"
+                                        label="Headline 1"
+                                        v-if="userForInquire">
+                                    </v-checkbox>
+                                    <span v-else class="overline">Headline 1</span>
+                                </v-list-item-title>
+                                <v-list-item-subtitle class="overline">Greyhound divisely fonwderfully</v-list-item-subtitle>
+                            </v-list-item-content>
+                        </v-list-item>
+                    </v-card>
+                </v-hover>
+            </v-flex>
+            <v-flex xs6 sm4 class="px-1 mt-2">
+                <v-hover v-slot:default="{ hover }">
+                    <v-card :elevation="hover ? 12 : 0">
+                        <v-list-item three-line>
+                            <v-list-item-avatar tile size="80" color="grey">
+                                <v-img src="http://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp"
+                                    class="white--text align-end">
+                                </v-img>
+                            </v-list-item-avatar>
+                            <v-list-item-content>
+                                <v-list-item-title>
+                                    <v-checkbox
+                                        v-model="checkbox"
+                                        color="green"
+                                        label="Headline 1"
+                                        v-if="userForInquire">
+                                    </v-checkbox>
+                                    <span v-else class="overline">Headline 1</span>
+                                </v-list-item-title>
+                                <v-list-item-subtitle class="overline">Greyhound divisely fonwderfully</v-list-item-subtitle>
+                            </v-list-item-content>
+                        </v-list-item>
+                    </v-card>
+                </v-hover>
+            </v-flex>
         </v-layout>
     </div>
 </template>
