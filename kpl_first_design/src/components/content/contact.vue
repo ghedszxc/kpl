@@ -72,6 +72,13 @@
                         </span>
                     </v-flex>
                     <v-flex xs12>
+                        <span class="title">Email</span>
+                        <br>
+                        <span class="body-2 grey--text text--darken-1">
+                            sample@kplindustrial.com
+                        </span>
+                    </v-flex>
+                    <v-flex xs12>
                         <div style="border: 1px solid green;">
                             INSERT HERE MAP
                         </div>
