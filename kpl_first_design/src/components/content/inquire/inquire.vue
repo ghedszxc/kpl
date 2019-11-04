@@ -14,6 +14,8 @@
             </v-card-title>
             <div v-if="showInquireBox">
                 <v-card-text>
+                    {{form.name}}
+                    <v-divider></v-divider>
                     <v-list dense>
                         <v-list-item>
                             <v-list-item-title>
@@ -73,7 +75,7 @@
                 <v-card-actions>
                     <v-spacer></v-spacer>
                     <v-btn text small class="green white--text mr-2"
-                        @click="onSubmit()">
+                        @click="onSubmit(form)">
                         Submit
                     </v-btn>
                 </v-card-actions>
@@ -100,6 +102,15 @@ export default {
             return this.$store.state.inquire.userForInquire;
         }
     },
+    mounted(){
+        if (localStorage.getItem("name") && localStorage.getItem("email") && localStorage.getItem("contact") ) {
+            this.showInquireDialog = false;
+            this.form.name = localStorage.getItem("name");
+            this.form.email = localStorage.getItem("email");
+            this.form.contact = localStorage.getItem("contact");
+            this.$store.dispatch('inquire/getUserForInquire', true);
+        }
+    },
     methods: {
         closeDialog(){
             const self = this;
@@ -107,9 +118,12 @@ export default {
             self.$store.dispatch('inquire/getUserForInquire', false);
 
         },
-        onSubmit(){
+        onSubmit(form){
             const self = this;
             self.showInquireDialog = false;
+            localStorage.setItem("name",form.name)
+            localStorage.setItem("email",form.email)
+            localStorage.setItem("contact",form.contact)
             self.$store.dispatch('inquire/getUserForInquire', true);
         }
     }
