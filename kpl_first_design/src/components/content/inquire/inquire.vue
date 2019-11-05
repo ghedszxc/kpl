@@ -17,23 +17,17 @@
                     {{form.name}}
                     <v-divider></v-divider>
                     <v-list dense>
-                        <v-list-item>
+                        <v-list-item v-for="item in checkbox" :key="item">
                             <v-list-item-title>
-                                Hydraulic Achuchu
+                                {{item}}
                             </v-list-item-title>
                         </v-list-item>
-                        <v-divider></v-divider>
-                        <v-list-item>
-                            <v-list-item-title>
-                                Hydraulic Chenes
-                            </v-list-item-title>
-                        </v-list-item>
-                        <v-divider></v-divider>
+                       
                     </v-list>
                 </v-card-text>
                 <v-card-actions>
                     <v-spacer></v-spacer>
-                    <v-btn class="primary" text small>Submit</v-btn>
+                    <v-btn class="primary" text small @click="sendInquire(checkbox)">Submit</v-btn>
                 </v-card-actions>
             </div>
         </v-card>
@@ -100,6 +94,9 @@ export default {
         // PARA MALAMAN KUNG MAG IINQUIRE BA O HINDI
         userForInquire(){
             return this.$store.state.inquire.userForInquire;
+        },
+        checkbox(){
+            return this.$store.state.inquire.checkbox;
         }
     },
     mounted(){
@@ -125,6 +122,9 @@ export default {
             localStorage.setItem("email",form.email)
             localStorage.setItem("contact",form.contact)
             self.$store.dispatch('inquire/getUserForInquire', true);
+        },
+        sendInquire(checkbox){
+            console.log('inquire this',checkbox)
         }
     }
 }

@@ -1,3 +1,4 @@
 export default {
-  userForInquire: false
+  userForInquire: false,
+  checkbox: []
 };
