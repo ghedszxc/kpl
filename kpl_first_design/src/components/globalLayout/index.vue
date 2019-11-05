@@ -7,8 +7,7 @@
             </router-view>
         </div>
         <div class="hidden-md-and-up">
-            <router-view style="height: 100%; overflow-y: hidden; overflow-x: hidden;">
-            </router-view>
+            <router-view style="height: 100%; overflow-y: hidden; overflow-x: hidden;"></router-view>
         </div>
         <inquire-view v-if="$route.path == '/product'"></inquire-view>
         <v-btn color="green" rounded x-large dark v-if="$route.path == '/'"

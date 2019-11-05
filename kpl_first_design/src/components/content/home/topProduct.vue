@@ -4,16 +4,23 @@
         <v-layout wrap row class="hidden-sm-and-down">
             <v-flex xs12 sm4 class="px-1 mt-2">
                 <v-hover v-slot:default="{ hover }">
-                    <v-card flat style="border-radius: 0;">
-                        <v-img height="200px"
+                    <v-card flat :style="{'cursor': hover ? 'pointer' : 'default', 'border-radius': '0'}">
+                        <v-img height="270px"
                             src="https://www.bidlink.net/news/wp-content/uploads/2019/08/12_ton_hydraulic_tripod_jack.jpg">
+                            <v-btn
+                                v-if="!hover"
+                                text class="primary white--text"
+                                style="position: absolute; top: 0; right: 0; border-radius: 0;">
+                                Inquire
+                            </v-btn>
                             <v-expand-transition>
                             <div
                                 v-if="hover"
                                 class="d-flex transition-fast-in-fast-out white v-card--reveal display-3 white--text"
                                 style="height: 100%;">
+                                
                                 <v-btn text class="primary white--text">
-                                    Inquire
+                                    Inquire Now
                                 </v-btn>
                             </div>
                             </v-expand-transition>
@@ -26,89 +33,60 @@
                 </v-hover>
             </v-flex>
             <v-flex xs12 sm4 class="px-1 mt-2">
-                <v-card flat style="border-radius: 0;">
-                    <v-img class="white--text align-end" height="200px"
-                        src="https://3.imimg.com/data3/AC/LW/MY-7375549/hydax-items-full-range-500x500.jpg">
-                        <v-btn text class="primary white--text"
-                            style="position: absolute; top: 0; right: 0; border-radius: 0;">
-                            Inquire
-                        </v-btn>
-                    </v-img>
-                    <v-card-text>
-                        <p class="main_font"> Hydraulic Chuchu </p>
-                        <span class="font-weight-light">Suspendisse imperdiet, felis eu hendrerit pretium, sapien mauris blandit arcu, et accumsan neque est ut erat. Vivamus eget tellus euismod, interdum nibh at</span>
-                    </v-card-text>
-                </v-card>
-            </v-flex>
-            <v-flex xs12 sm4 class="px-1 mt-2">
                 <v-hover v-slot:default="{ hover }">
-                    <v-card :elevation="hover ? 12 : 0"
-                        :style="{'cursor': hover ? 'pointer' : 'default'}">
-                        <v-img class="white--text align-end" height="200px"
-                            src="https://dewaldfluidpower.com/wp-content/uploads/2017/10/pro-top-2.jpg">
-                                <v-btn text class="primary white--text"
-                                    style="position: absolute; top: 0; right: 0; border-radius: 0;">
-                                    Inquire
-                                </v-btn>
-                        </v-img>
-                        <v-card-text>
-                            <p class="main_font"> Hydraulic Chuchu </p>
-                            <span class="font-weight-light">Suspendisse imperdiet, felis eu hendrerit pretium, sapien mauris blandit arcu, et accumsan neque est ut erat. Vivamus eget tellus euismod, interdum nibh at</span>
-                        </v-card-text>
-                    </v-card>
-                </v-hover>
-            </v-flex>
-            <v-flex xs12 sm4 class="px-1 mt-2">
-                <v-card flat style="border-radius: 0;">
-                    <v-img class="white--text align-end" height="200px"
-                        src="https://3.imimg.com/data3/AC/LW/MY-7375549/hydax-items-full-range-500x500.jpg">
-                        <v-btn text class="primary white--text"
-                            style="position: absolute; top: 0; right: 0; border-radius: 0;">
-                            Inquire
-                        </v-btn>
-                    </v-img>
-                    <v-card-text>
-                        <p class="main_font"> Hydraulic Chuchu </p>
-                        <span class="font-weight-light">Suspendisse imperdiet, felis eu hendrerit pretium, sapien mauris blandit arcu, et accumsan neque est ut erat. Vivamus eget tellus euismod, interdum nibh at</span>
-                    </v-card-text>
-                </v-card>
-            </v-flex>
-            <v-flex xs12 sm4 class="px-1 mt-2">
-                <v-hover v-slot:default="{ hover }">
-                    <v-card :elevation="hover ? 12 : 0"
-                        :style="{'cursor': hover ? 'pointer' : 'default'}">
-                        <v-img class="white--text align-end" height="200px"
-                            src="https://dewaldfluidpower.com/wp-content/uploads/2017/10/pro-top-2.jpg">
-                                <v-btn text class="primary white--text"
-                                    style="position: absolute; top: 0; right: 0; border-radius: 0;">
-                                    Inquire
-                                </v-btn>
-                        </v-img>
-                        <v-card-text>
-                            <p class="main_font"> Hydraulic Chuchu </p>
-                            <span class="font-weight-light">Suspendisse imperdiet, felis eu hendrerit pretium, sapien mauris blandit arcu, et accumsan neque est ut erat. Vivamus eget tellus euismod, interdum nibh at</span>
-                        </v-card-text>
-                    </v-card>
-                </v-hover>
-            </v-flex>
-            <v-flex xs12 sm4 class="px-1 mt-2">
-                <v-hover v-slot:default="{ hover }">
-                    <v-card flat style="border-radius: 0;">
-                        <v-img height="200px"
-                            src="https://www.bidlink.net/news/wp-content/uploads/2019/08/12_ton_hydraulic_tripod_jack.jpg">
+                    <v-card flat :style="{'cursor': hover ? 'pointer' : 'default', 'border-radius': '0'}">
+                        <v-img height="270px"
+                            src="https://3.imimg.com/data3/AC/LW/MY-7375549/hydax-items-full-range-500x500.jpg">
+                            <v-btn
+                                v-if="!hover"
+                                text class="primary white--text"
+                                style="position: absolute; top: 0; right: 0; border-radius: 0;">
+                                Inquire
+                            </v-btn>
                             <v-expand-transition>
                             <div
                                 v-if="hover"
                                 class="d-flex transition-fast-in-fast-out white v-card--reveal display-3 white--text"
                                 style="height: 100%;">
+                                
                                 <v-btn text class="primary white--text">
-                                    Inquire
+                                    Inquire Now
                                 </v-btn>
                             </div>
                             </v-expand-transition>
                         </v-img>
                         <v-card-text>
-                            <p class="main_font"> Hydraulic Tripod Jack </p>
+                            <p class="main_font"> Hydraulic Chuchu </p>
+                            <span class="font-weight-light">Suspendisse imperdiet, felis eu hendrerit pretium, sapien mauris blandit arcu, et accumsan neque est ut erat. Vivamus eget tellus euismod, interdum nibh at</span>
+                        </v-card-text>
+                    </v-card>
+                </v-hover>
+            </v-flex>
+            <v-flex xs12 sm4 class="px-1 mt-2">
+                <v-hover v-slot:default="{ hover }">
+                    <v-card flat :style="{'cursor': hover ? 'pointer' : 'default', 'border-radius': '0'}">
+                        <v-img height="270px"
+                            src="https://dewaldfluidpower.com/wp-content/uploads/2017/10/pro-top-2.jpg">
+                            <v-btn
+                                v-if="!hover"
+                                text class="primary white--text"
+                                style="position: absolute; top: 0; right: 0; border-radius: 0;">
+                                Inquire
+                            </v-btn>
+                            <v-expand-transition>
+                            <div
+                                v-if="hover"
+                                class="d-flex transition-fast-in-fast-out white v-card--reveal display-3 white--text"
+                                style="height: 100%;">
+                                
+                                <v-btn text class="primary white--text">
+                                    Inquire Now
+                                </v-btn>
+                            </div>
+                            </v-expand-transition>
+                        </v-img>
+                        <v-card-text>
+                            <p class="main_font"> Hydraulic Chuchu </p>
                             <span class="font-weight-light">Suspendisse imperdiet, felis eu hendrerit pretium, sapien mauris blandit arcu, et accumsan neque est ut erat. Vivamus eget tellus euismod, interdum nibh at</span>
                         </v-card-text>
                     </v-card>

@@ -8,7 +8,7 @@
                         <v-icon color="black">list</v-icon>
                     </v-list-item-icon>
                     <v-list-item-title>
-                        <span class="main_font">My Markets</span>
+                        <span class="main_font">Products</span>
                     </v-list-item-title>
                 </v-list-item>
                 <div v-for="(item, index) in sample_items" :key="index">

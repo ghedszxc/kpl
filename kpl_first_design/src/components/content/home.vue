@@ -17,11 +17,15 @@
                 </v-flex>
             </v-layout>
         </v-card>
-        <!-- <v-card flat class="pa-4 mt-5"> -->
-            <div class="pa-4">
+        <div class="pa-4">
             <top-product></top-product>
-            </div>
+        </div>
+        <!-- <v-card flat class="pa-4 ma-2 mb-12"> -->
+            <about-us class="pa-2 mb-4"></about-us>
         <!-- </v-card> -->
+        <v-card flat class="pa-4 ma-2 mb-12">
+            <contact-us></contact-us>
+        </v-card>
     </div>
 </template>
 <script>
@@ -29,12 +33,16 @@ import featureProduct from './home/featureProduct'
 import glimpseProuct from './home/glimpseProduct'
 import topProduct from './home/topProduct'
 import promoList from './home/promo'
+import contactUs from './contact'
+import aboutUs from './about'
 export default {
     components: {
         'feature-product': featureProduct,
         'glimpse-product': glimpseProuct,
         'top-product': topProduct,
-        'promo-list': promoList
+        'promo-list': promoList,
+        'contact-us': contactUs,
+        'about-us': aboutUs
     }
 }
 </script>

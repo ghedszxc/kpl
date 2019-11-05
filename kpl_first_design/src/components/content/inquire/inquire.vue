@@ -1,6 +1,7 @@
 <template>
     <div style="position: fixed; right: 10px; bottom: 0;">
-        <v-card v-if="!closeInquireBox && userForInquire">
+        <v-card v-if="!closeInquireBox && userForInquire"
+            style="border-bottom-left-radius: 0; border-bottom-right-radius: 0;">
             <v-card-title class="green white--text" @click="showInquireBox = !showInquireBox"
             style="height: 50px; cursor: pointer; border-bottom-left-radius: 0; border-bottom-right-radius: 0;">
                 <span class="overline mr-12">Inquire Module</span>
@@ -27,12 +28,12 @@
                 </v-card-text>
                 <v-card-actions>
                     <v-spacer></v-spacer>
-                    <v-btn class="primary" text small @click="sendInquire(checkbox)">Submit</v-btn>
+                    <v-btn class="primary" style="border-radius: 0;" text small @click="sendInquire(checkbox)">Submit</v-btn>
                 </v-card-actions>
             </div>
         </v-card>
 
-        <v-dialog v-model="showInquireDialog" persistent max-width="50%">
+        <v-dialog v-model="showInquireDialog" persistent max-width="500">
             <v-card>
                 <v-card-title>
                     <span class="main_title">Inquire Form</span>
@@ -66,9 +67,10 @@
                         </v-flex>
                     </v-layout>
                 </v-card-text>
-                <v-card-actions>
+                <v-card-actions style="margin-top: -5%;">
                     <v-spacer></v-spacer>
                     <v-btn text small class="green white--text mr-2"
+                        style="border-radius: 0;"
                         @click="onSubmit(form)">
                         Submit
                     </v-btn>
@@ -124,7 +126,7 @@ export default {
             self.$store.dispatch('inquire/getUserForInquire', true);
         },
         sendInquire(checkbox){
-            console.log('inquire this',checkbox)
+            console.log('inquire this',checkbox);
         }
     }
 }
