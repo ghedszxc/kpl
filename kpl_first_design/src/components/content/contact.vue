@@ -51,7 +51,7 @@
             </v-flex>
             <v-flex xs12 sm4 class="px-4">
                 <v-layout wrap row>
-                    <v-flex xs12 class="mt-6 mb-4">
+                    <v-flex xs12 class="mb-4">
                         <span class="display-1 font-weight-bold grey--text text--darken-3">Contact Info</span>
                     </v-flex>
                     <v-flex xs12>
