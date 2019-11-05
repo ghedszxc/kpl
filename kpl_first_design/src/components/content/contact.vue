@@ -23,8 +23,7 @@
                             label="Contact Number"
                             v-model="form.contact_number"
                             
-                            outlined
-                            color="green">
+                            outlined>
                         </v-text-field>
                     </v-flex>
                     <v-flex xs12 class="px-2" style="margin-top: -2%;">
@@ -32,8 +31,7 @@
                             label="Email Address"
                             v-model="form.email_address"
                             
-                            outlined
-                            color="green">
+                            outlined>
                         </v-text-field>
                     </v-flex>
                     <v-flex xs12 class="px-2" style="margin-top: -2%;">
@@ -41,12 +39,11 @@
                             label="Write your message"
                             v-model="form.message"
 
-                            outlined
-                            color="green">
+                            outlined>
                         </v-textarea>
                     </v-flex>
                     <v-flex xs12 class="px-2" style="margin-top: -2%;">
-                        <v-btn text class="primary" style="border-radius: 0;">
+                        <v-btn text class="success" style="border-radius: 0;">
                             Send Message
                         </v-btn>
                     </v-flex>
@@ -55,24 +52,24 @@
             <v-flex xs12 sm4 class="px-4">
                 <v-layout wrap row>
                     <v-flex xs12 class="mt-6 mb-4">
-                        <span class="display-1 font-weight-bold">Contact Info</span>
+                        <span class="display-1 font-weight-bold grey--text text--darken-3">Contact Info</span>
                     </v-flex>
                     <v-flex xs12>
-                        <span class="title">Address</span>
+                        <span class="title grey--text text--darken-3">Address</span>
                         <br>
                         <span class="body-2 grey--text text--darken-1">
                             #3 Vinegar st., Llenado subd., Karuhatan Valenzuela city
                         </span>
                     </v-flex>
                     <v-flex xs12>
-                        <span class="title">Phone</span>
+                        <span class="title grey--text text--darken-3">Phone</span>
                         <br>
                         <span class="body-2 grey--text text--darken-1">
                             +639 174 768 910
                         </span>
                     </v-flex>
                     <v-flex xs12>
-                        <span class="title">Email</span>
+                        <span class="title grey--text text--darken-3">Email</span>
                         <br>
                         <span class="body-2 grey--text text--darken-1">
                             sample@kplindustrial.com
