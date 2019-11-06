@@ -52,24 +52,24 @@
             <v-flex xs12 sm4 class="px-4">
                 <v-layout wrap row>
                     <v-flex xs12 class="mb-4">
-                        <span class="display-1 font-weight-bold grey--text text--darken-3">Contact Info</span>
+                        <span class="display-1 font-weight-bold grey--text text--darken-2">Contact Info</span>
                     </v-flex>
                     <v-flex xs12>
-                        <span class="title grey--text text--darken-3">Address</span>
+                        <span class="title grey--text text--darken-2">Address</span>
                         <br>
                         <span class="body-2 grey--text text--darken-1">
                             #3 Vinegar st., Llenado subd., Karuhatan Valenzuela city
                         </span>
                     </v-flex>
                     <v-flex xs12>
-                        <span class="title grey--text text--darken-3">Phone</span>
+                        <span class="title grey--text text--darken-2">Phone</span>
                         <br>
                         <span class="body-2 grey--text text--darken-1">
                             +639 174 768 910
                         </span>
                     </v-flex>
                     <v-flex xs12>
-                        <span class="title grey--text text--darken-3">Email</span>
+                        <span class="title grey--text text--darken-2">Email</span>
                         <br>
                         <span class="body-2 grey--text text--darken-1">
                             sample@kplindustrial.com

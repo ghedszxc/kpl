@@ -18,9 +18,9 @@
             </v-parallax>
         </div>
         <div  v-if="$route.path == '/about'">
-            <v-card flat class="mt-3 px-3">
+            <v-card flat class="mt-3 px-3" style="border-radius: 0;">
                 <v-timeline :dense="$vuetify.breakpoint.smAndDown">
-                    <v-timeline-item color="purple lighten-2" fill-dot right small>
+                    <v-timeline-item class="animate_one" color="purple lighten-2" fill-dot right small>
                         <template v-slot:opposite>
                             <span class="headline font-weight-medium purple--text">
                             1985
@@ -44,7 +44,7 @@
                         </v-card>
                     </v-timeline-item>
 
-                    <v-timeline-item color="cyan lighten-1" left>
+                    <v-timeline-item class="animate_two" color="cyan lighten-1" left>
                         <template v-slot:opposite>
                             <span class="headline font-weight-medium cyan--text">
                             1990
@@ -65,7 +65,7 @@
                         </v-card>
                     </v-timeline-item>
 
-                    <v-timeline-item color="red lighten-1" fill-dot right small>
+                    <v-timeline-item class="animate_three" color="red lighten-1" fill-dot right small>
                         <template v-slot:opposite>
                             <span class="headline font-weight-medium red--text">
                             2000
@@ -126,8 +126,3 @@ export default {
     
 }
 </script>
-<style scoped>
-    /* .about_card {
-        opacity: .7;
-    } */
-</style>

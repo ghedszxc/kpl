@@ -12,10 +12,7 @@ export default {
 };
 </script>
 <style>
-
-  html {
-    overflow-y: auto !important;
-  }
+  /* SCROLLBAR */
   ::-webkit-scrollbar{
     height:10px;
     width:6px;
@@ -31,8 +28,7 @@ export default {
     border-radius: 4px;
   }
 
-
-
+  /* FONTS */
   .main_font{
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif !important;
     font-weight: 700 !important;
@@ -51,7 +47,30 @@ export default {
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif !important;
     font-size: 12px !important;
   }
-  .active{
-    background-color: #616161;
+  
+  /* DIV FADES */
+  @keyframes fadeInLeft {
+    0% { opacity: 0; transform: translateX(-20px); }
+    100% { opacity: 1; transform: translateX(0); }
   }
+  @keyframes fadeInRight {
+    0% { opacity: 0; transform: translateX(20px); }
+    100% { opacity: 1; transform: translateX(0); }
+  }
+  
+  .animate_one {
+    animation-name: fadeInRight;
+    background-position: left top;
+    animation-duration: 3s;
+  } 
+  .animate_two {
+    animation-name: fadeInLeft;
+    background-position: right top;
+    animation-duration: 3s;
+  } 
+  .animate_three {
+    animation-name: fadeInRight;
+    background-position: right top;
+    animation-duration: 3s;
+  } 
 </style>
