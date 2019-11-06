@@ -1,20 +1,21 @@
 <template>
     <div>
         <div class="text-center">
-            <v-parallax height="300" src="https://cdn.vuetifyjs.com/images/parallax/material2.jpg">
-                <v-card flat class="px-4 text-center"
-                    style="background: rgba(0, 0, 0, 0.1); border-radius: 0; height: 90%; padding-top: 5%;">
-                    <span class="display-2 white--text">ABOUT US</span>
-                    <div class="ml-12 mr-12 mt-8">
-                        <span class="subtitle-1 font-italic white--text">Aliquam sagittis ligula et sem lacinia sagittis ligula et sem lacinia sagittis ligula et sem lacinia, ut facilisis enim sollicitudin. Proin nisi est, convallis nec purus vitae, iaculis posuere sapien. Cum sociis natoque.</span>
-                    </div>
-                    <v-btn outlined small color="white"
-                        style="border-radius: 0;"
-                        v-if="$route.path == '/'"
-                        @click="$router.push('/about')">
-                        See More...
-                    </v-btn>
-                </v-card>
+            <v-parallax src="https://cdn.vuetifyjs.com/images/parallax/material2.jpg">
+                <v-container fluid align="center" justify="center">
+                    <v-card flat style="background: rgba(0, 0, 0, 0.1); border-radius: 0; padding: 5%;">
+                        <span class="display-2 white--text">ABOUT US</span>
+                        <div class="ml-12 mr-12">
+                            <span class="subtitle-1 font-italic white--text">Aliquam sagittis ligula et sem lacinia sagittis ligula et sem lacinia sagittis ligula et sem lacinia, ut facilisis enim sollicitudin. Proin nisi est, convallis nec purus vitae, iaculis posuere sapien. Cum sociis natoque.</span>
+                        </div>
+                        <v-btn outlined small color="white"
+                            style="border-radius: 0;"
+                            v-if="$route.path == '/'"
+                            @click="goTo()">
+                            See More...
+                        </v-btn>
+                    </v-card>
+                </v-container>
             </v-parallax>
         </div>
         <div  v-if="$route.path == '/about'">
@@ -90,8 +91,8 @@
                     </v-timeline-item>
                 </v-timeline>
             </v-card>
-            <v-layout wrap row class="mt-3 mb-6">
-                <v-flex xs12 sm6 class="px-2">
+            <v-layout wrap row class="mb-6">
+                <v-flex xs12 sm6 class="px-2 mt-3">
                     <v-card flat style="border-radius: 0;">
                         <v-card-title>
                             <v-spacer></v-spacer>
@@ -104,7 +105,7 @@
                         </v-card-text>
                     </v-card>
                 </v-flex>
-                <v-flex xs12 sm6 class="px-2">
+                <v-flex xs12 sm6 class="px-2 mt-3">
                     <v-card flat style="border-radius: 0;">
                         <v-card-title>
                             <v-spacer></v-spacer>
@@ -123,6 +124,13 @@
 </template>
 <script>
 export default {
-    
+    methods: {
+        goTo(){
+            const self = this;
+            self.$router.push('/about')
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    }
 }
 </script>
