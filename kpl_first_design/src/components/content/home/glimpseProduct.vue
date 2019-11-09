@@ -12,7 +12,7 @@
                     </v-list-item-title>
                 </v-list-item>
                 <div v-for="(item, index) in sample_items" :key="index">
-                    <v-menu open-on-hover right offset-x>
+                    <v-menu open-on-hover right offset-x transition="scale-transition">
                         <template v-slot:activator="{ on }">
                             <v-list-item v-on="on" style="border-bottom: 1px solid #E0E0E0;">
                                 <v-list-item-title>{{item.cat}}</v-list-item-title>
@@ -22,12 +22,12 @@
                             </v-list-item>
                         </template>
 
-                        <v-list dense class="pa-3">
-                            <div v-for="(data, key) in item.subhead" :key="key"
-                                style="border-bottom: 1px solid #E0E0E0;">
-                                <v-list-item>
+                        <v-list dense>
+                            <div v-for="(data, key) in item.subhead" :key="key">
+                                <v-list-item link>
                                     <v-list-item-title>{{ data }}</v-list-item-title>
                                 </v-list-item>
+                                <v-divider class="ml-4 mr-4"></v-divider>
                             </div>
                         </v-list>
                     </v-menu>

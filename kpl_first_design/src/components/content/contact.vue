@@ -5,7 +5,8 @@
                 <v-flex xs12 class="text-center mt-4 mb-12">
                     <span class="display-2 grey--text text--darken-2">CONTACT US</span>
                 </v-flex>
-                <v-flex xs12 sm6 class="px-4 mt-3">
+                <!-- SHOW INFO WHEN SCREEN IS LARGE -->
+                <v-flex xs12 sm6 class="px-4 mt-3 hidden-xs-only">
                     <v-layout wrap row class="ml-12">
                         <v-flex xs12 class="mb-4">
                             <span class="headline font-weight-light grey--text text--darken-2">CONTACT INFORMATION</span>
@@ -33,7 +34,31 @@
                         </v-flex>
                     </v-layout>
                 </v-flex>
-                <v-flex xs12 sm6 class="px-4 mt-3">
+                <!-- SHOW INFO WHEN SCREEN IS SMALL -->
+                <v-flex xs12 sm6 class="px-4 mt-3 hidden-sm-and-up">
+                    <v-layout wrap row class="text-center">
+                        <v-flex xs12 class="mb-4">
+                            <span class="headline font-weight-light grey--text text--darken-2">CONTACT INFORMATION</span>
+                        </v-flex>
+                        <v-flex xs12>
+                            <span class="body-2 grey--text text--darken-1">
+                                <b>ADDRESS : </b> 536 Quirino Hwy, Novaliches, Quezon City, Metro Manila
+                            </span>
+                        </v-flex>
+                        <v-flex xs12>
+                            <span class="body-2 grey--text text--darken-1">
+                                <b>PHONE : </b> (02) 8952 4265
+                            </span>
+                        </v-flex>
+                        <v-flex xs12>
+                            <span class="body-2 grey--text text--darken-1">
+                                <b>EMAIL : </b> inquiry@kplindustrial.com
+                            </span>
+                        </v-flex>
+                    </v-layout>
+                </v-flex>
+                <!-- SHOW FORM WHEN SCREEN IS LARGE -->
+                <v-flex xs12 sm6 class="px-4 mt-3 hidden-xs-only">
                     <v-layout wrap row class="mr-12">
                         <v-flex xs12 class="px-2 mb-4">
                             <span class="headline font-weight-light grey--text text--darken-2">LEAVE US A MESSAGE</span>
@@ -78,6 +103,57 @@
                         </v-flex>
                         <v-flex xs12 class="px-2" style="margin-top: -2%;">
                             <v-btn text class="success" style="border-radius: 0;">
+                                Send Message
+                            </v-btn>
+                        </v-flex>
+                    </v-layout>
+                </v-flex>
+                <!-- SHOW FORM WHEN SCREEN IS SMALL -->
+                <v-flex xs12 sm6 class="px-4 mt-3 hidden-sm-and-up">
+                    <v-layout wrap row class="text-center">
+                        <v-flex xs12 class="px-2 mb-4">
+                            <span class="headline font-weight-light grey--text text--darken-2">LEAVE US A MESSAGE</span>
+                        </v-flex>
+                        <v-flex xs12 sm6 class="px-4">
+                            <v-text-field
+                                label="Name"
+                                v-model="form.name"
+                                
+                                outlined dense>
+                                
+                                <!-- v-validate="'required|ip'"
+                                data-vv-scope="add"
+                                :data-vv-name="item.validate_ip_address"
+                                :error-messages="errors.collect(`add.${item.validate_ip_address}`)"
+                                data-vv-validate-on="blur" -->
+                            </v-text-field>
+                        </v-flex>
+                        <v-flex xs12 sm6 class="px-4" style="margin-top: -2%;">
+                            <v-text-field
+                                label="Contact Number"
+                                v-model="form.contact_number"
+                                
+                                outlined dense>
+                            </v-text-field>
+                        </v-flex>
+                        <v-flex xs12 class="px-4" style="margin-top: -2%;">
+                            <v-text-field
+                                label="Email Address"
+                                v-model="form.email_address"
+                                
+                                outlined dense>
+                            </v-text-field>
+                        </v-flex>
+                        <v-flex xs12 class="px-4" style="margin-top: -2%;">
+                            <v-textarea
+                                label="Write your message"
+                                v-model="form.message"
+
+                                outlined dense>
+                            </v-textarea>
+                        </v-flex>
+                        <v-flex xs12 class="px-4" style="margin-top: -2%;">
+                            <v-btn text class="success" style="border-radius: 0; width: 100%;">
                                 Send Message
                             </v-btn>
                         </v-flex>

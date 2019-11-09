@@ -12,12 +12,13 @@
             </v-toolbar-items>
         </v-toolbar>
 
-        <v-toolbar class="hidden-lg-and-up" flat height="50">
-            <v-app-bar-nav-icon color="black" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+        <v-toolbar class="green hidden-lg-and-up" flat height="50">
+            <v-app-bar-nav-icon color="white" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
             <v-spacer></v-spacer>
             <v-toolbar-title class="black--text font-weight-light">
-                <img src="../../../public/home/kpl_logo.png"
-                alt="kpl"  style="height: 45px;">
+                <span class="white--text">INSERT KPL LOGO</span>
+                <!-- <img src="../../../public/home/kpl_logo.png"
+                alt="kpl"  style="height: 45px;"> -->
             </v-toolbar-title>
         </v-toolbar>
 

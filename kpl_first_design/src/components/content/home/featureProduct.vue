@@ -7,7 +7,7 @@
                 show-arrows-on-hover>
                 <v-carousel-item v-for="(slide, i) in slides" :key="i">
                     <v-sheet height="100%" tile>
-                        <v-img height="calc(55vh - 100px)" :src="photos[i]" class="white--text align-end">
+                        <v-img height="100%" :src="photos[i]" class="white--text align-end">
                         <!-- <v-card-title class="main_title">{{ slide }}</v-card-title> -->
                         
                             <!-- <v-row class="fill-height" align="center" justify="center">
