@@ -127,6 +127,10 @@ export default {
         },
         sendInquire(checkbox){
             console.log('inquire this',checkbox);
+            this.form.checkbox = checkbox
+            this.$http.post('api/inquire',this.form).then(response => {
+                console.log('send email',response.data)
+            });
         }
     }
 }
