@@ -77,7 +77,13 @@
                     </v-flex>
                     <v-flex xs12>
                         <div style="border: 1px solid green;">
-                            INSERT HERE MAP
+                            <GmapMap ref="mapRef" :center="{lat:14.6895012, lng:-238.972904}"
+                                    :zoom="16"
+                                    map-type-id="terrain"
+                                    style="width: 500px; height: 300px" >
+                                    <gmap-marker :position="{lat:14.6895012, lng:-238.972904}">
+                                    </gmap-marker>
+                            </GmapMap>
                         </div>
                     </v-flex>
                 </v-layout>
@@ -94,6 +100,15 @@ export default {
             email_address: '',
             message: '',
         }
-    })
+    }),
+    mounted () {
+    // At this point, the child GmapMap has been mounted, but
+    // its map has not been initialized.
+    // Therefore we need to write mapRef.$mapPromise.then(() => ...)
+ 
+    // this.$refs.mapRef.$mapPromise.then((map) => {
+    //   map.panTo({lat:14.6895012, lng:-238.972904})
+    // })
+  }
 }
 </script>
