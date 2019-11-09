@@ -2,7 +2,10 @@
     <div class="white">
         <v-toolbar class="hidden-md-and-down" flat height="50"
             style="margin-left: 10%; margin-right: 9%;">
-            <v-toolbar-title class="main_font hidden-sm-and-down">INSERT KPL LOGO</v-toolbar-title>
+            <v-toolbar-title class="main_font hidden-sm-and-down">
+                <img src="../../../public/home/kpl_logo.png"
+                alt="kpl"  style="height: 45px;">
+            </v-toolbar-title>
             <v-spacer></v-spacer>
             <v-toolbar-items v-for="(item, index) in items" :key="index">
                 <v-btn text @click="onSelectPage(item.link)">{{item.title}}</v-btn>
@@ -12,7 +15,10 @@
         <v-toolbar class="hidden-lg-and-up" flat height="50">
             <v-app-bar-nav-icon color="black" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
             <v-spacer></v-spacer>
-            <v-toolbar-title class="black--text font-weight-light">INSERT KPL LOGO</v-toolbar-title>
+            <v-toolbar-title class="black--text font-weight-light">
+                <img src="../../../public/home/kpl_logo.png"
+                alt="kpl"  style="height: 45px;">
+            </v-toolbar-title>
         </v-toolbar>
 
         <v-navigation-drawer v-model="drawer" class="hidden-lg-and-up" hide-overlay app>

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-card flat class="pa-4">
+        <v-card flat class="pa-4 mb-2 ml-2 mr-2" style="border-radius: 0;">
             <v-layout wrap row class="pa-4">
                 <v-flex xs12>
                     <v-layout wrap row>
@@ -15,17 +15,16 @@
                         </v-flex>
                     </v-layout>
                 </v-flex>
+                <v-flex xs12>
+                    <top-product></top-product>
+                </v-flex>
             </v-layout>
         </v-card>
-        <div class="pa-4">
+        <!-- <div class="pa-4">
             <top-product></top-product>
-        </div>
-        <!-- <v-card flat class="pa-4 ma-2 mb-12"> -->
-            <about-us class="pa-2 mb-4"></about-us>
-        <!-- </v-card> -->
-        <v-card flat class="pa-4 ma-2 mb-12">
-            <contact-us></contact-us>
-        </v-card>
+        </div> -->
+        <about-us class="pa-2"></about-us>
+        <contact-us class="pa-2"></contact-us>
     </div>
 </template>
 <script>
