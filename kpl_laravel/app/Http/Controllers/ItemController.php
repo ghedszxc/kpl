@@ -14,7 +14,7 @@ class ItemController extends Controller
      */
     public function index()
     {
-        $items = Item::all();
+        return $items = Item::paginate(15);
         $output = [];
         foreach ($items as $item)
         {

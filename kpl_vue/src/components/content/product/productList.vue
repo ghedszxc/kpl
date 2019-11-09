@@ -3,12 +3,12 @@
     <!-- DISPLAY WHEN VIEW IS LARGE -->
     <!-- class="hidden-sm-and-down" -->
     <v-layout wrap row class="ma-1">
-      <v-flex xs12 sm6 md3 class="px-1 mt-2" v-for="(item, index) in products" :key="index">
+      <v-flex xs12 sm6 md3 class="px-1 mt-2" v-for="(item, index) in productList.data" :key="index">
         <v-card flat style="border-radius: 0;">
           <v-img
             class="white--text align-end"
             height="200px"
-            src="https://3.imimg.com/data3/AC/LW/MY-7375549/hydax-items-full-range-500x500.jpg"></v-img>
+            src="http://localhost:8000/api/image"></v-img>
           <v-card-text>
             <v-checkbox
               v-if="userForInquire"
@@ -16,16 +16,20 @@
               v-model="item.checkbox"
               @change="addToInquire(item)"
               color="green"
-              :label="`${item.name}`">
+              :label="`${item.item_name}`">
             </v-checkbox>
-            <p v-else class="overline">{{item.name}}</p>
+            <p v-else class="overline">{{item.item_name}}</p>
             <span style="font-size: 12px;" class="font-weight-light">
-              {{item.description}}
+              {{item.item_description}}
             </span>
           </v-card-text>
         </v-card>
       </v-flex>
-     
+      <v-flex xs12 class="px-1 mt-2">
+        <v-pagination v-if="productList" v-model="productList.current_page" @input="showPage($http.options.root+'/api/item?page='+productList.current_page)"  :length="productList.last_page">
+
+        </v-pagination>
+      </v-flex>
     </v-layout>
     <!-- DISPLAY WHEN VIEW IS SMALL -->
     <!-- <v-layout wrap row class="hidden-md-and-up">
@@ -65,24 +69,38 @@ import productMixin from "../../mixins/product"
 export default {
   mixins : [productMixin],
   data: () => ({
-    checkbox: []
+    checkbox: [],
+    page:0
   }),
   computed: {
     // PARA MALAMAN KUNG MAG IINQUIRE BA O HINDI
     userForInquire() {
       return this.$store.state.inquire.userForInquire;
+    },
+    productList(){
+      return this.$store.state.global.productList
+    },
+    selectedItem(){
+        return this.$store.state.global.selectedItem;
     }
   },
   methods: {
     addToInquire(item){
       const self = this;
-      if (item.checkbox) {
+      let index = this.selectedItem.findIndex(find => find.id == item.id)
+      console.log('index',index)
+      console.log('index',this.selectedItem)
+      if (index == -1) {
         // TO ADD IN LIST
-        self.$store.dispatch('global/updateSelectedItem', item.name)
+        self.$store.dispatch('global/updateSelectedItem', item)
       } else {
         // TO REMOVE IN LIST
-        self.$store.dispatch('global/removeCheckboxInProductList', item.name)
+        self.$store.dispatch('global/removeCheckboxInProductList', item.id)
       }
+    },
+    showPage(page_url){
+      this.$store.dispatch('global/getProductList',page_url)
+      console.log("page url",page_url)
     }
   }
 };

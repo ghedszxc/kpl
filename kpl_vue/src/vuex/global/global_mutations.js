@@ -18,12 +18,8 @@ export default {
 
   // TO REMOVE SELECTION IN CHECKBOX
   REMOVE_CHECKBOX_IN_PRODUCT_LIST: (state, payload) => {
-    let index = state.productList.findIndex(find => find.name == payload);
-    if (index != -1) {
-      state.productList[index].checkbox = "";
-    }
-
-    let find_index = state.selectedItem.findIndex(find => find == payload);
+    
+    let find_index = state.selectedItem.findIndex(find => find.id == payload);
     if (find_index != -1) {
       state.selectedItem.splice(find_index, 1);
     }

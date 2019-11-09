@@ -27,3 +27,7 @@ Route::resource("catergory","CategoryController");
 Route::get('redis',function(){
     return response()->json(Redis::get('test'));
 });
+
+Route::get('image',function(){
+    return response()->file(storage_path('/app/public/hydax-items-full-range-500x500.jpeg'));
+});

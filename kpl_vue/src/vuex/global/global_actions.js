@@ -1,10 +1,10 @@
 import Vue from "vue";
 export default {
-  // getProductList: ({ commit }) => {
-  //   Vue.http.get("api/item").then(response => {
-  //     commit("GET_PRODUCT_LIST", response.body);
-  //   });
-  // },
+  getProductList: ({ commit },url) => {
+    Vue.http.get( url? url : "api/item").then(response => {
+      commit("GET_PRODUCT_LIST", response.body);
+    });
+  },
   getCatergoryList: ({ commit }) => {
     Vue.http.get("api/catergory").then(response => {
       commit("GET_CATEGORY_LIST", response.body);
