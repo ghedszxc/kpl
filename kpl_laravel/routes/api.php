@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redis;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,8 @@ Route::resource("inquire","InquireController");
 
 Route::resource("item","ItemController");
 Route::resource("catergory","CategoryController");
+
+
+Route::get('redis',function(){
+    return response()->json(Redis::get('test'));
+});
