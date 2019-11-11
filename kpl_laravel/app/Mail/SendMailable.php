@@ -11,7 +11,9 @@ class SendMailable extends Mailable
 {
     use Queueable, SerializesModels;
     public $name;
-
+    public $email;
+    public $contact;
+    public $checkbox;
     /**
      * Create a new message instance.
      *
@@ -19,8 +21,10 @@ class SendMailable extends Mailable
      */
     public function __construct($name)
     {
-        //
-        $this->name = $name;
+        $this->name = $name['name'];
+        $this->email = $name['email'];
+        $this->contact = $name['contact'];
+        $this->checkbox = $name['checkbox'];
     }
 
     /**

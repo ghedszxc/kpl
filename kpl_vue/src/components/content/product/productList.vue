@@ -614,11 +614,22 @@ export default {
     userForInquire() {
       return this.$store.state.inquire.userForInquire;
     },
+    vueCheckbox() {
+      return this.$store.state.inquire.checkbox;
+    }
+  },
+  watch: {
+    vueCheckbox(to) {
+      if (to.length == 0) {
+        this.checkbox = [];
+        return;
+      }
+    }
   },
   methods: {
-    addToInquire() {
+    addToInquire(){
       const self = this;
-      self.$store.commit('inquire/CHECKBOX',this.checkbox)
+      self.$store.commit('inquire/CHECKBOX', self.checkbox)
     }
   }
 };

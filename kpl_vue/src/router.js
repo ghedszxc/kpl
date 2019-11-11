@@ -5,7 +5,7 @@ import Index from "./components/globalLayout/index";
 import Home from "./components/content/home";
 import About from "./components/content/about";
 import Contact from "./components/content/contact";
-import Product from "./components/content/product/productManagementt";
+import Product from "./components/content/product/productManagement";
 
 Vue.use(Router);
 

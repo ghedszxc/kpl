@@ -18,17 +18,27 @@
                     {{form.name}}
                     <v-divider></v-divider>
                     <v-list dense>
-                        <v-list-item v-for="item in checkbox" :key="item">
-                            <v-list-item-title>
-                                {{item}}
-                            </v-list-item-title>
-                        </v-list-item>
-                       
+                        <div v-for="item in checkbox" :key="item">
+                            <v-list-item :disabled="onLoad">
+                                <v-list-item-title>
+                                    {{item}}
+                                </v-list-item-title>
+                                <v-list-item-action>
+                                    <v-btn icon small @click="onRemoveList(item)">
+                                        <v-icon color="red">remove</v-icon>
+                                    </v-btn>
+                                </v-list-item-action>
+                            </v-list-item>
+                        </div>
                     </v-list>
                 </v-card-text>
                 <v-card-actions>
                     <v-spacer></v-spacer>
-                    <v-btn class="primary" style="border-radius: 0;" text small @click="sendInquire(checkbox)">Submit</v-btn>
+                    <v-btn class="primary" style="border-radius: 0;" text small
+                        :loading="onLoad"
+                        @click="sendInquire(checkbox)">
+                        Submit
+                    </v-btn>
                 </v-card-actions>
             </div>
         </v-card>
@@ -82,6 +92,7 @@
 <script>
 export default {
     data:() => ({
+        onLoad: false,
         showInquireBox: true,
         closeInquireBox: false,
 
@@ -126,11 +137,26 @@ export default {
             self.$store.dispatch('inquire/getUserForInquire', true);
         },
         sendInquire(checkbox){
-            console.log('inquire this',checkbox);
-            this.form.checkbox = checkbox
-            this.$http.post('api/inquire',this.form).then(response => {
-                console.log('send email',response.data)
+            const self = this;
+            // self.onLoad = true;
+            self.form.checkbox = checkbox
+            self.$http.post('api/inquire', self.form).then(response => {
+                console.log('send email', response.body)
+
+                // self.$store.dispatch('inquire/getClearCheckbox')
+                
+                // self.onLoad = false;
+                self.$store.dispatch('inquire/showSnackbar',{
+                    snackbar: true, timeout: 3000, color: 'success', y: 'top',
+                    message: `Email Sent!`
+                })
+
+                
             });
+        },
+        onRemoveList(item){
+            const self = this;
+            self.$store.commit('inquire/REMOVE_SELECTED_ITEM', item)
         }
     }
 }
