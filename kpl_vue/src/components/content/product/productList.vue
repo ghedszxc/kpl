@@ -4,10 +4,10 @@
     <v-layout wrap row class="hidden-sm-and-down">
       <v-flex xs12 sm4 md3 class="px-1 mt-2" v-for="(item, index) in productList" :key="index">
         <v-card flat style="height: calc(47vh - 115px); border-radius: 0;">
-          <v-img
+          <!-- <v-img
             class="white--text align-end"
             height="200px"
-            src="https://3.imimg.com/data3/AC/LW/MY-7375549/hydax-items-full-range-500x500.jpg"></v-img>
+            src="https://3.imimg.com/data3/AC/LW/MY-7375549/hydax-items-full-range-500x500.jpg"></v-img> -->
           <v-card-text>
             <v-checkbox
               v-if="userForInquire"
@@ -32,12 +32,12 @@
         <v-hover v-slot:default="{ hover }">
           <v-card :elevation="hover ? 12 : 0">
             <v-list-item three-line>
-              <v-list-item-avatar tile size="80" color="grey">
+              <!-- <v-list-item-avatar tile size="80" color="grey">
                 <v-img
                   src="http://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp"
                   class="white--text align-end">
                 </v-img>
-              </v-list-item-avatar>
+              </v-list-item-avatar> -->
               <v-list-item-content>
                 <v-list-item-title>
                   <v-checkbox
@@ -69,19 +69,8 @@ export default {
     userForInquire() {
       return this.$store.state.inquire.userForInquire;
     },
-    vueCheckbox() {
-      return this.$store.state.inquire.checkbox;
-    },
     productList() {
       return this.$store.state.global.productList;
-    }
-  },
-  watch: {
-    vueCheckbox(to) {
-      if (to.length == 0) {
-        // self.$store.commit('global/getProductListClearCheckbox')
-        return;
-      }
     }
   },
   methods: {
