@@ -14,7 +14,24 @@ class ItemController extends Controller
      */
     public function index()
     {
-        //
+        $items = Item::all();
+        $output = [];
+        foreach ($items as $item)
+        {
+            $result = [
+                'checkbox' => '',
+
+                'brand_id' => $item['brand_id'],
+                'category_id' => $item['category_id'],
+
+                'name' => $item['item_name'],
+                'description' => $item['item_description']
+            ];
+
+            array_push($output, $result);
+        }
+
+        return $output;
     }
 
     /**

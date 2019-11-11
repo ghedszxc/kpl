@@ -18,3 +18,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::resource("inquire","InquireController");
+
+Route::resource("item","ItemController");
+Route::resource("catergory","CategoryController");

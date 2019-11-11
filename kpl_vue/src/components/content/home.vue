@@ -20,9 +20,6 @@
                 </v-flex>
             </v-layout>
         </v-card>
-        <!-- <div class="pa-4">
-            <top-product></top-product>
-        </div> -->
         <about-us class="pa-2"></about-us>
         <contact-us class="pa-2"></contact-us>
     </div>

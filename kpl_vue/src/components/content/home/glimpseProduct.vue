@@ -11,11 +11,11 @@
                         <span class="main_font">Products</span>
                     </v-list-item-title>
                 </v-list-item>
-                <div v-for="(item, index) in sample_items" :key="index">
+                <div v-for="(item, index) in categoryList" :key="index">
                     <v-menu open-on-hover right offset-x transition="scale-transition">
                         <template v-slot:activator="{ on }">
                             <v-list-item v-on="on" style="border-bottom: 1px solid #E0E0E0;">
-                                <v-list-item-title>{{item.cat}}</v-list-item-title>
+                                <v-list-item-title>{{item.category_name}}</v-list-item-title>
                                 <v-list-item-icon>
                                     <v-icon>keyboard_arrow_right</v-icon>
                                 </v-list-item-icon>
@@ -23,9 +23,9 @@
                         </template>
 
                         <v-list dense>
-                            <div v-for="(data, key) in item.subhead" :key="key">
+                            <div v-for="(data, key) in item.brands" :key="key">
                                 <v-list-item link>
-                                    <v-list-item-title>{{ data }}</v-list-item-title>
+                                    <v-list-item-title>{{ data.brand_name }}</v-list-item-title>
                                 </v-list-item>
                                 <v-divider class="ml-4 mr-4"></v-divider>
                             </div>
@@ -109,6 +109,11 @@ export default {
           }
       ]
     }),
+    computed: {
+        categoryList() {
+            return this.$store.state.global.categoryList;
+        }
+    },
     methods: {
         goTo(){
             const self = this;

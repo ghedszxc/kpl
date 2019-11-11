@@ -4,7 +4,9 @@
             style="border-bottom-left-radius: 0; border-bottom-right-radius: 0;">
             <v-card-title class="green white--text" @click="showInquireBox = !showInquireBox"
             style="height: 50px; cursor: pointer; border-bottom-left-radius: 0; border-bottom-right-radius: 0;">
-                <span class="overline mr-12">Inquire Module</span>
+                <span class="overline mr-12">
+                    Inquire Module <b>({{form.name}})</b>
+                </span>
                 
                 <v-btn icon small class="ml-12">
                     <v-icon small color="white" @click="showInquireBox = !showInquireBox">remove</v-icon>
@@ -14,29 +16,32 @@
                 </v-btn>
             </v-card-title>
             <div v-if="showInquireBox">
-                <v-card-text>
-                    {{form.name}}
-                    <v-divider></v-divider>
-                    <v-list dense>
-                        <div v-for="item in checkbox" :key="item">
-                            <v-list-item :disabled="onLoad">
-                                <v-list-item-title>
-                                    {{item}}
-                                </v-list-item-title>
-                                <v-list-item-action>
-                                    <v-btn icon small @click="onRemoveList(item)">
-                                        <v-icon color="red">remove</v-icon>
-                                    </v-btn>
-                                </v-list-item-action>
-                            </v-list-item>
-                        </div>
-                    </v-list>
-                </v-card-text>
-                <v-card-actions>
+                <v-list dense v-if="selectedItem.length"
+                    style="height: calc(35vh - 115px); overflow-y: auto; overflow-x: hidden;">
+                    <div v-for="item in selectedItem" :key="item">
+                        <v-list-item :disabled="onLoad">
+                            <v-list-item-title>
+                                {{item}}
+                            </v-list-item-title>
+                            <v-list-item-action>
+                                <v-btn icon small @click="onRemoveList(item)">
+                                    <v-icon color="red">remove</v-icon>
+                                </v-btn>
+                            </v-list-item-action>
+                        </v-list-item>
+                        <v-divider class="mx-2"></v-divider>
+                    </div>
+                </v-list>
+                <v-layout wrap row v-else style="height: 50px;">
+                    <v-flex xs12 class="text-center mt-3">
+                        <span class="body-2 grey--text text--darken-2">No item selected</span>
+                    </v-flex>
+                </v-layout>
+                <v-card-actions style="border-top: 1px solid #BDBDBD;">
                     <v-spacer></v-spacer>
                     <v-btn class="primary" style="border-radius: 0;" text small
                         :loading="onLoad"
-                        @click="sendInquire(checkbox)">
+                        @click="sendInquire(selectedItem)">
                         Submit
                     </v-btn>
                 </v-card-actions>
@@ -108,8 +113,8 @@ export default {
         userForInquire(){
             return this.$store.state.inquire.userForInquire;
         },
-        checkbox(){
-            return this.$store.state.inquire.checkbox;
+        selectedItem(){
+            return this.$store.state.global.selectedItem;
         }
     },
     mounted(){
@@ -126,7 +131,6 @@ export default {
             const self = this;
             self.showInquireDialog = false;
             self.$store.dispatch('inquire/getUserForInquire', false);
-
         },
         onSubmit(form){
             const self = this;
@@ -136,16 +140,17 @@ export default {
             localStorage.setItem("contact",form.contact)
             self.$store.dispatch('inquire/getUserForInquire', true);
         },
-        sendInquire(checkbox){
+        sendInquire(data){
             const self = this;
-            // self.onLoad = true;
-            self.form.checkbox = checkbox
+
+            self.onLoad = true;
+            self.form.checkbox = data
             self.$http.post('api/inquire', self.form).then(response => {
                 console.log('send email', response.body)
 
-                // self.$store.dispatch('inquire/getClearCheckbox')
+                self.$store.dispatch('global/removeAllCheckboxInProductList')
                 
-                // self.onLoad = false;
+                self.onLoad = false;
                 self.$store.dispatch('inquire/showSnackbar',{
                     snackbar: true, timeout: 3000, color: 'success', y: 'top',
                     message: `Email Sent!`
@@ -156,7 +161,8 @@ export default {
         },
         onRemoveList(item){
             const self = this;
-            self.$store.commit('inquire/REMOVE_SELECTED_ITEM', item)
+            self.$store.dispatch('global/removeCheckboxInProductList', item)
+            self.$store.dispatch('global/removeSelectedItem', item)
         }
     }
 }

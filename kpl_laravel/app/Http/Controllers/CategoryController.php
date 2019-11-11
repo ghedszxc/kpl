@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Brand;
 use App\Category;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,20 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::all();
+
+        $output = [];
+        foreach($categories as $categorie)
+        {
+            $brands = Brand::select('brands.id as brand_id', 'brands.brand_name')->where('brands.category_id', $categorie['id'])->get();
+            $result = [
+                'category_id' => $categorie['id'],
+                'category_name' => $categorie['category_name'],
+                'brands' => $brands
+            ];
+            array_push($output, $result);
+        }
+        return $output;
     }
 
     /**

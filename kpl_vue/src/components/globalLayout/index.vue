@@ -24,6 +24,11 @@ export default {
     components: {
         'tool-bar': toolBar,
         'inquire-view': inquire
+    },
+    mounted() {
+        const self = this;
+        self.$store.dispatch("global/getProductList")
+        self.$store.dispatch("global/getCatergoryList")
     }
 }
 </script>

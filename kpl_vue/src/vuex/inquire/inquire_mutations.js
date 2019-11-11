@@ -1,4 +1,4 @@
-import Vue from "vue"
+// import Vue from "vue"
 export default {
   GET_USER_FOR_INQUIRE: (state, payload) => {
     state.userForInquire = payload;
@@ -10,7 +10,8 @@ export default {
     state.showSnackbar = payload;
   },
   CHECKBOX(state, payload) {
-    Vue.set(state, "checkbox", payload);
+    state.checkbox.push(payload);
+    // Vue.set(state, "checkbox", payload);
   },
   REMOVE_SELECTED_ITEM(state, payload) {
     let index = state.checkbox.findIndex(find => find == payload);
