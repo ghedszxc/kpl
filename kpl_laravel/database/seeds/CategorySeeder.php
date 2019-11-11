@@ -12,7 +12,6 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        //
         $category = [
                 [
                     'category_name' => 'Soap',
@@ -23,6 +22,21 @@ class CategorySeeder extends Seeder
                 [
                     'category_name' => 'Toothpaste',
                 ],
+                [
+                    'category_name' => 'Clothings',
+                ],
+                [
+                    'category_name' => 'Shoes',
+                ],
+                [
+                    'category_name' => 'Restaurant',
+                ],
+                [
+                    'category_name' => 'Gadgets',
+                ],
+                [
+                    'category_name' => 'Cafe',
+                ]
             ];
             foreach ($category as $key => $value) {
                 Category::create($value);

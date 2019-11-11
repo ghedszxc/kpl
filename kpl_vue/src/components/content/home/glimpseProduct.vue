@@ -101,7 +101,7 @@ export default {
           },
           {
               cat: 'Gadgets',
-              subhead: [ 'Apple', 'Sample', 'Asus', 'Nintendo']
+              subhead: [ 'Apple', 'Samsung', 'Asus', 'Nintendo']
           },
           {
               cat: 'Cafe',
