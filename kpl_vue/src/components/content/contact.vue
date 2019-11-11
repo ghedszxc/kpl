@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-card flat style="border-radius: 0; padding-bottom: 1%;">
+        <v-card flat :class="$route.path == '/contact' ? 'animate_one' : ''" style="border-radius: 0; padding-bottom: 1%;">
             <v-layout wrap row>
                 <v-flex xs12 class="text-center mt-4 mb-12">
                     <span class="display-2 grey--text text--darken-2">CONTACT US</span>
@@ -182,3 +182,16 @@ export default {
     })
 }
 </script>
+<style scoped>
+
+  @keyframes fadeInTop {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  .animate_one {
+    animation-name: fadeInTop;
+    background-position: bottom top;
+    animation-duration: 2s;
+  } 
+</style>

@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="text-center">
-            <v-parallax height="400" src="https://cdn.vuetifyjs.com/images/parallax/material2.jpg">
+            <v-parallax :class="$route.path == '/about' ? 'about_one' : ''" height="500" src="https://cdn.vuetifyjs.com/images/parallax/material2.jpg">
                 <v-container fluid align="center" justify="center">
                     <v-card flat style="background: rgba(0, 0, 0, 0.1); border-radius: 0; padding: 5%;">
                         <span class="display-2 white--text">ABOUT US</span>
@@ -19,6 +19,34 @@
             </v-parallax>
         </div>
         <div  v-if="$route.path == '/about'">
+            <v-layout wrap row class="mb-2">
+                <v-flex xs12 sm6 class="px-2 mt-3 about_two">
+                    <v-card flat style="border-radius: 0;">
+                        <v-card-title>
+                            <v-spacer></v-spacer>
+                            <v-icon style="font-size: 80px;" color="green">language</v-icon>
+                            <v-spacer></v-spacer>
+                        </v-card-title>
+                        <v-card-text class="text-center">
+                            <span class="display-1 font-weight-medium">Mission</span><br>
+                            <span class="subtitle-2 font-weight-light grey--text">Aliquam sagittis ligula et sem lacinia sagittis ligula et sem lacinia sagittis ligula et sem lacinia, ut facilisis enim sollicitudin. Proin nisi est, convallis nec purus vitae, iaculis posuere sapien. Cum sociis natoque.</span>
+                        </v-card-text>
+                    </v-card>
+                </v-flex>
+                <v-flex xs12 sm6 class="px-2 mt-3 about_three">
+                    <v-card flat style="border-radius: 0;">
+                        <v-card-title>
+                            <v-spacer></v-spacer>
+                            <v-icon style="font-size: 80px;" color="green">supervised_user_circle</v-icon>
+                            <v-spacer></v-spacer>
+                        </v-card-title>
+                        <v-card-text class="text-center">
+                            <span class="display-1 font-weight-medium">Vision</span><br>
+                            <span class="subtitle-2 font-weight-light grey--text">Aliquam sagittis ligula et sem lacinia sagittis ligula et sem lacinia sagittis ligula et sem lacinia, ut facilisis enim sollicitudin. Proin nisi est, convallis nec purus vitae, iaculis posuere sapien. Cum sociis natoque.</span>
+                        </v-card-text>
+                    </v-card>
+                </v-flex>
+            </v-layout>
             <v-card flat class="mt-3 px-3" style="border-radius: 0;">
                 <v-timeline :dense="$vuetify.breakpoint.smAndDown">
                     <v-timeline-item class="animate_one" color="purple lighten-2" fill-dot right small>
@@ -58,7 +86,7 @@
                             </v-card-title>
                             <v-container>
                                 <v-row>
-                                    <v-col v-for="n in 3" :key="n" cols="12" md="4">
+                                    <v-col v-for="n in 2" :key="n" cols="12" md="6">
                                     Lorem ipsum dolor sit amet, no nam oblique veritus no nam oblique.
                                     </v-col>
                                 </v-row>
@@ -75,7 +103,7 @@
                         <v-card>
                             <v-card-title class="red lighten-1">
                                 <v-icon dark>mdi-account-multiple-outline</v-icon>
-                                <h2 class="title mr-4 white--text">History 3</h2>
+                                <h2 class="title ml-4 white--text">History 3</h2>
                             </v-card-title>
                             <v-container>
                                 <v-row>
@@ -91,34 +119,6 @@
                     </v-timeline-item>
                 </v-timeline>
             </v-card>
-            <v-layout wrap row class="mb-6">
-                <v-flex xs12 sm6 class="px-2 mt-3">
-                    <v-card flat style="border-radius: 0;">
-                        <v-card-title>
-                            <v-spacer></v-spacer>
-                            <v-icon style="font-size: 80px;" color="green">language</v-icon>
-                            <v-spacer></v-spacer>
-                        </v-card-title>
-                        <v-card-text class="text-center">
-                            <span class="display-1 font-weight-medium">Mission</span><br>
-                            <span class="subtitle-2 font-weight-light grey--text">Aliquam sagittis ligula et sem lacinia sagittis ligula et sem lacinia sagittis ligula et sem lacinia, ut facilisis enim sollicitudin. Proin nisi est, convallis nec purus vitae, iaculis posuere sapien. Cum sociis natoque.</span>
-                        </v-card-text>
-                    </v-card>
-                </v-flex>
-                <v-flex xs12 sm6 class="px-2 mt-3">
-                    <v-card flat style="border-radius: 0;">
-                        <v-card-title>
-                            <v-spacer></v-spacer>
-                            <v-icon style="font-size: 80px;" color="green">supervised_user_circle</v-icon>
-                            <v-spacer></v-spacer>
-                        </v-card-title>
-                        <v-card-text class="text-center">
-                            <span class="display-1 font-weight-medium">Vision</span><br>
-                            <span class="subtitle-2 font-weight-light grey--text">Aliquam sagittis ligula et sem lacinia sagittis ligula et sem lacinia sagittis ligula et sem lacinia, ut facilisis enim sollicitudin. Proin nisi est, convallis nec purus vitae, iaculis posuere sapien. Cum sociis natoque.</span>
-                        </v-card-text>
-                    </v-card>
-                </v-flex>
-            </v-layout>
         </div>
     </div>
 </template>
@@ -134,3 +134,35 @@ export default {
     }
 }
 </script>
+<style scoped>
+
+  @keyframes fadeInTop {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeInLeft {
+    0% { opacity: 0; transform: translateX(-20px); }
+    100% { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes fadeInRight {
+    0% { opacity: 0; transform: translateX(20px); }
+    100% { opacity: 1; transform: translateX(0); }
+  }
+  
+  .about_one {
+    animation-name: fadeInTop;
+    background-position: bottom top;
+    animation-duration: 2s;
+  } 
+  .about_two {
+    animation-name: fadeInLeft;
+    background-position: bottom top;
+    animation-duration: 2s;
+  } 
+  .about_three {
+    animation-name: fadeInRight;
+    background-position: bottom top;
+    animation-duration: 2s;
+  } 
+</style>
