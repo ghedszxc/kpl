@@ -47,7 +47,7 @@
                     </v-card>
                 </v-flex>
             </v-layout>
-            <v-card flat class="mt-3 px-3" style="border-radius: 0;">
+            <v-card flat class="mt-3 mb-3 px-3" style="border-radius: 0;">
                 <v-timeline :dense="$vuetify.breakpoint.smAndDown">
                     <v-timeline-item class="animate_one" color="purple lighten-2" fill-dot right small>
                         <template v-slot:opposite>
