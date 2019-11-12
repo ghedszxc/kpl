@@ -18,16 +18,11 @@
             <div v-if="showInquireBox">
                 <v-list dense v-if="selectedItem.length"
                     style="height: calc(35vh - 115px); overflow-y: auto; overflow-x: hidden;">
-                    <div v-for="item in selectedItem" :key="item">
+                    <div v-for="(item, index) in selectedItem" :key="item">
                         <v-list-item :disabled="onLoad">
                             <v-list-item-title>
-                                {{item}}
+                                {{index+1}}) {{item}}
                             </v-list-item-title>
-                            <v-list-item-action>
-                                <v-btn icon small @click="onRemoveList(item)">
-                                    <v-icon color="red">remove</v-icon>
-                                </v-btn>
-                            </v-list-item-action>
                         </v-list-item>
                         <v-divider class="mx-2"></v-divider>
                     </div>
@@ -37,7 +32,7 @@
                         <span class="body-2 grey--text text--darken-2">No item selected</span>
                     </v-flex>
                 </v-layout>
-                <v-card-actions style="border-top: 1px solid #BDBDBD;">
+                <v-card-actions>
                     <v-spacer></v-spacer>
                     <v-btn class="primary" style="border-radius: 0;" text small
                         :loading="onLoad"
@@ -95,7 +90,9 @@
     </div>
 </template>
 <script>
+import productMixin from "../../mixins/product"
 export default {
+    mixins: [productMixin],
     data:() => ({
         onLoad: false,
         showInquireBox: true,
@@ -158,11 +155,6 @@ export default {
 
                 
             });
-        },
-        onRemoveList(item){
-            const self = this;
-            self.$store.dispatch('global/removeCheckboxInProductList', item)
-            self.$store.dispatch('global/removeSelectedItem', item)
         }
     }
 }

@@ -4,7 +4,7 @@
             style="margin-left: 10%; margin-right: 9%;">
             <v-toolbar-title class="main_font hidden-sm-and-down">
                 <img src="../../../public/home/kpl_logo.png"
-                alt="kpl"  style="height: 45px;">
+                alt="kpl" class="mt-2 " style="height: 40px;">
             </v-toolbar-title>
             <v-spacer></v-spacer>
             <v-toolbar-items v-for="(item, index) in items" :key="index">
@@ -16,9 +16,8 @@
             <v-app-bar-nav-icon color="white" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
             <v-spacer></v-spacer>
             <v-toolbar-title class="black--text font-weight-light">
-                <span class="white--text">INSERT KPL LOGO</span>
-                <!-- <img src="../../../public/home/kpl_logo.png"
-                alt="kpl"  style="height: 45px;"> -->
+                <img src="../../../public/home/kpl_logo_1.png"
+                alt="kpl" class="mt-2 " style="height: 40px;">
             </v-toolbar-title>
         </v-toolbar>
 

@@ -27,7 +27,7 @@ export default {
     },
     mounted() {
         const self = this;
-        self.$store.dispatch("global/getProductList")
+        // self.$store.dispatch("global/getProductList")
         self.$store.dispatch("global/getCatergoryList")
     }
 }

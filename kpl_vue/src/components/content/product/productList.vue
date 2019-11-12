@@ -1,13 +1,14 @@
 <template>
   <div>
     <!-- DISPLAY WHEN VIEW IS LARGE -->
-    <v-layout wrap row class="hidden-sm-and-down">
-      <v-flex xs12 sm4 md3 class="px-1 mt-2" v-for="(item, index) in productList" :key="index">
-        <v-card flat style="height: calc(47vh - 115px); border-radius: 0;">
-          <!-- <v-img
+    <!-- class="hidden-sm-and-down" -->
+    <v-layout wrap row class="ma-1">
+      <v-flex xs12 sm6 md3 class="px-1 mt-2" v-for="(item, index) in products" :key="index">
+        <v-card flat style="border-radius: 0;">
+          <v-img
             class="white--text align-end"
             height="200px"
-            src="https://3.imimg.com/data3/AC/LW/MY-7375549/hydax-items-full-range-500x500.jpg"></v-img> -->
+            src="https://3.imimg.com/data3/AC/LW/MY-7375549/hydax-items-full-range-500x500.jpg"></v-img>
           <v-card-text>
             <v-checkbox
               v-if="userForInquire"
@@ -27,17 +28,17 @@
      
     </v-layout>
     <!-- DISPLAY WHEN VIEW IS SMALL -->
-    <v-layout wrap row class="hidden-md-and-up">
-      <v-flex xs6 sm4 class="px-1 mt-2" v-for="(item, index) in productList" :key="index">
+    <!-- <v-layout wrap row class="hidden-md-and-up">
+      <v-flex xs6 sm4 class="px-1 mt-2" v-for="(item, index) in products" :key="index">
         <v-hover v-slot:default="{ hover }">
           <v-card :elevation="hover ? 12 : 0">
             <v-list-item three-line>
-              <!-- <v-list-item-avatar tile size="80" color="grey">
+              <v-list-item-avatar tile size="80" color="grey">
                 <v-img
                   src="http://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp"
                   class="white--text align-end">
                 </v-img>
-              </v-list-item-avatar> -->
+              </v-list-item-avatar>
               <v-list-item-content>
                 <v-list-item-title>
                   <v-checkbox
@@ -56,11 +57,13 @@
           </v-card>
         </v-hover>
       </v-flex>
-    </v-layout>
+    </v-layout> -->
   </div>
 </template>
 <script>
+import productMixin from "../../mixins/product"
 export default {
+  mixins : [productMixin],
   data: () => ({
     checkbox: []
   }),
@@ -68,9 +71,6 @@ export default {
     // PARA MALAMAN KUNG MAG IINQUIRE BA O HINDI
     userForInquire() {
       return this.$store.state.inquire.userForInquire;
-    },
-    productList() {
-      return this.$store.state.global.productList;
     }
   },
   methods: {
