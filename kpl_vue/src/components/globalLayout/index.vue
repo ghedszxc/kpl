@@ -1,9 +1,10 @@
 <template>
     <div class="grey lighten-3">
         <tool-bar class="mb-2"></tool-bar>
-        <div class="hidden-sm-and-down">
+        
+        <div class="hidden-sm-and-down" style="margin-top: 7%">
             <router-view
-                style="height: 100%; overflow-y: hidden; overflow-x: hidden; margin-left: 10%; margin-right: 10%;">
+                style="height: 100%; overflow-y: hidden; overflow-x: hidden; margin-left: 18%; margin-right: 18%;">
             </router-view>
         </div>
         <div class="hidden-md-and-up">

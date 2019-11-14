@@ -1,14 +1,14 @@
 <template>
     <div>
         <!-- THIS IS TO DISPLAY LARGE VIEW -->
-        <v-card flat class="hidden-md-and-down" style="border-radius: 0;">
-            <v-list dense>
+        <v-card flat class="px-3 transparent hidden-md-and-down" style="border-radius: 0;">
+            <v-list dense class="transparent">
                 <v-list-item @click="goTo()">
                     <v-list-item-icon>
-                        <v-icon color="black">list</v-icon>
+                        <v-icon color="grey darken-2">list</v-icon>
                     </v-list-item-icon>
                     <v-list-item-title>
-                        <span class="main_font">Products</span>
+                        <span class="caption font-weight-medium grey--text text--darken-2">Products</span>
                     </v-list-item-title>
                 </v-list-item>
                 <div v-for="(item, index) in categoryList" :key="index">
@@ -37,14 +37,14 @@
 
         <!-- THIS IS TO DISPLAY SMALL VIEW -->
         <v-list dense class="hidden-lg-and-up">
-            <v-list-item @click="goTo()" :class="$route.path == '/product' ? 'green' : ''">
+            <!-- <v-list-item @click="goTo()" :class="$route.path == '/product' ? 'green' : ''">
                 <v-list-item-icon>
                     <v-icon :color="$route.path == '/product' ? 'white' : 'grey darken-2'">list</v-icon>
                 </v-list-item-icon>
                 <v-list-item-title :class="$route.path == '/product' ? 'white--text' : 'grey--text text--darken-2'">
                     Products
                 </v-list-item-title>
-            </v-list-item>
+            </v-list-item> -->
             <v-list-group v-for="(item, index) in sample_items" :key="index" color="green">
                 <template v-slot:activator>
                     <v-list-item-title class="main_subheader grey-text text--darken-2">

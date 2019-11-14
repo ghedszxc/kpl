@@ -1,34 +1,24 @@
 <template>
-    <div>
-        <v-card flat class="pa-4 mb-2 ml-2 mr-2" style="border-radius: 0;">
-            <v-layout wrap row class="pa-4">
-                <v-flex xs12>
-                    <v-layout wrap row>
-                        <v-flex xs3 class="px-2 hidden-md-and-down">
-                            <glimpse-product></glimpse-product>
-                        </v-flex>
-                        <v-flex xs12 sm12 md12 lg7>
-                            <feature-product></feature-product>
-                        </v-flex>
-                        <v-flex xs2 class="px-2 hidden-md-and-down">
-                            <promo-list></promo-list>
-                        </v-flex>
-                    </v-layout>
+    <div class="animate_one">
+        <v-card flat style="border-radius: 0;">
+            <v-layout wrap row class="px-3">
+                <v-flex class="hidden-md-and-down">
+                    <glimpse-product></glimpse-product>
                 </v-flex>
-                <v-flex xs12>
-                    <top-product></top-product>
+                <v-flex md12 lg9>
+                    <feature-product></feature-product>
                 </v-flex>
             </v-layout>
         </v-card>
-        <about-us class="pa-2"></about-us>
-        <contact-us class="pa-2"></contact-us>
+        <top-product class="mb-2 mx-2"></top-product>
+        <about-us class="mb-2"></about-us>
+        <contact-us class="mb-2"></contact-us>
     </div>
 </template>
 <script>
 import featureProduct from './home/featureProduct'
 import glimpseProuct from './home/glimpseProduct'
 import topProduct from './home/topProduct'
-import promoList from './home/promo'
 import contactUs from './contact'
 import aboutUs from './about'
 export default {
@@ -36,9 +26,21 @@ export default {
         'feature-product': featureProduct,
         'glimpse-product': glimpseProuct,
         'top-product': topProduct,
-        'promo-list': promoList,
         'contact-us': contactUs,
         'about-us': aboutUs
     }
 }
 </script>
+<style scoped>
+
+  @keyframes fadeInTop {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  .animate_one {
+    animation-name: fadeInTop;
+    background-position: bottom top;
+    animation-duration: 2s;
+  } 
+</style>

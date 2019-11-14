@@ -1,25 +1,56 @@
 <template>
-    <div class="white">
-        <v-toolbar class="hidden-md-and-down" flat height="50"
-            style="margin-left: 10%; margin-right: 9%;">
-            <v-toolbar-title class="main_font hidden-sm-and-down">
-                <img src="../../../public/home/kpl_logo.png"
-                alt="kpl" class="mt-2 " style="height: 40px;">
-            </v-toolbar-title>
-            <v-spacer></v-spacer>
-            <v-toolbar-items v-for="(item, index) in items" :key="index">
-                <v-btn text @click="onSelectPage(item.link)">{{item.title}}</v-btn>
-            </v-toolbar-items>
-        </v-toolbar>
+    <div>
+        <v-app-bar app flat clipped-left extended class="green hidden-md-and-down"
+            style="padding-left: 18%; padding-right: 18%;">
 
-        <v-toolbar class="green hidden-lg-and-up" flat height="50">
+            <v-layout>
+                <v-flex xs12 class="text-start pl-2">
+                    <v-toolbar-title class="main_font hidden-sm-and-down">
+                        <img src="../../../public/home/kpl_logo_1.png"
+                        alt="kpl" class="mt-2 mr-2" style="height: 40px;">
+                    </v-toolbar-title>
+                </v-flex>
+                <v-flex xs12 class="text-end mt-1">
+                    <v-layout row>
+                        <v-flex xs12>
+                            <span class="caption font-weight-bold white--text"
+                                style="cursor: default;">
+                                <v-icon style="font-size: 15px;" color="white" class="mr-1">phone</v-icon>
+                                <span class="font-weight-light white--text"> (02) 8952 4265</span>
+                            </span>
+                        </v-flex>
+                        <v-flex xs12 class="text-end" style="margin-top: -1%;">
+                            <span class="caption font-weight-light white--text"
+                                style="cursor: default;">
+                                <v-icon style="font-size: 15px;" color="white" class="mr-1">local_library</v-icon>
+                                536 Quirino Hwy, Novaliches, Quezon City, Metro Manila
+                            </span>
+                        </v-flex>
+                    </v-layout>
+                </v-flex>
+            </v-layout>
+
+            <template #extension>
+                <v-tabs background-color="green" dark height="40"
+                    style="position: absolute; bottom: -3px;">
+                    <v-tab v-for="(item, index) in items" :key="index"
+                        :class="$route.path == item.link ? 'active-class' : ''"
+                        @click="onSelectPage(item.link)">
+                        <span class="caption font-weight-medium">{{item.title}}</span>
+                    </v-tab>
+                </v-tabs>
+                <v-spacer></v-spacer>
+            </template>
+        </v-app-bar>
+
+        <v-app-bar app flat clipped-left class="green hidden-lg-and-up" height="50">
             <v-app-bar-nav-icon color="white" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
             <v-spacer></v-spacer>
             <v-toolbar-title class="black--text font-weight-light">
                 <img src="../../../public/home/kpl_logo_1.png"
                 alt="kpl" class="mt-2 " style="height: 40px;">
             </v-toolbar-title>
-        </v-toolbar>
+        </v-app-bar>
 
         <v-navigation-drawer v-model="drawer" class="hidden-lg-and-up" hide-overlay app>
             <v-list dense>
@@ -33,30 +64,29 @@
                             {{item.title}}
                         </v-list-item-title>
                     </v-list-item>
-                    <v-divider class="mr-2 ml-2"></v-divider>
                 </div>
-                <glimpse-product></glimpse-product> 
+                <!-- <v-divider></v-divider>
+                <glimpse-product></glimpse-product>  -->
             </v-list>
         </v-navigation-drawer>
     </div>
 </template>
 <script>
-import glimpseProduct from '../content/home/glimpseProduct';
 export default {
     data: () => ({
         drawer: null,
         items: [
           { title: 'Home', icon: 'home', link: '/' },
-          { title: 'Contact Us', icon: 'phone', link: '/contact' },
-          { title: 'About Us', icon: 'supervisor_account', link: '/about' }
+          { title: 'Product', icon: 'shopping_cart', link: '/product' },
+          { title: 'About Us', icon: 'supervisor_account', link: '/about' },
+          { title: 'Contact Us', icon: 'phone', link: '/contact' }
         ]
     }),
-    components: {
-        'glimpse-product': glimpseProduct
-    },
     methods: {
         onSelectPage(data){
             const self = this;
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
             self.$router.push(data)
         }
     }

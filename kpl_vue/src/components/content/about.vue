@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="text-center">
-            <v-parallax :class="$route.path == '/about' ? 'about_one' : ''" height="500" src="https://cdn.vuetifyjs.com/images/parallax/material2.jpg">
+            <v-parallax :class="$route.path == '/about' ? 'about_one' : ''" height="400" src="https://cdn.vuetifyjs.com/images/parallax/material2.jpg">
                 <v-container fluid align="center" justify="center">
                     <v-card flat style="background: rgba(0, 0, 0, 0.1); border-radius: 0; padding: 5%;">
                         <span class="display-2 white--text">ABOUT US</span>

@@ -5,6 +5,61 @@
                 <v-flex xs12 class="text-center mt-4 mb-12">
                     <span class="display-2 grey--text text--darken-2">CONTACT US</span>
                 </v-flex>
+                <v-flex xs12 sm6>
+                    <v-card flat style="border-radius: 0;" class="px-5 text-center">
+                        <v-card-text>
+                            <v-layout wrap row class="mb-2">
+                                <v-flex xs12>
+                                    <span class="body-1 font-weight-medium grey--text text--darken-1">
+                                        QUIRINO, QUEZON CITY
+                                    </span>
+                                </v-flex>
+                                <v-flex xs12>
+                                    <span class="caption grey--text text--darken-2">
+                                        <v-icon small>local_library</v-icon>
+                                        536 Quirino Hwy, Novaliches, Quezon City, Metro Manila
+                                    </span>
+                                </v-flex>
+                            </v-layout>
+                            <GmapMap style="width: 100%; height: 250px;"
+                                :center="{lat:14.6894942, lng:-238.972941}" :zoom="17" map-type-id="terrain"
+                                :options="googleMap">
+                                <gmap-marker :position="{lat:14.6894942, lng:-238.972941}">
+                                </gmap-marker>
+                            </GmapMap>
+                        </v-card-text>
+                    </v-card>
+                </v-flex>
+                <v-flex xs12 sm6>
+                    <v-card flat style="border-radius: 0;" class="px-5 text-center">
+                        <v-card-text>
+                            <v-layout wrap row class="mb-2">
+                                <v-flex xs12>
+                                    <span class="body-1 font-weight-medium grey--text text--darken-1">
+                                        MARILAO, BULACAN
+                                    </span>
+                                </v-flex>
+                                <v-flex xs12>
+                                    <span class="caption grey--text text--darken-2">
+                                        <v-icon small>local_library</v-icon>
+                                        281 MacArthur Highway, Bocaue, 3018 Bulacan
+                                    </span>
+                                </v-flex>
+                            </v-layout>
+                            <GmapMap style="width: 100%; height: 250px;"
+                                :center="{lat:14.7907806, lng:120.9322321}" :zoom="18" map-type-id="terrain"
+                                :options="googleMap">
+                                    <gmap-marker :position="{lat:14.7907806, lng:120.9322321}">
+                                    </gmap-marker>
+                            </GmapMap>
+                        </v-card-text>
+                    </v-card>
+                </v-flex>
+            </v-layout>
+        </v-card>
+        <v-card flat style="border-radius: 0; padding-bottom: 1%;"
+             :class="$route.path == '/contact' ? 'animate_two mt-3 mb-4' : 'mt-3 mb-4'">
+            <v-layout wrap row>
                 <!-- SHOW INFO WHEN SCREEN IS LARGE -->
                 <v-flex xs12 sm6 class="px-4 mt-3 hidden-xs-only">
                     <v-layout wrap row class="ml-12">
@@ -120,12 +175,6 @@
                                 v-model="form.name"
                                 
                                 outlined dense>
-                                
-                                <!-- v-validate="'required|ip'"
-                                data-vv-scope="add"
-                                :data-vv-name="item.validate_ip_address"
-                                :error-messages="errors.collect(`add.${item.validate_ip_address}`)"
-                                data-vv-validate-on="blur" -->
                             </v-text-field>
                         </v-flex>
                         <v-flex xs12 sm6 class="px-4" style="margin-top: -2%;">
@@ -159,13 +208,6 @@
                         </v-flex>
                     </v-layout>
                 </v-flex>
-                <v-flex xs12 class="mt-6 px-4">
-                    <GmapMap ref="mapRef" :center="{lat:14.6894942, lng:-238.972941}"
-                            :zoom="16" map-type-id="terrain" style="width: 100%; height: 400px;">
-                            <gmap-marker :position="{lat:14.6894942, lng:-238.972941}">
-                            </gmap-marker>
-                    </GmapMap>
-                </v-flex>
             </v-layout>
         </v-card>
     </div>
@@ -173,6 +215,15 @@
 <script>
 export default {
     data:() => ({
+        googleMap : {
+            zoomControl: true,
+            mapTypeControl: false,
+            scaleControl: false,
+            streetViewControl: true,
+            rotateControl: false,
+            fullscreenControl: false,
+            disableDefaultUi: false
+        },
         form: {
             name: '',
             contact_number: '',
@@ -193,5 +244,10 @@ export default {
     animation-name: fadeInTop;
     background-position: bottom top;
     animation-duration: 2s;
+  } 
+  .animate_two {
+    animation-name: fadeInTop;
+    background-position: bottom top;
+    animation-duration: 4s;
   } 
 </style>

@@ -6,9 +6,10 @@
       <v-flex xs12 sm6 md3 class="px-1 mt-2" v-for="(item, index) in productList.data" :key="index">
         <v-card flat style="border-radius: 0;">
           <v-img
-            class="white--text align-end"
-            height="200px"
-            src="http://localhost:8000/api/image"></v-img>
+            class="white--text align-end" height="200px"
+            src="http://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp">
+            <!-- src="http://localhost:8000/api/image" -->
+            </v-img>
           <v-card-text>
             <v-checkbox
               v-if="userForInquire"
@@ -26,7 +27,12 @@
         </v-card>
       </v-flex>
       <v-flex xs12 class="px-1 mt-2">
-        <v-pagination v-if="productList" v-model="productList.current_page" @input="showPage($http.options.root+'/api/item?page='+productList.current_page)"  :length="productList.last_page">
+        <v-pagination
+          v-if="productList"
+          v-model="productList.current_page"
+          @input="showPage($http.options.root+'/api/item?page='+productList.current_page)"
+          :length="productList.last_page"
+          flat>
 
         </v-pagination>
       </v-flex>

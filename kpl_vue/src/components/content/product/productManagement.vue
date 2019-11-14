@@ -10,10 +10,10 @@
             {{ showSnackbar.message }}
         </v-snackbar>
         <v-layout wrap row class="hidden-md-and-down">
-            <v-flex xs3 class="px-3 mt-2">
+            <v-flex xs3 class="mt-3 about_one">
                 <glimpse-product></glimpse-product>
             </v-flex>
-            <v-flex xs9 class="px-3">
+            <v-flex xs9 class="about_two">
                 <product-list></product-list>
             </v-flex>
         </v-layout>
@@ -38,5 +38,23 @@ export default {
 }
 </script>
 <style scoped>
+  @keyframes fadeInLeft {
+    0% { opacity: 0; transform: translateX(-20px); }
+    100% { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes fadeInRight {
+    0% { opacity: 0; transform: translateX(20px); }
+    100% { opacity: 1; transform: translateX(0); }
+  }
 
+  .about_one {
+    animation-name: fadeInLeft;
+    background-position: bottom top;
+    animation-duration: 2s;
+  } 
+  .about_two {
+    animation-name: fadeInRight;
+    background-position: bottom top;
+    animation-duration: 2s;
+  } 
 </style>
