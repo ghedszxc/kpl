@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-app-bar app flat clipped-left extended class="green hidden-md-and-down"
+        <v-app-bar app flat clipped-left extended class="green hidden-sm-and-down"
             style="padding-left: 18%; padding-right: 18%;">
 
             <v-layout>
@@ -19,7 +19,14 @@
                                 <span class="font-weight-light white--text"> (02) 8952 4265</span>
                             </span>
                         </v-flex>
-                        <v-flex xs12 class="text-end" style="margin-top: -1%;">
+                        <v-flex xs12 style="margin-top: -1%;">
+                            <span class="caption font-weight-bold white--text"
+                                style="cursor: default;">
+                                <v-icon style="font-size: 15px;" color="white" class="mr-1">phone</v-icon>
+                                <span class="font-weight-light white--text"> +639 9456 484236</span>
+                            </span>
+                        </v-flex>
+                        <v-flex xs12 style="margin-top: -1%;">
                             <span class="caption font-weight-light white--text"
                                 style="cursor: default;">
                                 <v-icon style="font-size: 15px;" color="white" class="mr-1">local_library</v-icon>
@@ -38,12 +45,13 @@
                         @click="onSelectPage(item.link)">
                         <span class="caption font-weight-medium">{{item.title}}</span>
                     </v-tab>
+                    <contact-us></contact-us>
                 </v-tabs>
                 <v-spacer></v-spacer>
             </template>
         </v-app-bar>
 
-        <v-app-bar app flat clipped-left class="green hidden-lg-and-up" height="50">
+        <v-app-bar app flat clipped-left class="green hidden-md-and-up" height="50">
             <v-app-bar-nav-icon color="white" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
             <v-spacer></v-spacer>
             <v-toolbar-title class="black--text font-weight-light">
@@ -52,7 +60,7 @@
             </v-toolbar-title>
         </v-app-bar>
 
-        <v-navigation-drawer v-model="drawer" class="hidden-lg-and-up" hide-overlay app>
+        <v-navigation-drawer v-model="drawer" class="hidden-md-and-up" hide-overlay app>
             <v-list dense>
                 <div v-for="(item, index) in items" :key="index">
                     <v-list-item @click="onSelectPage(item.link)"
@@ -65,6 +73,7 @@
                         </v-list-item-title>
                     </v-list-item>
                 </div>
+                <contact-us></contact-us>
                 <!-- <v-divider></v-divider>
                 <glimpse-product></glimpse-product>  -->
             </v-list>
@@ -72,14 +81,18 @@
     </div>
 </template>
 <script>
+import contactUs from "../content/contact"
 export default {
+    components: {
+        'contact-us': contactUs
+    },
     data: () => ({
         drawer: null,
         items: [
           { title: 'Home', icon: 'home', link: '/' },
           { title: 'Product', icon: 'shopping_cart', link: '/product' },
           { title: 'About Us', icon: 'supervisor_account', link: '/about' },
-          { title: 'Contact Us', icon: 'phone', link: '/contact' }
+          { title: 'Branch', icon: 'store', link: '/branch' }
         ]
     }),
     methods: {

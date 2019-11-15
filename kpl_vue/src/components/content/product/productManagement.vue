@@ -10,10 +10,10 @@
             {{ showSnackbar.message }}
         </v-snackbar>
         <v-layout wrap row class="hidden-md-and-down">
-            <v-flex xs3 class="mt-3 about_one">
+            <v-flex xs2 class="about_one">
                 <glimpse-product></glimpse-product>
             </v-flex>
-            <v-flex xs9 class="about_two">
+            <v-flex xs10 class="about_two">
                 <product-list></product-list>
             </v-flex>
         </v-layout>

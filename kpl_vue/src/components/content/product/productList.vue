@@ -1,29 +1,71 @@
 <template>
   <div>
     <!-- DISPLAY WHEN VIEW IS LARGE -->
-    <!-- class="hidden-sm-and-down" -->
-    <v-layout wrap row class="ma-1">
+    <v-layout wrap row class="mt-1 ml-1">
       <v-flex xs12 sm6 md3 class="px-1 mt-2" v-for="(item, index) in productList.data" :key="index">
-        <v-card flat style="border-radius: 0;">
-          <v-img
-            class="white--text align-end" height="200px"
-            src="http://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp">
-            <!-- src="http://localhost:8000/api/image" -->
-            </v-img>
-          <v-card-text>
-            <v-checkbox
-              v-if="userForInquire"
-
-              v-model="item.checkbox"
-              @change="addToInquire(item)"
-              color="green"
-              :label="`${item.item_name}`">
-            </v-checkbox>
-            <p v-else class="overline">{{item.item_name}}</p>
-            <span style="font-size: 12px;" class="font-weight-light">
-              {{item.item_description}}
-            </span>
-          </v-card-text>
+        <v-item-group multiple  v-if="userForInquire">
+           <v-item v-slot:default="{ active, toggle }">
+             <v-card @click="addToInquire(item)" style="border-radius: 0;">
+                <!-- src="http://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp">
+                src="http://localhost:8000/api/image" -->
+                <v-img
+                  src="http://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp"
+                  height="150"
+                  class="text-left align-end px-1"
+                  @click="toggle">
+                    <!-- <v-layout wrap row class="px-4 py-1 white--text"
+                      style="background: rgba(0, 150, 255, 1);">
+                      <v-flex xs2>
+                        <v-icon color="white"> {{ active ? 'check' : 'crop_square' }} </v-icon>
+                      </v-flex>
+                      <v-flex class="px-2">
+                        <v-layout wrap row>
+                          <v-flex xs12 class="overline">
+                            {{item.item_name}}
+                          </v-flex>
+                          <v-flex xs12 style="font-size: 12px; margin-top: -2%;"
+                            class="font-weight-light text-capitalize">
+                            {{item.item_description}}
+                          </v-flex>
+                        </v-layout>
+                      </v-flex>
+                    </v-layout> -->
+                </v-img>
+                <v-layout wrap row class="px-4 py-1 grey--text text--darken-1">
+                  <v-flex xs2>
+                    <v-icon color="grey darken-1" large>
+                      {{ active ? 'check' : 'crop_square' }}
+                    </v-icon>
+                  </v-flex>
+                  <v-flex class="pl-4">
+                    <v-layout wrap row>
+                      <v-flex xs12 style="font-size: 14px;"
+                        class="font-weight-bold text-capitalize">
+                        {{item.item_name}}
+                      </v-flex>
+                      <v-flex xs12 style="font-size: 12px; margin-top: -2%;"
+                        class="font-weight-light text-capitalize">
+                        {{item.item_description}}
+                      </v-flex>
+                    </v-layout>
+                  </v-flex>
+                </v-layout>
+             </v-card>
+            </v-item>
+        </v-item-group>
+        
+        <v-card v-else style="border-radius: 0;">
+          <v-img src="https://cdn.vuetifyjs.com/images/backgrounds/bg.jpg"
+            class="text-left align-end pa-2" height="150">
+            <v-layout wrap row class="px-4">
+              <v-flex xs12 class="overline">
+                {{item.item_name}}
+              </v-flex>
+              <v-flex xs12 style="font-size: 12px;" class="font-weight-light text-capitalize">
+                  {{item.item_description}}
+              </v-flex>
+            </v-layout>
+          </v-img>
         </v-card>
       </v-flex>
       <v-flex xs12 class="px-1 mt-2">
@@ -31,43 +73,10 @@
           v-if="productList"
           v-model="productList.current_page"
           @input="showPage($http.options.root+'/api/item?page='+productList.current_page)"
-          :length="productList.last_page"
-          flat>
-
+          :length="productList.last_page" flat>
         </v-pagination>
       </v-flex>
     </v-layout>
-    <!-- DISPLAY WHEN VIEW IS SMALL -->
-    <!-- <v-layout wrap row class="hidden-md-and-up">
-      <v-flex xs6 sm4 class="px-1 mt-2" v-for="(item, index) in products" :key="index">
-        <v-hover v-slot:default="{ hover }">
-          <v-card :elevation="hover ? 12 : 0">
-            <v-list-item three-line>
-              <v-list-item-avatar tile size="80" color="grey">
-                <v-img
-                  src="http://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp"
-                  class="white--text align-end">
-                </v-img>
-              </v-list-item-avatar>
-              <v-list-item-content>
-                <v-list-item-title>
-                  <v-checkbox
-                    v-if="userForInquire"
-
-                    v-model="item.checkbox"
-                    @change="addToInquire(item)"
-                    color="green"
-                    :label="`${item.name}`"
-                  ></v-checkbox>
-                  <p v-else class="overline">{{item.name}}</p>
-                </v-list-item-title>
-                <v-list-item-subtitle class="overline">{{item.description}}</v-list-item-subtitle>
-              </v-list-item-content>
-            </v-list-item>
-          </v-card>
-        </v-hover>
-      </v-flex>
-    </v-layout> -->
   </div>
 </template>
 <script>
@@ -94,8 +103,6 @@ export default {
     addToInquire(item){
       const self = this;
       let index = this.selectedItem.findIndex(find => find.id == item.id)
-      console.log('index',index)
-      console.log('index',this.selectedItem)
       if (index == -1) {
         // TO ADD IN LIST
         self.$store.dispatch('global/updateSelectedItem', item)

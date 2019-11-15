@@ -4,21 +4,19 @@
         <v-card flat class="px-3 transparent hidden-md-and-down" style="border-radius: 0;">
             <v-list dense class="transparent">
                 <v-list-item @click="goTo()">
-                    <v-list-item-icon>
-                        <v-icon color="grey darken-2">list</v-icon>
-                    </v-list-item-icon>
                     <v-list-item-title>
-                        <span class="caption font-weight-medium grey--text text--darken-2">Products</span>
+                        <v-icon small color="grey darken-2">list</v-icon>
+                        <span class="caption font-weight-medium grey--text text--darken-2 ml-2">Products</span>
                     </v-list-item-title>
                 </v-list-item>
                 <div v-for="(item, index) in categoryList" :key="index">
                     <v-menu open-on-hover right offset-x transition="scale-transition">
                         <template v-slot:activator="{ on }">
                             <v-list-item v-on="on" style="border-bottom: 1px solid #E0E0E0;">
-                                <v-list-item-title>{{item.category_name}}</v-list-item-title>
-                                <v-list-item-icon>
-                                    <v-icon>keyboard_arrow_right</v-icon>
-                                </v-list-item-icon>
+                                <v-list-item-title class="caption">
+                                    <v-icon small>keyboard_arrow_right</v-icon>
+                                    {{item.category_name}}
+                                </v-list-item-title>
                             </v-list-item>
                         </template>
 
