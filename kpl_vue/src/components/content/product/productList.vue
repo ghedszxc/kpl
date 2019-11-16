@@ -97,6 +97,14 @@ export default {
     },
     selectedItem(){
         return this.$store.state.global.selectedItem;
+    },
+    parameter(){
+      return this.$route.params.id
+    }
+  },
+  watch:{
+    parameter(to){
+        this.$store.dispatch("global/getProductList",to? 'api/item/'+to : null)
     }
   },
   methods: {

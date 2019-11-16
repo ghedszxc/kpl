@@ -12,7 +12,7 @@
                 <div v-for="(item, index) in categoryList" :key="index">
                     <v-menu open-on-hover right offset-x transition="scale-transition">
                         <template v-slot:activator="{ on }">
-                            <v-list-item v-on="on" style="border-bottom: 1px solid #E0E0E0;">
+                            <v-list-item @click="goTo(item.category_id)" v-on="on" style="border-bottom: 1px solid #E0E0E0;">
                                 <v-list-item-title class="caption">
                                     <v-icon small>keyboard_arrow_right</v-icon>
                                     {{item.category_name}}
@@ -113,10 +113,14 @@ export default {
         }
     },
     methods: {
-        goTo(){
+        goTo(id){
             const self = this;
             if (self.$router.path != '/product') {
-                self.$router.push('/product')
+                if (id) {
+                    self.$router.push(`/product/${id}`)
+                } else {
+                    self.$router.push('/product')
+                }
             }
         }
     },
