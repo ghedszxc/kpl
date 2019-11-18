@@ -14,7 +14,7 @@ class ItemController extends Controller
      */
     public function index()
     {
-        return $items = Item::paginate(15);
+        return $items = Item::paginate(20);
         $output = [];
         foreach ($items as $item)
         {
@@ -61,9 +61,25 @@ class ItemController extends Controller
      * @param  \App\Item  $item
      * @return \Illuminate\Http\Response
      */
-    public function show(Item $item)
+    public function show($id)
     {
         //
+        return $items = Item::where('category_id',$id)->paginate(20);
+        $output = [];
+        foreach ($items as $item)
+        {
+            $result = [
+                'checkbox' => '',
+
+                'brand_id' => $item['brand_id'],
+                'category_id' => $item['category_id'],
+
+                'name' => $item['item_name'],
+                'description' => $item['item_description']
+            ];
+
+            array_push($output, $result);
+        }
     }
 
     /**

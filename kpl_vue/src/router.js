@@ -4,7 +4,7 @@ import Index from "./components/globalLayout/index";
 
 import Home from "./components/content/home";
 import About from "./components/content/about";
-import Contact from "./components/content/contact";
+import Branch from "./components/content/branch";
 import Product from "./components/content/product/productManagement";
 
 Vue.use(Router);
@@ -25,12 +25,16 @@ export default new Router({
           component: Product
         },
         {
+          path: "/product/:id",
+          component: Product
+        },
+        {
           path: "/about",
           component: About
         },
         {
-          path: "/contact",
-          component: Contact
+          path: "/branch",
+          component: Branch
         }
       ]
     }

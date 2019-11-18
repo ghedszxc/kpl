@@ -2,6 +2,26 @@
     <div class="animate_one">
         <v-card flat style="border-radius: 0;">
             <v-layout wrap row class="px-3">
+                <!-- <v-flex xs12 class="grey lighten-4 ma-1">
+                    <v-layout class="font-weight-bold text-uppercase subtitle-1 mt-1">
+                        <v-flex xs1>
+                            <span class="grey--text text--lighten-1 pl-3">
+                                Updates : 
+                            </span>
+                        </v-flex>
+                        <v-flex xs11>
+                            <marquee>
+                                <span class="blue--text text--darken-2">
+                                    sample news
+                                    sample news
+                                    sample news
+                                    sample news
+                                    sample news
+                                </span>
+                            </marquee>
+                        </v-flex>
+                    </v-layout>
+                </v-flex> -->
                 <v-flex class="hidden-md-and-down">
                     <glimpse-product></glimpse-product>
                 </v-flex>
@@ -12,21 +32,21 @@
         </v-card>
         <top-product class="mb-2 mx-2"></top-product>
         <about-us class="mb-2"></about-us>
-        <contact-us class="mb-2"></contact-us>
+        <our-branch class="mb-2"></our-branch>
     </div>
 </template>
 <script>
 import featureProduct from './home/featureProduct'
 import glimpseProuct from './home/glimpseProduct'
 import topProduct from './home/topProduct'
-import contactUs from './contact'
+import ourBranch from './branch'
 import aboutUs from './about'
 export default {
     components: {
         'feature-product': featureProduct,
         'glimpse-product': glimpseProuct,
         'top-product': topProduct,
-        'contact-us': contactUs,
+        'our-branch': ourBranch,
         'about-us': aboutUs
     }
 }

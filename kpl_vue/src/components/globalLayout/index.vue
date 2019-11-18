@@ -2,12 +2,12 @@
     <div class="grey lighten-3">
         <tool-bar class="mb-2"></tool-bar>
         
-        <div class="hidden-sm-and-down" style="margin-top: 7%">
+        <div class="hidden-sm-and-down" style="margin-top: 120px;">
             <router-view
                 style="height: 100%; overflow-y: hidden; overflow-x: hidden; margin-left: 18%; margin-right: 18%;">
             </router-view>
         </div>
-        <div class="hidden-md-and-up">
+        <div class="hidden-md-and-up" style="margin-top: 60px">
             <router-view style="height: 100%; overflow-y: hidden; overflow-x: hidden;"></router-view>
         </div>
         <inquire-view v-if="$route.path == '/product'"></inquire-view>
@@ -28,7 +28,7 @@ export default {
     },
     mounted() {
         const self = this;
-        self.$store.dispatch("global/getProductList")
+        self.$store.dispatch("global/getProductList",self.$route.params.id? 'api/item/'+self.$route.params.id : null)
         self.$store.dispatch("global/getCatergoryList")
     }
 }
