@@ -40,5 +40,9 @@ export default {
     state.productList.map(value => {
       value.checkbox = "";
     });
+  },
+
+  REMOVE_ALL_SELECTED_SITE: state => {
+    state.selectedItem = [];
   }
 };

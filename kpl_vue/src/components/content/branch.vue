@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-card flat :class="$route.path == '/contact' ? 'animate_one' : ''" style="border-radius: 0; padding-bottom: 1%;">
+        <v-card flat :class="$route.path == '/branch' ? 'animate_one' : ''" style="border-radius: 0; padding-bottom: 1%;">
             <v-layout wrap row>
                 <v-flex xs12 class="text-center mt-4 mb-12">
                     <span class="display-2 grey--text text--darken-2">OUR BRANCH</span>

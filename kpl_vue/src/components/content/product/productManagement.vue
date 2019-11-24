@@ -34,6 +34,10 @@ export default {
         showSnackbar(){
             return this.$store.state.inquire.showSnackbar;
         }
+    },
+    beforeDestroy(){
+        const self = this;
+        self.$store.dispatch("global/removeAllSelectedSite")
     }
 }
 </script>

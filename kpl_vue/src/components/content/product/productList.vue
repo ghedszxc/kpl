@@ -31,7 +31,7 @@
                       </v-flex>
                     </v-layout> -->
                 </v-img>
-                <v-layout wrap row class="px-4 py-1 grey--text text--darken-1">
+                <v-layout wrap row class="px-4 py-1 grey--text text--darken-1" @click="toggle">
                   <v-flex xs2>
                     <v-icon color="grey darken-1" large>
                       {{ active ? 'check' : 'crop_square' }}

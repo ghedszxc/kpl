@@ -32,5 +32,9 @@ export default {
   // REMOVE ALL SELECTED ITEM
   removeAllCheckboxInProductList: ({ commit }) => {
     commit("REMOVE_ALL_CHECKBOX_IN_PRODUCT_LIST");
+  },
+
+  removeAllSelectedSite: ({ commit }) => {
+    commit("REMOVE_ALL_SELECTED_SITE");
   }
 };
