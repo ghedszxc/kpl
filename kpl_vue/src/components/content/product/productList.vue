@@ -10,8 +10,7 @@
                 src="http://localhost:8000/api/image" -->
                 <v-img
                   src="http://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp"
-                  height="150"
-                  class="text-left align-end px-1"
+                  height="150" class="text-left align-end px-1"
                   @click="toggle">
                     <!-- <v-layout wrap row class="px-4 py-1 white--text"
                       style="background: rgba(0, 150, 255, 1);">
@@ -55,17 +54,22 @@
         </v-item-group>
         
         <v-card v-else style="border-radius: 0;">
-          <v-img src="https://cdn.vuetifyjs.com/images/backgrounds/bg.jpg"
-            class="text-left align-end pa-2" height="150">
-            <v-layout wrap row class="px-4">
-              <v-flex xs12 class="overline">
-                {{item.item_name}}
-              </v-flex>
-              <v-flex xs12 style="font-size: 12px;" class="font-weight-light text-capitalize">
-                  {{item.item_description}}
-              </v-flex>
-            </v-layout>
+          <v-img src="http://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp"
+            height="150" class="text-left align-end px-1">
           </v-img>
+
+          <v-layout wrap row class="px-4 py-1 grey--text text--darken-1">
+            <v-flex class="px-4">
+              <v-layout wrap row>
+                <v-flex xs12 class="overline">
+                  {{item.item_name}}
+                </v-flex>
+                <v-flex xs12 style="font-size: 12px;" class="font-weight-light text-capitalize">
+                  {{item.item_description}}
+                </v-flex>
+              </v-layout>
+            </v-flex>
+          </v-layout>
         </v-card>
       </v-flex>
       <v-flex xs12 class="px-1 mt-2">
