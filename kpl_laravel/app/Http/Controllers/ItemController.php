@@ -48,52 +48,16 @@ class ItemController extends Controller
      */
     public function show($id)
     {
-        // return $items = Item::where('category_id',$id)->paginate(20);
-        $items = Item::where('category_id',$id)->paginate(20);
-        $output = [];
-        foreach ($items as $item)
-        {
-            $result = [
-                'id' => $item['id'],
-                'brand_id' => $item['brand_id'],
-                'category_id' => $item['category_id'],
-
-                'checkbox' => '',
-
-
-                'item_name' => $item['item_name'],
-                'item_description' => $item['item_description']
-            ];
-
-            array_push($output, $result);
-        }
-
-        return $output;
+        return $items = Item::select('items.id', 'items.brand_id', 'items.category_id',
+        'items.item_name', 'items.item_description', 'items.created_at as checkbox')
+        ->where('category_id',$id)->paginate(20);
     }
 
     public function filterByBrand($id)
     {
-        // return $items = Item::where('brand_id',$id)->paginate(20);
-        $items = Item::where('brand_id',$id)->paginate(20);
-        $output = [];
-        foreach ($items as $item)
-        {
-            $result = [
-                'id' => $item['id'],
-                'brand_id' => $item['brand_id'],
-                'category_id' => $item['category_id'],
-
-                'checkbox' => '',
-
-
-                'item_name' => $item['item_name'],
-                'item_description' => $item['item_description']
-            ];
-
-            array_push($output, $result);
-        }
-
-        return $output;
+        return $items = Item::select('items.id', 'items.brand_id', 'items.category_id',
+        'items.item_name', 'items.item_description', 'items.created_at as checkbox')
+        ->where('brand_id',$id)->paginate(20);
     }
 
     /**

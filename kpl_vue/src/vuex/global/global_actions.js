@@ -56,9 +56,28 @@ export default {
     commit("FILTER_ITEM_BY_CATEGORY", data);
   },
 
+  // ON CHANGE ALL ITEM PAGE (PAGINATION)
   onChangePage: ({ commit }, url) => {
     Vue.http.get(url ? url : "api/item").then(response => {
       commit("GET_PRODUCT_LIST", response.body);
     });
+  },
+
+  // ON CHANGE CATEGORY PAGE (PAGINATION)
+  onChangePageForCategory: ({ commit }, data) => {
+    // eslint-disable-next-line prettier/prettier
+    Vue.http.get(data.for_page ? data.for_page : `api/item/${data.category_id}`)
+      .then(response => {
+        commit("GET_PRODUCT_LIST", response.body);
+      });
+  },
+
+  // ON CHANGE BRAND PAGE (PAGINATION)
+  onChangePageForBrand: ({ commit }, data) => {
+    // eslint-disable-next-line prettier/prettier
+    Vue.http.get(data.for_page ? data.for_page : `api/item/filterByBrand/${data.brand_id}`)
+      .then(response => {
+        commit("GET_PRODUCT_LIST", response.body);
+      });
   }
 };

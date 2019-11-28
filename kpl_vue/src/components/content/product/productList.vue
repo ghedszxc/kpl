@@ -51,12 +51,13 @@
           </v-layout>
         </v-card>
       </v-flex>
+
       <v-flex xs12 class="px-1 mt-2">
         <v-pagination
           v-if="productList"
           v-model="productList.current_page"
-          :length="productList.last_page" flat
-          @input="onChangePage($http.options.root+'/api/item?page='+productList.current_page)">
+          :length="productList.last_page"
+          @input="onChangePage(productList.current_page)">
           <!-- @input="showPage($http.options.root+'/api/item?page='+productList.current_page)" -->
         </v-pagination>
       </v-flex>
@@ -73,10 +74,7 @@ export default {
     // PARA MALAMAN KUNG MAG IINQUIRE BA O HINDI
     userForInquire() {
       return this.$store.state.inquire.userForInquire;
-    },
-    selectedItem(){
-        return this.$store.state.global.selectedItem;
-    },
+    }
   },
   methods: {
     addToInquire(item){

@@ -50,5 +50,15 @@ export default {
   },
   GET_FILTERED_PRODUCT_BY_BRAND: (state, payload) => {
     state.productList = payload;
+  },
+  FILTER_PAGE_DISTINCTION: (state, payload) => {
+    state.page_distinction = payload;
+  },
+
+  CHANGED_BRAND_ID: (state, payload) => {
+    state.brand_id = payload;
+  },
+  CHANGED_CATEGORY_ID: (state, payload) => {
+    state.category_id = payload;
   }
 };
