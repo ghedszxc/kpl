@@ -6,29 +6,10 @@
         <v-item-group multiple  v-if="userForInquire">
            <v-item v-slot:default="{ active, toggle }">
              <v-card @click="addToInquire(item)" style="border-radius: 0;">
-                <!-- src="http://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp">
-                src="http://localhost:8000/api/image" -->
                 <v-img
                   src="http://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp"
                   height="150" class="text-left align-end px-1"
                   @click="toggle">
-                    <!-- <v-layout wrap row class="px-4 py-1 white--text"
-                      style="background: rgba(0, 150, 255, 1);">
-                      <v-flex xs2>
-                        <v-icon color="white"> {{ active ? 'check' : 'crop_square' }} </v-icon>
-                      </v-flex>
-                      <v-flex class="px-2">
-                        <v-layout wrap row>
-                          <v-flex xs12 class="overline">
-                            {{item.item_name}}
-                          </v-flex>
-                          <v-flex xs12 style="font-size: 12px; margin-top: -2%;"
-                            class="font-weight-light text-capitalize">
-                            {{item.item_description}}
-                          </v-flex>
-                        </v-layout>
-                      </v-flex>
-                    </v-layout> -->
                 </v-img>
                 <v-layout wrap row class="px-4 py-1 grey--text text--darken-1" @click="toggle">
                   <v-flex xs2>
@@ -76,17 +57,15 @@
         <v-pagination
           v-if="productList"
           v-model="productList.current_page"
-          @input="showPage($http.options.root+'/api/item?page='+productList.current_page)"
           :length="productList.last_page" flat>
+          <!-- @input="showPage($http.options.root+'/api/item?page='+productList.current_page)" -->
         </v-pagination>
       </v-flex>
     </v-layout>
   </div>
 </template>
 <script>
-import productMixin from "../../mixins/product"
 export default {
-  mixins : [productMixin],
   data: () => ({
     checkbox: [],
     page:0
@@ -96,20 +75,9 @@ export default {
     userForInquire() {
       return this.$store.state.inquire.userForInquire;
     },
-    productList(){
-      return this.$store.state.global.productList
-    },
     selectedItem(){
         return this.$store.state.global.selectedItem;
     },
-    parameter(){
-      return this.$route.params.id
-    }
-  },
-  watch:{
-    parameter(to){
-        this.$store.dispatch("global/getProductList",to? 'api/item/'+to : null)
-    }
   },
   methods: {
     addToInquire(item){
@@ -123,10 +91,6 @@ export default {
         self.$store.dispatch('global/removeCheckboxInProductList', item.id)
       }
     },
-    showPage(page_url){
-      this.$store.dispatch('global/getProductList',page_url)
-      console.log("page url",page_url)
-    }
   }
 };
 </script>

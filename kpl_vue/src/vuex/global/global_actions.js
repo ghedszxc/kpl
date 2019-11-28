@@ -1,10 +1,24 @@
 import Vue from "vue";
 export default {
-  getProductList: ({ commit },url) => {
-    Vue.http.get( url? url : "api/item").then(response => {
+  // GET ALL ITEMS
+  getProductList: ({ commit }) => {
+    Vue.http.get("api/item").then(response => {
       commit("GET_PRODUCT_LIST", response.body);
     });
   },
+  // ITEM FILTERED BY CATEGORY
+  getFilteredProductByCategory: ({ commit }, data) => {
+    Vue.http.get(`api/item/${data}`).then(response => {
+      commit("GET_FILTERED_PRODUCT_BY_CATERGORY", response.body);
+    });
+  },
+  // ITEM FILTERED BY BRAND
+  getFilteredProductByBrand: ({ commit }, data) => {
+    Vue.http.get(`api/item/filterByBrand/${data}`).then(response => {
+      commit("GET_FILTERED_PRODUCT_BY_BRAND", response.body);
+    });
+  },
+
   getCatergoryList: ({ commit }) => {
     Vue.http.get("api/catergory").then(response => {
       commit("GET_CATEGORY_LIST", response.body);
@@ -36,5 +50,9 @@ export default {
 
   removeAllSelectedSite: ({ commit }) => {
     commit("REMOVE_ALL_SELECTED_SITE");
+  },
+
+  filterItemByCategory: ({ commit }, data) => {
+    commit("FILTER_ITEM_BY_CATEGORY", data);
   }
 };

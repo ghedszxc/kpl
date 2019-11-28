@@ -18,7 +18,6 @@ export default {
 
   // TO REMOVE SELECTION IN CHECKBOX
   REMOVE_CHECKBOX_IN_PRODUCT_LIST: (state, payload) => {
-    
     let find_index = state.selectedItem.findIndex(find => find.id == payload);
     if (find_index != -1) {
       state.selectedItem.splice(find_index, 1);
@@ -44,5 +43,12 @@ export default {
 
   REMOVE_ALL_SELECTED_SITE: state => {
     state.selectedItem = [];
+  },
+
+  GET_FILTERED_PRODUCT_BY_CATERGORY: (state, payload) => {
+    state.productList = payload;
+  },
+  GET_FILTERED_PRODUCT_BY_BRAND: (state, payload) => {
+    state.productList = payload;
   }
 };

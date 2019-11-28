@@ -3,7 +3,7 @@
         <!-- THIS IS TO DISPLAY LARGE VIEW -->
         <v-card flat class="px-3 transparent hidden-md-and-down" style="border-radius: 0;">
             <v-list dense class="transparent">
-                <v-list-item @click="goTo()">
+                <v-list-item @click="onSelectProduct()">
                     <v-list-item-title>
                         <v-icon small color="grey darken-2">list</v-icon>
                         <span class="caption font-weight-medium grey--text text--darken-2 ml-2">Products</span>
@@ -12,7 +12,9 @@
                 <div v-for="(item, index) in categoryList" :key="index">
                     <v-menu open-on-hover right offset-x transition="scale-transition">
                         <template v-slot:activator="{ on }">
-                            <v-list-item @click="goTo(item.category_id)" v-on="on" style="border-bottom: 1px solid #E0E0E0;">
+                            <v-list-item @click="onFilterByCategory(item)" v-on="on"
+                                style="border-bottom: 1px solid #E0E0E0;"
+                                :class="item.category_id == category_id ? 'grey lighten-2' : ''">
                                 <v-list-item-title class="caption">
                                     <v-icon small>keyboard_arrow_right</v-icon>
                                     {{item.category_name}}
@@ -22,7 +24,8 @@
 
                         <v-list dense>
                             <div v-for="(data, key) in item.brands" :key="key">
-                                <v-list-item link>
+                                <v-list-item @click="onFilterByBrand(data)"
+                                :class="data.brand_id == brand_id ? 'grey lighten-2' : ''">
                                     <v-list-item-title>{{ data.brand_name }}</v-list-item-title>
                                 </v-list-item>
                                 <v-divider class="ml-4 mr-4"></v-divider>
@@ -32,32 +35,6 @@
                 </div>
             </v-list>
         </v-card>
-
-        <!-- THIS IS TO DISPLAY SMALL VIEW -->
-        <v-list dense class="hidden-lg-and-up">
-            <!-- <v-list-item @click="goTo()" :class="$route.path == '/product' ? 'green' : ''">
-                <v-list-item-icon>
-                    <v-icon :color="$route.path == '/product' ? 'white' : 'grey darken-2'">list</v-icon>
-                </v-list-item-icon>
-                <v-list-item-title :class="$route.path == '/product' ? 'white--text' : 'grey--text text--darken-2'">
-                    Products
-                </v-list-item-title>
-            </v-list-item> -->
-            <v-list-group v-for="(item, index) in sample_items" :key="index" color="green">
-                <template v-slot:activator>
-                    <v-list-item-title class="main_subheader grey-text text--darken-2">
-                        {{item.cat}}
-                    </v-list-item-title>
-                </template>
-                <v-list-item v-for="(data, key) in item.subhead" :key="key" link>
-                    <v-list-item-title>
-                        <span class="main_subheader grey-text text--darken-2 ml-4">
-                            {{data}}
-                        </span>
-                    </v-list-item-title>
-                </v-list-item>
-            </v-list-group>
-        </v-list>
     </div>
 </template>
 <script>
@@ -66,46 +43,6 @@ export default {
       fav: true,
       menu: false,
       checkbox: false,
-
-      admins: [
-        ['Management', 'people_outline'],
-        ['Settings', 'settings'],
-      ],
-
-      sample_items: [
-          {
-              cat: 'Soap',
-              subhead: [ 'Safeguard', 'Dove', 'Silka' ]
-          },
-          {
-              cat: 'Shampoo',
-              subhead: [ 'Head & Shoulder', 'Clear', 'Tresemme', 'Palmolive', 'Vaseline' ]
-          },
-          {
-              cat: 'Toothpaste',
-              subhead: [ 'Close Up', 'Colgate' ]
-          },
-          {
-              cat: 'Clothings',
-              subhead: [ 'Bench', 'H&M', 'Uniqlo', 'Tribal', 'Oxygen']
-          },
-          {
-              cat: 'Shoes',
-              subhead: [ 'Nike', 'Jordan', 'Vans', 'Converse']
-          },
-          {
-              cat: 'Restaurant',
-              subhead: [ 'Jollibee', 'Mcdonalds', 'KFC']
-          },
-          {
-              cat: 'Gadgets',
-              subhead: [ 'Apple', 'Samsung', 'Asus', 'Nintendo']
-          },
-          {
-              cat: 'Cafe',
-              subhead: [ 'Starbucks', 'Tullys', "Seattle's Best", 'Miao Cat Cafe']
-          }
-      ]
     }),
     computed: {
         categoryList() {

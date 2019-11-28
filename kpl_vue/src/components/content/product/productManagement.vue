@@ -35,6 +35,10 @@ export default {
             return this.$store.state.inquire.showSnackbar;
         }
     },
+    mounted() {
+        const self = this;
+        self.$store.dispatch('global/getProductList')
+    },
     beforeDestroy(){
         const self = this;
         self.$store.dispatch("global/removeAllSelectedSite")

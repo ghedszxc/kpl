@@ -21,7 +21,7 @@
                     <div v-for="(item, index) in selectedItem" :key="item.id">
                         <v-list-item :disabled="onLoad">
                             <v-list-item-title>
-                                {{index+1}}) {{item.item_name}}
+                                {{index+1}}. {{item.item_name}}
                             </v-list-item-title>
                         </v-list-item>
                         <v-divider class="mx-2"></v-divider>
@@ -90,9 +90,7 @@
     </div>
 </template>
 <script>
-import productMixin from "../../mixins/product"
 export default {
-    mixins: [productMixin],
     data:() => ({
         onLoad: false,
         showInquireBox: true,

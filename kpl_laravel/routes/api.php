@@ -21,6 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::resource("inquire","InquireController");
 
 Route::resource("item","ItemController");
+Route::get('item/filterByBrand/{id}','ItemController@filterByBrand');
 Route::resource("catergory","CategoryController");
 
 

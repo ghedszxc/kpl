@@ -20,7 +20,8 @@ class CategoryController extends Controller
         $output = [];
         foreach($categories as $categorie)
         {
-            $brands = Brand::select('brands.id as brand_id', 'brands.brand_name')->where('brands.category_id', $categorie['id'])->get();
+            $brands = Brand::select('brands.id as brand_id', 'brands.brand_name', 'brands.category_id')
+                ->where('brands.category_id', $categorie['id'])->get();
             $result = [
                 'category_id' => $categorie['id'],
                 'category_name' => $categorie['category_name'],

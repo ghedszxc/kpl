@@ -15,23 +15,6 @@ class ItemController extends Controller
     public function index()
     {
         return $items = Item::paginate(20);
-        $output = [];
-        foreach ($items as $item)
-        {
-            $result = [
-                'checkbox' => '',
-
-                'brand_id' => $item['brand_id'],
-                'category_id' => $item['category_id'],
-
-                'name' => $item['item_name'],
-                'description' => $item['item_description']
-            ];
-
-            array_push($output, $result);
-        }
-
-        return $output;
     }
 
     /**
@@ -63,23 +46,12 @@ class ItemController extends Controller
      */
     public function show($id)
     {
-        //
         return $items = Item::where('category_id',$id)->paginate(20);
-        $output = [];
-        foreach ($items as $item)
-        {
-            $result = [
-                'checkbox' => '',
+    }
 
-                'brand_id' => $item['brand_id'],
-                'category_id' => $item['category_id'],
-
-                'name' => $item['item_name'],
-                'description' => $item['item_description']
-            ];
-
-            array_push($output, $result);
-        }
+    public function filterByBrand($id)
+    {
+        return $items = Item::where('brand_id',$id)->paginate(20);
     }
 
     /**

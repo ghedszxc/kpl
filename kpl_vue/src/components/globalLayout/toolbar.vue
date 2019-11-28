@@ -74,8 +74,6 @@
                     </v-list-item>
                 </div>
                 <contact-us></contact-us>
-                <!-- <v-divider></v-divider>
-                <glimpse-product></glimpse-product>  -->
             </v-list>
         </v-navigation-drawer>
     </div>
