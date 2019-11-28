@@ -20,7 +20,7 @@ export default {
   methods: {
     onSelectProduct() {
       const self = this;
-      if (!self.$route.path == "/product") {
+      if (self.$route.path != "/product") {
         self.$router.push("/product");
       } else {
         self.$store.commit("global/CHANGED_BRAND_ID", 0);
