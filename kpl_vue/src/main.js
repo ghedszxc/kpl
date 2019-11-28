@@ -7,6 +7,8 @@ import vueResource from "vue-resource";
 import "material-icons";
 import * as VueGoogleMaps from "vue2-google-maps";
 
+import resizing from "./components/mixins/resize";
+
 Vue.use(vueResource);
 Vue.use(VueGoogleMaps, {
   load: {
@@ -15,6 +17,8 @@ Vue.use(VueGoogleMaps, {
   }
 });
 Vue.http.options.root = "http://localhost:8000";
+
+Vue.mixin(resizing);
 
 Vue.config.productionTip = false;
 

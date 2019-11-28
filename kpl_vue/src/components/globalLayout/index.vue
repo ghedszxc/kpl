@@ -1,14 +1,15 @@
 <template>
-    <div class="grey lighten-3">
+    <v-app class="grey lighten-3" v-resize="onResize">
         <tool-bar class="mb-2"></tool-bar>
         
-        <div class="hidden-sm-and-down" style="margin-top: 120px;">
-            <router-view
-                style="height: 100%; overflow-y: hidden; overflow-x: hidden; margin-left: 18%; margin-right: 18%;">
+        <div :style="{ 'margin-top': windowSize.x >= '960' ? '120px' : '60px' }">
+            <router-view :style="{
+                'height': '100%',
+                'overflow-y': 'hidden',
+                'overflow-x': 'hidden',
+                'margin-left': windowSize.x >= '960' ? '18%' : '',
+                'margin-right': windowSize.x >= '960' ? '18%' : '' }">
             </router-view>
-        </div>
-        <div class="hidden-md-and-up" style="margin-top: 60px">
-            <router-view style="height: 100%; overflow-y: hidden; overflow-x: hidden;"></router-view>
         </div>
         <inquire-view v-if="$route.path == '/product'"></inquire-view>
         <v-btn color="green" rounded x-large dark v-if="$route.path == '/'"
@@ -16,7 +17,7 @@
             @click="$router.push('/product')">
             Inquire Now!
         </v-btn>
-    </div>
+    </v-app>
 </template>
 <script>
 import toolBar from './toolbar'
