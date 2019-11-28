@@ -18,7 +18,7 @@
             <div v-if="showInquireBox">
                 <v-list dense v-if="selectedItem.length"
                     style="height: calc(35vh - 115px); overflow-y: auto; overflow-x: hidden;">
-                    <div v-for="(item, index) in selectedItem" :key="item.id">
+                    <div v-for="(item, index) in selectedItem" :key="index">
                         <v-list-item :disabled="onLoad">
                             <v-list-item-title>
                                 {{index+1}}. {{item.item_name}}
@@ -107,9 +107,6 @@ export default {
         // PARA MALAMAN KUNG MAG IINQUIRE BA O HINDI
         userForInquire(){
             return this.$store.state.inquire.userForInquire;
-        },
-        selectedItem(){
-            return this.$store.state.global.selectedItem;
         }
     },
     mounted(){

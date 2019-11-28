@@ -1,18 +1,14 @@
 export default {
   data: () => ({
-    // products: []
     category_id: 0,
     brand_id: 0
   }),
-  // mounted() {
-  //   const self = this;
-  //   self.$http.get("api/item").then(response => {
-  //     self.products = response.body;
-  //   });
-  // }
   computed: {
     productList() {
       return this.$store.state.global.productList;
+    },
+    selectedItem() {
+      return this.$store.state.global.selectedItem;
     }
   },
   methods: {
@@ -38,6 +34,10 @@ export default {
       self.brand_id = data.brand_id;
       self.category_id = data.category_id;
       self.$store.dispatch("global/getFilteredProductByBrand", data.brand_id);
+    },
+    onChangePage(page_url) {
+      this.$store.dispatch("global/onChangePage", page_url);
+      console.log(page_url);
     }
   }
 };

@@ -54,5 +54,11 @@ export default {
 
   filterItemByCategory: ({ commit }, data) => {
     commit("FILTER_ITEM_BY_CATEGORY", data);
+  },
+
+  onChangePage: ({ commit }, url) => {
+    Vue.http.get(url ? url : "api/item").then(response => {
+      commit("GET_PRODUCT_LIST", response.body);
+    });
   }
 };
