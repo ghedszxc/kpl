@@ -6,10 +6,12 @@
     <span style="font-size: 18px;"> Email: {{$email}}</span>
     <br>
     <span style="font-size: 18px;"> Contact Number: {{$contact}}</span>
-    
+    <br>
+
+    <span style="font-size: 18px;"> Inquired item:</span>
+    <ol>
     @foreach ($checkbox as $item)
-    <div>
-    {{$item}}
-    </div>
+        <li style="font-size: 18px;">{{$item['item_name']}} - {{$item['item_description']}}</li>
     @endforeach
+    </ol>
 </div>

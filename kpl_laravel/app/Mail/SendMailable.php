@@ -35,11 +35,8 @@ class SendMailable extends Mailable
     public function build()
     {
         return $this->from('memyselfandi@gmail.com')
-                    ->view('email')
-                    ->with(
-                        [
-                            'message' => 'Ban co the kiem tra email',
-                        ]);
+                    ->subject('Customer Inquire')
+                    ->view('email');
         	  
     }
 }
