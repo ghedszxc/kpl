@@ -16,9 +16,10 @@ class CreateItemsTable extends Migration
         Schema::create('items', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('item_name');
-            $table->string('item_description');
+            $table->string('item_description')->nullable();
+            $table->string('item_image_link')->nullable();
             $table->unsignedInteger('category_id');
-            $table->unsignedInteger('brand_id');
+            // $table->unsignedInteger('brand_id');
             $table->timestamps();
 
 
@@ -28,10 +29,10 @@ class CreateItemsTable extends Migration
             ->onDelete('cascade')
             ->onUpdate('cascade');
             
-            $table->foreign('brand_id')
-            ->references('id')->on('brands')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
+            // $table->foreign('brand_id')
+            // ->references('id')->on('brands')
+            // ->onDelete('cascade')
+            // ->onUpdate('cascade');
         });
     }
 

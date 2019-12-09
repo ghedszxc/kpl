@@ -19,7 +19,7 @@
                 <v-list dense v-if="selectedItem.length"
                     style="height: calc(35vh - 115px); overflow-y: auto; overflow-x: hidden;">
                     <div v-for="(item, index) in selectedItem" :key="index">
-                        <v-list-item :disabled="onLoad">
+                        <v-list-item :disabled="onLoad" class="text-capitalize">
                             <v-list-item-title>
                                 {{index+1}}. {{item.item_name}}
                             </v-list-item-title>

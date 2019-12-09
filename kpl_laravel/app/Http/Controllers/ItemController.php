@@ -14,7 +14,7 @@ class ItemController extends Controller
      */
     public function index()
     {
-        return $items = Item::select('items.id', 'items.brand_id', 'items.category_id',
+        return $items = Item::select('items.id', 'items.category_id', 'items.item_image_link',
             'items.item_name', 'items.item_description', 'items.created_at as checkbox')
             ->paginate(20);
     }
@@ -48,14 +48,14 @@ class ItemController extends Controller
      */
     public function show($id)
     {
-        return $items = Item::select('items.id', 'items.brand_id', 'items.category_id',
+        return $items = Item::select('items.id', 'items.category_id', 'items.item_image_link',
         'items.item_name', 'items.item_description', 'items.created_at as checkbox')
         ->where('category_id',$id)->paginate(20);
     }
 
     public function filterByBrand($id)
     {
-        return $items = Item::select('items.id', 'items.brand_id', 'items.category_id',
+        return $items = Item::select('items.id', 'items.category_id', 'items.item_image_link',
         'items.item_name', 'items.item_description', 'items.created_at as checkbox')
         ->where('brand_id',$id)->paginate(20);
     }

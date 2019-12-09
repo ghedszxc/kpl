@@ -6,7 +6,11 @@
                     <v-card flat style="background: rgba(0, 0, 0, 0.1); border-radius: 0; padding: 5%;">
                         <span class="display-2 white--text">ABOUT US</span>
                         <div class="ml-12 mr-12">
-                            <span class="subtitle-1 font-italic white--text">Aliquam sagittis ligula et sem lacinia sagittis ligula et sem lacinia sagittis ligula et sem lacinia, ut facilisis enim sollicitudin. Proin nisi est, convallis nec purus vitae, iaculis posuere sapien. Cum sociis natoque.</span>
+                            <span class="subtitle-1 font-italic white--text">
+                                <b>KPL Industrial Supply</b> was founded since 2012, started by well-trained people and number of years 
+                                experienced before started in services industry. We are focusing on providing your needs and services 
+                                with the highest level of customer satisfaction. And do everything to meet your expectations.
+                            </span>
                         </div>
                         <v-btn outlined small color="white"
                             style="border-radius: 0;"
@@ -20,29 +24,24 @@
         </div>
         <div  v-if="$route.path == '/about'">
             <v-layout wrap row class="mb-2">
-                <v-flex xs12 sm6 class="px-2 mt-3 about_two">
-                    <v-card flat style="border-radius: 0;">
+                <v-flex v-for="(item, index) in below_about" :key="index"
+                    xs12 sm4 :class="'px-2 mt-3 '+ 'about_'+index"
+                    style="height: 240px;">
+                    <v-card flat style="border-radius: 0; height: 100%;">
                         <v-card-title>
                             <v-spacer></v-spacer>
-                            <v-icon style="font-size: 80px;" color="green">language</v-icon>
+                            <v-icon style="font-size: 80px;" color="green">
+                                {{item.icon}}
+                            </v-icon>
                             <v-spacer></v-spacer>
                         </v-card-title>
                         <v-card-text class="text-center">
-                            <span class="display-1 font-weight-medium">Mission</span><br>
-                            <span class="subtitle-2 font-weight-light grey--text">Aliquam sagittis ligula et sem lacinia sagittis ligula et sem lacinia sagittis ligula et sem lacinia, ut facilisis enim sollicitudin. Proin nisi est, convallis nec purus vitae, iaculis posuere sapien. Cum sociis natoque.</span>
-                        </v-card-text>
-                    </v-card>
-                </v-flex>
-                <v-flex xs12 sm6 class="px-2 mt-3 about_three">
-                    <v-card flat style="border-radius: 0;">
-                        <v-card-title>
-                            <v-spacer></v-spacer>
-                            <v-icon style="font-size: 80px;" color="green">supervised_user_circle</v-icon>
-                            <v-spacer></v-spacer>
-                        </v-card-title>
-                        <v-card-text class="text-center">
-                            <span class="display-1 font-weight-medium">Vision</span><br>
-                            <span class="subtitle-2 font-weight-light grey--text">Aliquam sagittis ligula et sem lacinia sagittis ligula et sem lacinia sagittis ligula et sem lacinia, ut facilisis enim sollicitudin. Proin nisi est, convallis nec purus vitae, iaculis posuere sapien. Cum sociis natoque.</span>
+                            <span class="display-1 font-weight-medium">
+                                {{item.title}}
+                            </span><br>
+                            <span class="subtitle-2 font-weight-light grey--text">
+                                {{item.description}}
+                            </span>
                         </v-card-text>
                     </v-card>
                 </v-flex>
@@ -124,6 +123,25 @@
 </template>
 <script>
 export default {
+    data:() => ({
+        below_about: [
+            {
+                icon: "supervised_user_circle",
+                title: "Vision",
+                description: "To be the company that best understands and satisfies the product, service and self-fulfillment needs of our customers."
+            },
+            {
+                icon: "language",
+                title: "Mission",
+                description: "To provide each of our clients with the most satisfying products, services and supplies to their heart's content"
+            },
+            {
+                icon: "stars",
+                title: "Goal",
+                description: "To product people who are willing to expand their knowledge in sales and services industry"
+            },
+        ]
+    }),
     methods: {
         goTo(){
             const self = this;
@@ -155,12 +173,17 @@ export default {
     background-position: bottom top;
     animation-duration: 2s;
   } 
-  .about_two {
+  .about_0 {
     animation-name: fadeInLeft;
     background-position: bottom top;
     animation-duration: 2s;
   } 
-  .about_three {
+  .about_1 {
+    animation-name: fadeInTop;
+    background-position: bottom top;
+    animation-duration: 2s;
+  } 
+  .about_2 {
     animation-name: fadeInRight;
     background-position: bottom top;
     animation-duration: 2s;

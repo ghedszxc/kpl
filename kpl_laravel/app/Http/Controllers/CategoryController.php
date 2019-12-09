@@ -15,21 +15,22 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
+        return Category::all();
+        // $categories = Category::all();
 
-        $output = [];
-        foreach($categories as $categorie)
-        {
-            $brands = Brand::select('brands.id as brand_id', 'brands.brand_name', 'brands.category_id')
-                ->where('brands.category_id', $categorie['id'])->get();
-            $result = [
-                'category_id' => $categorie['id'],
-                'category_name' => $categorie['category_name'],
-                'brands' => $brands
-            ];
-            array_push($output, $result);
-        }
-        return $output;
+        // $output = [];
+        // foreach($categories as $categorie)
+        // {
+        //     $brands = Brand::select('brands.id as brand_id', 'brands.brand_name', 'brands.category_id')
+        //         ->where('brands.category_id', $categorie['id'])->get();
+        //     $result = [
+        //         'category_id' => $categorie['id'],
+        //         'category_name' => $categorie['category_name'],
+        //         'brands' => $brands
+        //     ];
+        //     array_push($output, $result);
+        // }
+        // return $output;
     }
 
     /**

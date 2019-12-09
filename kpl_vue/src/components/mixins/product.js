@@ -13,9 +13,9 @@ export default {
     category_id() {
       return this.$store.state.global.category_id;
     },
-    brand_id() {
-      return this.$store.state.global.brand_id;
-    }
+    // brand_id() {
+    //   return this.$store.state.global.brand_id;
+    // }
   },
   methods: {
     onSelectProduct() {
@@ -23,7 +23,7 @@ export default {
       if (self.$route.path != "/product") {
         self.$router.push("/product");
       } else {
-        self.$store.commit("global/CHANGED_BRAND_ID", 0);
+        // self.$store.commit("global/CHANGED_BRAND_ID", 0);
         self.$store.commit("global/CHANGED_CATEGORY_ID", 0);
         self.$store.commit("global/FILTER_PAGE_DISTINCTION", 1);
         self.$store.dispatch("global/getProductList");
@@ -32,22 +32,22 @@ export default {
     onFilterByCategory(data) {
       const self = this;
 
-      self.$store.commit("global/CHANGED_BRAND_ID", 0);
-      self.$store.commit("global/CHANGED_CATEGORY_ID", data.category_id);
+      // self.$store.commit("global/CHANGED_BRAND_ID", 0);
+      self.$store.commit("global/CHANGED_CATEGORY_ID", data.id);
       self.$store.commit("global/FILTER_PAGE_DISTINCTION", 2);
 
       // eslint-disable-next-line prettier/prettier
-      self.$store.dispatch("global/getFilteredProductByCategory", data.category_id);
+      self.$store.dispatch("global/getFilteredProductByCategory", data.id);
     },
-    onFilterByBrand(data) {
-      const self = this;
+    // onFilterByBrand(data) {
+    //   const self = this;
 
-      self.$store.commit("global/CHANGED_BRAND_ID", data.brand_id);
-      self.$store.commit("global/CHANGED_CATEGORY_ID", data.category_id);
-      self.$store.commit("global/FILTER_PAGE_DISTINCTION", 3);
+    //   // self.$store.commit("global/CHANGED_BRAND_ID", data.brand_id);
+    //   self.$store.commit("global/CHANGED_CATEGORY_ID", data.category_id);
+    //   self.$store.commit("global/FILTER_PAGE_DISTINCTION", 3);
 
-      self.$store.dispatch("global/getFilteredProductByBrand", data.brand_id);
-    },
+    //   self.$store.dispatch("global/getFilteredProductByBrand", data.brand_id);
+    // },
     onChangePage(page_number) {
       const self = this;
       if (self.page_distinction == 1){
