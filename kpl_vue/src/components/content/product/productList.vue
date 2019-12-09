@@ -1,7 +1,6 @@
 <template>
   <div>
-    <!-- DISPLAY WHEN VIEW IS LARGE -->
-    <v-layout wrap row class="mt-1 ml-1">
+    <v-layout wrap row class="mt-1 mx-1">
       <v-flex xs12 sm6 md3 class="px-1 mt-2" v-for="(item, index) in productList.data" :key="index">
         <v-card @click="addToInquire(item)" v-if="userForInquire"
           style="border-radius: 0;">
@@ -10,21 +9,15 @@
             height="150" class="text-left align-end px-1"
             @click="item.checkbox ? !item.checkbox : true">
           </v-img>
-          <!-- <v-tooltip top>
-            <template v-slot:activator="{ on }">
-               v-on="on" -->
-              <v-layout wrap row class="px-4 grey--text text--darken-1"
-                  @click="item.checkbox ? !item.checkbox : true">
-                  <v-icon color="grey darken-1">
-                    {{ selectedItem.findIndex(find => find.id == item.id) != -1 || item.checkbox == true ? 'check' : 'crop_square' }}
-                  </v-icon>
-                  <span class="caption font-weight-bold text-capitalize col-10 text-truncate">
-                    {{item.item_name}}
-                  </span>
-              </v-layout>
-            <!-- </template>
-            <span>{{item.item_name}}</span>
-          </v-tooltip> -->
+          <v-layout wrap row class="px-4 grey--text text--darken-1"
+              @click="item.checkbox ? !item.checkbox : true">
+              <v-icon color="grey darken-1">
+                {{ selectedItem.findIndex(find => find.id == item.id) != -1 || item.checkbox == true ? 'check' : 'crop_square' }}
+              </v-icon>
+              <span class="caption font-weight-bold text-capitalize col-10 text-truncate">
+                {{item.item_name}}
+              </span>
+          </v-layout>
         </v-card>
         
         <v-card v-else style="border-radius: 0;">

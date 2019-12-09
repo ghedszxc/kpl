@@ -51,7 +51,7 @@
             </template>
         </v-app-bar>
 
-        <v-app-bar app flat clipped-left class="green hidden-md-and-up" height="50">
+        <v-app-bar app flat clipped-left class="green hidden-md-and-up">
             <v-app-bar-nav-icon color="white" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
             <v-spacer></v-spacer>
             <v-toolbar-title class="black--text font-weight-light">

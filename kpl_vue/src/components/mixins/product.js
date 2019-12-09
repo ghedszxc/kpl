@@ -13,6 +13,9 @@ export default {
     category_id() {
       return this.$store.state.global.category_id;
     },
+    categoryList() {
+        return this.$store.state.global.categoryList;
+    }
     // brand_id() {
     //   return this.$store.state.global.brand_id;
     // }

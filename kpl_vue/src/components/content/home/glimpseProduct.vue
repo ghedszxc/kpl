@@ -44,11 +44,6 @@ export default {
       menu: false,
       checkbox: false,
     }),
-    computed: {
-        categoryList() {
-            return this.$store.state.global.categoryList;
-        }
-    },
     methods: {
         goTo(id){
             const self = this;
