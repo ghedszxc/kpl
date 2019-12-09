@@ -13,12 +13,12 @@
           <!-- <v-tooltip top>
             <template v-slot:activator="{ on }">
                v-on="on" -->
-              <v-layout wrap row class="px-4 py-1 grey--text text--darken-1"
+              <v-layout wrap row class="px-4 grey--text text--darken-1"
                   @click="item.checkbox ? !item.checkbox : true">
                   <v-icon color="grey darken-1">
                     {{ selectedItem.findIndex(find => find.id == item.id) != -1 || item.checkbox == true ? 'check' : 'crop_square' }}
                   </v-icon>
-                  <span class="font-weight-bold text-capitalize col-10 text-truncate">
+                  <span class="caption font-weight-bold text-capitalize col-10 text-truncate">
                     {{item.item_name}}
                   </span>
               </v-layout>
@@ -32,17 +32,10 @@
             height="150" class="text-left align-end px-1">
           </v-img>
 
-          <v-layout wrap row class="px-4 py-1 grey--text text--darken-1">
-            <v-flex class="px-4">
-              <v-layout wrap row>
-                <v-flex xs12 class="overline">
-                  {{item.item_name}}
-                </v-flex>
-                <v-flex xs12 style="font-size: 12px;" class="font-weight-light text-capitalize">
-                  {{item.item_description}}
-                </v-flex>
-              </v-layout>
-            </v-flex>
+          <v-layout wrap row class="px-3 grey--text text--darken-1">
+            <span class="caption font-weight-bold text-capitalize col-10 text-truncate">
+              {{item.item_name}}
+            </span>
           </v-layout>
         </v-card>
       </v-flex>

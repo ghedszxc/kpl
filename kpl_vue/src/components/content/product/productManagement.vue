@@ -37,7 +37,9 @@ export default {
     },
     mounted() {
         const self = this;
-        self.$store.dispatch('global/getProductList')
+        if (!self.productList) {
+            self.$store.dispatch('global/getProductList')
+        }
     },
     beforeDestroy(){
         const self = this;

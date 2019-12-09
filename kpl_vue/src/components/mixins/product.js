@@ -38,6 +38,10 @@ export default {
 
       // eslint-disable-next-line prettier/prettier
       self.$store.dispatch("global/getFilteredProductByCategory", data.id);
+
+      if (self.$route.path != "/product") {
+        self.$router.push("/product");
+      }
     },
     // onFilterByBrand(data) {
     //   const self = this;
