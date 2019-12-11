@@ -10,17 +10,17 @@
                     </v-list-item-title>
                 </v-list-item>
                 <div v-for="(item, index) in categoryList" :key="index">
-                    <v-menu open-on-hover right offset-x transition="scale-transition">
-                        <template v-slot:activator="{ on }">
-                            <v-list-item @click="onFilterByCategory(item)" v-on="on"
+                   <!-- <v-menu open-on-hover right offset-x transition="scale-transition">
+                        <template v-slot:activator="{ on }"> -->
+                            <v-list-item @click="onFilterByCategory(item)"
                                 style="border-bottom: 1px solid #E0E0E0;"
-                                :class="item.category_id == category_id ? 'grey lighten-2' : ''">
+                                :class="item.id == category_id ? 'grey lighten-2' : ''">
                                 <v-list-item-title class="caption">
-                                    <v-icon small>keyboard_arrow_right</v-icon>
+                                    <!-- <v-icon small>keyboard_arrow_right</v-icon> -->
                                     {{item.category_name}}
                                 </v-list-item-title>
                             </v-list-item>
-                        </template>
+                        <!-- </template>
 
                         <v-list dense>
                             <div v-for="(data, key) in item.brands" :key="key">
@@ -31,7 +31,7 @@
                                 <v-divider class="ml-4 mr-4"></v-divider>
                             </div>
                         </v-list>
-                    </v-menu>
+                    </v-menu> -->
                 </div>
             </v-list>
         </v-card>
@@ -44,11 +44,6 @@ export default {
       menu: false,
       checkbox: false,
     }),
-    computed: {
-        categoryList() {
-            return this.$store.state.global.categoryList;
-        }
-    },
     methods: {
         goTo(id){
             const self = this;
