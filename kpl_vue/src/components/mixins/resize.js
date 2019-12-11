@@ -1,6 +1,9 @@
 export default {
   data: () => ({
-    windowSize: ""
+    windowSize: {
+      x: '',
+      y: ''
+    }
   }),
   methods: {
     onResize() {

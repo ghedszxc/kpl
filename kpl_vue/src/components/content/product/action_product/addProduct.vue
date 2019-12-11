@@ -78,21 +78,14 @@ export default {
             console.log(self.form)
         },
         // onImageChange(e) {
-        //     // var fileReader = new FileReader()
-
-        //     // fileReader.readAsDataURL(e.target.files[0])
-
-        //     // fileReader.onload = (e) => {
-        //     //     this.owner_info = e.target.result
-        //     // }
-
+        //     var fileReader = new FileReader()
+        //     fileReader.readAsDataURL(e.target.files[0])
+        //     fileReader.onload = (e) => { this.owner_info = e.target.result }
         //     this.image = e.target.files[0].name
-        //     console.log("image: ", e.target.files[0].name)
-
         // },
         // onChangeImage(index){
         //     this.form[index].image_link = this.image;
-        // }
+        // },
         onImageChange(e) {
             let files = e.target.files || e.dataTransfer.files;
             if (!files.length)
