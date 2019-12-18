@@ -42,7 +42,7 @@
                             outlined dense>
                         </v-file-input> -->
                         <!-- <input type="file" v-on:change="onImageChange" @change="onChangeImage(index)"> -->
-                        <input type="file" v-on:change="onImageChange">
+                        <input type="file" ref="product" v-on:change="onImageChange">
                     </v-flex>
                 </v-layout>
                 <v-layout wrap>
@@ -75,17 +75,30 @@ export default {
         },
         addProudct(){
             const self = this;
-            console.log(self.form)
+            // let image = self.$refs.product[0].files[0];
+            let formData = new FormData();
+            formData.append("image",self.$refs.product[0].files[0]);
+            formData.append("name",self.form[0].name);
+            formData.append("description",self.form[0].description);
+            formData.append("category",self.form[0].category);
+            self.$http.post("api/upload",formData,{
+                headers: {
+						"Content-Type": "multipart/form-data"
+					},
+                progress: (progress) => {
+                        console.log(`progress: ${(progress.loaded / progress.total * 100).toFixed(2)}%`)
+                    }
+            }).then(response => {
+                console.log('response',response.data)
+                // self.$store.dispatch('show_snackbar',{
+                //     snackbar: true,
+                //     message: 'Image successfully added',
+                //     color: 'success',
+                // });
+                // self.dialog = false;
+            })
         },
-        // onImageChange(e) {
-        //     var fileReader = new FileReader()
-        //     fileReader.readAsDataURL(e.target.files[0])
-        //     fileReader.onload = (e) => { this.owner_info = e.target.result }
-        //     this.image = e.target.files[0].name
-        // },
-        // onChangeImage(index){
-        //     this.form[index].image_link = this.image;
-        // },
+        
         onImageChange(e) {
             let files = e.target.files || e.dataTransfer.files;
             if (!files.length)
