@@ -1,7 +1,7 @@
 <template>
     <div>
         <!-- THIS IS TO DISPLAY LARGE VIEW -->
-        <v-card flat class="px-3 transparent hidden-md-and-down" style="border-radius: 0;">
+        <v-card flat tile class="px-3 transparent hidden-md-and-down">
             <v-list dense class="transparent">
                 <v-list-item @click="onSelectProduct()">
                     <v-list-item-title>

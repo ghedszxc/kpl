@@ -2,8 +2,7 @@
   <div>
     <v-layout wrap row class="mt-1 mx-1">
       <v-flex xs12 sm6 md3 class="px-1 mt-2" v-for="(item, index) in productList.data" :key="index">
-        <v-card @click="addToInquire(item)" v-if="userForInquire"
-          style="border-radius: 0;">
+        <v-card tile @click="addToInquire(item)" v-if="userForInquire">
           <v-img
             src="http://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp"
             height="150" class="text-left align-end px-1"
@@ -20,7 +19,7 @@
           </v-layout>
         </v-card>
         
-        <v-card v-else style="border-radius: 0;">
+        <v-card v-else tile>
           <v-img src="http://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp"
             height="150" class="text-left align-end px-1">
           </v-img>

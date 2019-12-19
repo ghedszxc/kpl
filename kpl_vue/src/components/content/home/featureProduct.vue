@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-card flat style="border-radius: 0;">
+        <v-card flat tile>
             <v-carousel
                 cycle height="377"
                 hide-delimiter-background

@@ -1,6 +1,6 @@
 <template>
     <div class="animate_one">
-        <v-card flat style="border-radius: 0;">
+        <v-card flat tile>
             <v-layout wrap row class="px-3">
                 <!-- <v-flex xs12 class="grey lighten-4 ma-1">
                     <v-layout class="font-weight-bold text-uppercase subtitle-1 mt-1">

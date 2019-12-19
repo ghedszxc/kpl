@@ -34,7 +34,7 @@
                 </v-layout>
                 <v-card-actions>
                     <v-spacer></v-spacer>
-                    <v-btn class="primary" style="border-radius: 0;" text small
+                    <v-btn class="primary" tile text small
                         :loading="onLoad"
                         @click="sendInquire(selectedItem)">
                         Submit
@@ -79,8 +79,7 @@
                 </v-card-text>
                 <v-card-actions style="margin-top: -5%;">
                     <v-spacer></v-spacer>
-                    <v-btn text small class="green white--text mr-2"
-                        style="border-radius: 0;"
+                    <v-btn text small tile class="green white--text mr-2"
                         @click="onSubmit(form)">
                         Submit
                     </v-btn>

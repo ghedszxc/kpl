@@ -1,14 +1,14 @@
 <template>
     <div>
 
-        <v-card flat :class="$route.path == '/branch' ? 'animate_one' : ''" style="border-radius: 0;">
+        <v-card flat tile :class="$route.path == '/branch' ? 'animate_one' : ''">
             <v-card-text class="text-center py-12">
                 <span class="display-2 grey--text text--darken-3">OUR BRANCH</span>
             </v-card-text>
         </v-card>
         <v-layout wrap row class="mt-2">
             <v-flex xs12 sm6 class="px-1 py-1">
-                <v-card flat style="border-radius: 0;" class="text-center branch_one">
+                <v-card flat tile class="text-center branch_one">
                     <v-card-title>
                         <v-spacer></v-spacer>
                         <span class="headline font-weight-bold grey--text text--darken-1">
@@ -33,7 +33,7 @@
                 </v-card>
             </v-flex>
             <v-flex xs12 sm6 class="px-1 py-1">
-                <v-card flat style="border-radius: 0;" class="text-center branch_two">
+                <v-card flat tile class="text-center branch_two">
                     <v-card-title>
                         <v-spacer></v-spacer>
                         <span class="headline font-weight-bold grey--text text--darken-1">
