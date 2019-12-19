@@ -1,63 +1,54 @@
 <template>
-    <div>
+    <div v-resize="onResize">
+        <v-card flat tile :class="$route.path == '/branch' ? 'animate_one' : ''"
+            :style="{ 'height': (windowSize.y-140)+'px' }">
+            <v-card-title class="text-center py-12">
+                <v-spacer></v-spacer>
+                <span class="display-2 black--text">OUR BRANCH</span>
+                <v-spacer></v-spacer>
+            </v-card-title>
 
-        <v-card flat tile :class="$route.path == '/branch' ? 'animate_one' : ''">
-            <v-card-text class="text-center py-12">
-                <span class="display-2 grey--text text--darken-3">OUR BRANCH</span>
-            </v-card-text>
-        </v-card>
-        <v-layout wrap row class="mt-2">
-            <v-flex xs12 sm6 class="px-1 py-1">
-                <v-card flat tile class="text-center branch_one">
-                    <v-card-title>
-                        <v-spacer></v-spacer>
-                        <span class="headline font-weight-bold grey--text text--darken-1">
-                            QUIRINO, QUEZON CITY
-                        </span>
-                        <v-spacer></v-spacer>
-                    </v-card-title>
-                    <GmapMap style="width: 100%; height: 350px;"
-                        :center="{lat:14.6894942, lng:-238.972941}" :zoom="17" map-type-id="terrain"
-                        :options="googleMap">
-                        <gmap-marker :position="{lat:14.6894942, lng:-238.972941}">
-                        </gmap-marker>
-                    </GmapMap>
-                    <v-card-actions>
-                        <v-spacer></v-spacer>
-                        <span class="body-2 grey--text text--darken-2">
-                            <v-icon small>local_library</v-icon>
-                            536 Quirino Hwy, Novaliches, Quezon City, Metro Manila
-                        </span>
-                        <v-spacer></v-spacer>
-                    </v-card-actions>
-                </v-card>
-            </v-flex>
-            <v-flex xs12 sm6 class="px-1 py-1">
-                <v-card flat tile class="text-center branch_two">
-                    <v-card-title>
-                        <v-spacer></v-spacer>
-                        <span class="headline font-weight-bold grey--text text--darken-1">
-                            MARILAO, BULACAN
-                        </span>
-                        <v-spacer></v-spacer>
-                    </v-card-title>
-                    <GmapMap style="width: 100%; height: 350px;"
-                        :center="{lat:14.7907806, lng:120.9322321}" :zoom="18" map-type-id="terrain"
-                        :options="googleMap">
-                            <gmap-marker :position="{lat:14.7907806, lng:120.9322321}">
+            <v-layout wrap>
+                <v-flex xs12 sm6 class="px-4 py-1">
+                    <v-card flat tile class="branch_one">
+                        <GmapMap style="width: 100%; height: 350px;"
+                            :center="{lat:14.6894942, lng:-238.972941}" :zoom="17" map-type-id="terrain"
+                            :options="googleMap">
+                            <gmap-marker :position="{lat:14.6894942, lng:-238.972941}">
                             </gmap-marker>
-                    </GmapMap>
-                    <v-card-actions>
-                        <v-spacer></v-spacer>
-                        <span class="body-2 grey--text text--darken-2">
-                            <v-icon small>local_library</v-icon>
-                            281 MacArthur Highway, Bocaue, 3018 Bulacan
-                        </span>
-                        <v-spacer></v-spacer>
-                    </v-card-actions>
-                </v-card>
-            </v-flex>
-        </v-layout>
+                        </GmapMap>
+                        <v-layout wrap class="px-4 pt-2">
+                            <v-flex xs12 class="body-1 font-weight-bold">
+                                QUIRINO, QUEZON CITY
+                            </v-flex>
+                            <v-flex xs12 class="body-2 font-weight-light">
+                                <v-icon small>local_library</v-icon>
+                                536 Quirino Hwy, Novaliches, Quezon City, Metro Manila
+                            </v-flex>
+                        </v-layout>
+                    </v-card>
+                </v-flex>
+                <v-flex xs12 sm6 class="px-4 py-1">
+                    <v-card flat tile class="branch_two">
+                        <GmapMap style="width: 100%; height: 350px;"
+                            :center="{lat:14.7907806, lng:120.9322321}" :zoom="18" map-type-id="terrain"
+                            :options="googleMap">
+                                <gmap-marker :position="{lat:14.7907806, lng:120.9322321}">
+                                </gmap-marker>
+                        </GmapMap>
+                        <v-layout wrap class="px-4 pt-2">
+                            <v-flex xs12 class="body-1 font-weight-bold">
+                                MARILAO, BULACAN
+                            </v-flex>
+                            <v-flex xs12 class="body-2 font-weight-light">
+                                <v-icon small>local_library</v-icon>
+                                281 MacArthur Highway, Bocaue, 3018 Bulacan
+                            </v-flex>
+                        </v-layout>
+                    </v-card>
+                </v-flex>
+            </v-layout>
+        </v-card>
     </div>
 </template>
 <script>

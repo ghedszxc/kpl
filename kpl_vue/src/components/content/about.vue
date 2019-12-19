@@ -1,7 +1,7 @@
 <template>
     <div v-resize="onResize">
         <div class="text-center">
-            <v-parallax :class="$route.path == '/about' ? 'about_one' : ''" height="400" src="http://www.collab2.co.za/wp-content/uploads/2017/06/contact-us-background.jpg">
+            <v-parallax :class="$route.path == '/about' ? 'about_top' : ''" height="400" src="http://www.collab2.co.za/wp-content/uploads/2017/06/contact-us-background.jpg">
                 <v-container fluid align="center" justify="center">
                     <v-card flat style="background: rgba(0, 0, 0, 0.3); border-radius: 0; padding: 5%;">
                         <span class="display-2 white--text">ABOUT US</span>
@@ -22,6 +22,71 @@
             </v-parallax>
         </div>
         <div  v-if="$route.path == '/about'">
+
+            <!-- MEET THE TEAM -->
+            <v-card flat tile class="my-3 px-3">
+                <v-layout wrap>
+                    <v-flex xs12 class="text-center mt-4 about_top">
+                        <span class="display-2">
+                            Meet our Team
+                        </span>
+                    </v-flex>
+                    <v-flex xs12 sm4 class="px-2 my-3 about_left">
+                        <v-card flat style="border-radius: 0; height: 100%;">
+                            <v-img src="../../../public/team/romy.jpg" height="250" width="100%"
+                                aspect-ratio="1">
+                            </v-img>
+                            <v-card-text>
+                                <div class="headline font-weight-black black--text mt-2" style="margin-bottom: -5px;">
+                                    Romy Galang
+                                </div>
+                                <div class="subtitle-2 font-weight-medium grey--text text--darken-4">
+                                    Proprietor
+                                </div>
+                                <div class="subtitle-2 font-weight-light grey--text text--darken-4">
+                                    (02) 286-3632 / 0917 624 4069
+                                </div>
+                            </v-card-text>
+                        </v-card>
+                    </v-flex>
+                    <v-flex xs12 sm4 class="px-2 my-3 about_bottom">
+                        <v-card flat style="border-radius: 0; height: 100%;">
+                            <v-img src="../../../public/team/liza.jpg" height="250" width="100%"
+                                aspect-ratio="1">
+                            </v-img>
+                            <v-card-text>
+                                <div class="headline font-weight-black black--text mt-2" style="margin-bottom: -5px;">
+                                    Liza Manuel
+                                </div>
+                                <div class="subtitle-2 font-weight-medium grey--text text--darken-4">
+                                    Marketing Coordinator
+                                </div>
+                                <div class="subtitle-2 font-weight-light grey--text text--darken-4">
+                                    (02) 952-4265 / 0942 464 3933
+                                </div>
+                            </v-card-text>
+                        </v-card>
+                    </v-flex>
+                    <v-flex xs12 sm4 class="px-2 my-3 about_right">
+                        <v-card flat style="border-radius: 0; height: 100%;">
+                            <v-img src="../../../public/team/jenny.jpg" height="250" width="100%"
+                                aspect-ratio="1">
+                            </v-img>
+                            <v-card-text>
+                                <div class="headline font-weight-black black--text mt-2" style="margin-bottom: -5px;">
+                                    Jenny Ann Valenzuela
+                                </div>
+                                <div class="subtitle-2 font-weight-medium grey--text text--darken-4">
+                                    Secretary
+                                </div>
+                                <div class="subtitle-2 font-weight-light grey--text text--darken-4">
+                                    0915 975 2532 / 0920 541 4800
+                                </div>
+                            </v-card-text>
+                        </v-card>
+                    </v-flex>
+                </v-layout>
+            </v-card>
             <v-layout wrap class="text-center my-3">
                 <v-flex xs12 class="about_left">
                     <v-card tile flat class="pa-4">
@@ -107,29 +172,6 @@
                     </v-card>
                 </v-flex>
             </v-layout>
-            <v-card flat tile class="my-3 px-3">
-                <v-layout wrap>
-                    <v-flex xs12 sm4 class="px-2 mt-3" style="height: 240px;">
-                        <v-card flat style="border-radius: 0; height: 100%;">
-                            <v-card-title>
-                                <v-spacer></v-spacer>
-                                <v-icon style="font-size: 80px;" color="green">
-                                    
-                                </v-icon>
-                                <v-spacer></v-spacer>
-                            </v-card-title>
-                            <v-card-text class="text-center">
-                                <span class="display-1 font-weight-medium">
-                                    
-                                </span><br>
-                                <span class="subtitle-2 font-weight-light grey--text">
-                                    
-                                </span>
-                            </v-card-text>
-                        </v-card>
-                    </v-flex>
-                </v-layout>
-            </v-card>
         </div>
     </div>
 </template>
@@ -158,6 +200,10 @@ export default {
     0% { opacity: 0; transform: translateY(-20px); }
     100% { opacity: 1; transform: translateY(0); }
   }
+  @keyframes fadeInBottom {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
 
   @keyframes fadeInLeft {
     0% { opacity: 0; transform: translateX(-20px); }
@@ -168,7 +214,7 @@ export default {
     100% { opacity: 1; transform: translateX(0); }
   }
   
-  .about_one {
+  .about_top {
     animation-name: fadeInTop;
     background-position: bottom top;
     animation-duration: 2s;
@@ -180,6 +226,11 @@ export default {
   } 
   .about_right {
     animation-name: fadeInRight;
+    background-position: bottom top;
+    animation-duration: 2s;
+  } 
+  .about_bottom {
+    animation-name: fadeInBottom;
     background-position: bottom top;
     animation-duration: 2s;
   } 
