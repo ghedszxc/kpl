@@ -70,33 +70,37 @@ export default {
     }),
     methods: {
         addRow(){
+
             const self = this;
-            self.form.push({ name: '', description: '', category: '', image_link: '' })
+            self.form.push({ name: '', description: '', category: '', image_link: '', image: '' })
         },
         addProudct(){
             const self = this;
-            // let image = self.$refs.product[0].files[0];
-            let formData = new FormData();
-            formData.append("image",self.$refs.product[0].files[0]);
-            formData.append("name",self.form[0].name);
-            formData.append("description",self.form[0].description);
-            formData.append("category",self.form[0].category);
-            self.$http.post("api/upload",formData,{
-                headers: {
-						"Content-Type": "multipart/form-data"
-					},
-                progress: (progress) => {
-                        console.log(`progress: ${(progress.loaded / progress.total * 100).toFixed(2)}%`)
-                    }
-            }).then(response => {
-                console.log('response',response.data)
-                // self.$store.dispatch('show_snackbar',{
-                //     snackbar: true,
-                //     message: 'Image successfully added',
-                //     color: 'success',
-                // });
-                // self.dialog = false;
-            })
+            self.form.forEach((element,index) => {
+                let formData = new FormData();
+                formData.append("image",self.$refs.product[index].files[0]);
+                formData.append("name",self.form[index].name);
+                formData.append("description",self.form[index].description);
+                formData.append("category",self.form[index].category);
+                // multiform.push(formData)
+                self.$http.post("api/upload", formData, {
+                    headers: {
+                            "Content-Type": "multipart/form-data"
+                        },
+                    progress: (progress) => {
+                            console.log(`progress: ${(progress.loaded / progress.total * 100).toFixed(2)}%`)
+                        }
+                }).then(response => {
+                    console.log("response", response.data)
+                    // self.$store.dispatch('show_snackbar',{
+                    //     snackbar: true,
+                    //     message: 'Image successfully added',
+                    //     color: 'success',
+                    // });
+                    // self.dialog = false;
+                })
+
+            });
         },
         
         onImageChange(e) {

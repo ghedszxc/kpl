@@ -20,6 +20,7 @@ Vue.use(VueGoogleMaps, {
   }
 });
 Vue.http.options.root = "http://localhost:8000";
+// Vue.http.options.root = "http://kpllaravel.webstarterz.com";
 
 Vue.mixin(resizing);
 Vue.mixin(product);
