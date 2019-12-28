@@ -12,7 +12,7 @@
                 <v-flex xs12 sm6 :class="windowSize.y <= 736 ? 'px-4 pb-4' : 'px-4'">
                     <v-card flat tile class="branch_one">
                         <GmapMap style="width: 100%; height: 350px;"
-                            :center="{lat:14.6894942, lng:-238.972941}" :zoom="17" map-type-id="terrain"
+                            :center="{lat:14.6894942, lng:-238.972941}" :zoom="18" map-type-id="terrain"
                             :options="googleMap">
                             <gmap-marker :position="{lat:14.6894942, lng:-238.972941}">
                             </gmap-marker>
