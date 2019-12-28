@@ -6,8 +6,8 @@
             <v-layout>
                 <v-flex xs12 class="text-start pl-2">
                     <v-toolbar-title class="main_font hidden-sm-and-down">
-                        <img src="../../../public/home/kpl_logo_1.png"
-                        alt="kpl" class="mt-2 mr-2" style="height: 40px;">
+                        <img src="../../../public/home/final_kpl.png"
+                        alt="kpl" class="mt-2 mr-2" style="height: 60px;">
                     </v-toolbar-title>
                 </v-flex>
                 <v-flex xs12 class="text-end mt-1">
@@ -16,21 +16,14 @@
                             <span class="caption font-weight-bold white--text"
                                 style="cursor: default;">
                                 <v-icon style="font-size: 15px;" color="white" class="mr-1">phone</v-icon>
-                                <span class="font-weight-light white--text"> (+632) 286 3632</span>
+                                <span class="font-weight-light white--text"> (02) 9852 4265 | (02) 8294 4050</span>
                             </span>
                         </v-flex>
                         <v-flex xs12 style="margin-top: -1%;">
                             <span class="caption font-weight-bold white--text"
                                 style="cursor: default;">
                                 <v-icon style="font-size: 15px;" color="white" class="mr-1">phone_android</v-icon>
-                                <span class="font-weight-light white--text"> (+639) 1597 52532</span>
-                            </span>
-                        </v-flex>
-                        <v-flex xs12 style="margin-top: -1%;">
-                            <span class="caption font-weight-bold white--text"
-                                style="cursor: default;">
-                                <v-icon style="font-size: 15px;" color="white" class="mr-1">print</v-icon>
-                                <span class="font-weight-light white--text"> (+632) 952 4265</span>
+                                <span class="font-weight-light white--text"> (+639) 1597 52532 | (+639) 2054 14800</span>
                             </span>
                         </v-flex>
                         <v-flex xs12 style="margin-top: -1%;">
