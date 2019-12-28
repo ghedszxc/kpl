@@ -16,14 +16,21 @@
                             <span class="caption font-weight-bold white--text"
                                 style="cursor: default;">
                                 <v-icon style="font-size: 15px;" color="white" class="mr-1">phone</v-icon>
-                                <span class="font-weight-light white--text"> (02) 8952 4265</span>
+                                <span class="font-weight-light white--text"> (+639) 286 3632</span>
                             </span>
                         </v-flex>
                         <v-flex xs12 style="margin-top: -1%;">
                             <span class="caption font-weight-bold white--text"
                                 style="cursor: default;">
-                                <v-icon style="font-size: 15px;" color="white" class="mr-1">phone</v-icon>
-                                <span class="font-weight-light white--text"> +639 9456 484236</span>
+                                <v-icon style="font-size: 15px;" color="white" class="mr-1">phone_android</v-icon>
+                                <span class="font-weight-light white--text"> +639 1597 52532</span>
+                            </span>
+                        </v-flex>
+                        <v-flex xs12 style="margin-top: -1%;">
+                            <span class="caption font-weight-bold white--text"
+                                style="cursor: default;">
+                                <v-icon style="font-size: 15px;" color="white" class="mr-1">print</v-icon>
+                                <span class="font-weight-light white--text"> +632 952 4265</span>
                             </span>
                         </v-flex>
                         <v-flex xs12 style="margin-top: -1%;">
