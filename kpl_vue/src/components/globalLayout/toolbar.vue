@@ -55,8 +55,8 @@
             <v-app-bar-nav-icon color="white" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
             <v-spacer></v-spacer>
             <v-toolbar-title class="black--text font-weight-light">
-                <img src="../../../public/home/kpl_logo_1.png"
-                alt="kpl" class="mt-2 " style="height: 40px;">
+                <img src="../../../public/home/final_kpl.png"
+                alt="kpl" class="mt-2 " style="height: 45px;">
             </v-toolbar-title>
         </v-app-bar>
 
