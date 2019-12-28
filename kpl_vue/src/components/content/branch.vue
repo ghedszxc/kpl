@@ -21,8 +21,8 @@
                             <v-flex xs12 class="headline font-weight-black">
                                 QUIRINO, QUEZON CITY
                             </v-flex>
-                            <v-flex xs12 class="subtitle-1 font-weight-medium grey--text text--darken-4">
-                                <v-icon small color="grey darken-4" class="mb-1">local_library</v-icon>
+                            <v-flex xs12 class="subtitle-1 font-weight-medium grey--text text--darken-4 text-truncate">
+                                <v-icon small color="grey darken-4" class="mb-1">navigation</v-icon>
                                 536 Quirino Hwy, Novaliches, Quezon City, Metro Manila
                             </v-flex>
                         </v-layout>
@@ -40,8 +40,8 @@
                             <v-flex xs12 class="headline font-weight-black">
                                 MARILAO, BULACAN
                             </v-flex>
-                            <v-flex xs12 class="subtitle-1 font-weight-medium grey--text text--darken-4">
-                                <v-icon small color="grey darken-4" class="mb-1">local_library</v-icon>
+                            <v-flex xs12 class="subtitle-1 font-weight-medium grey--text text--darken-4 text-truncate">
+                                <v-icon small color="grey darken-4" class="mb-1">navigation</v-icon>
                                 281 MacArthur Highway, Bocaue, 3018 Bulacan
                             </v-flex>
                         </v-layout>

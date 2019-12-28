@@ -22,14 +22,14 @@
                         <v-flex xs12 style="margin-top: -1%;">
                             <span class="caption font-weight-bold white--text"
                                 style="cursor: default;">
-                                <v-icon style="font-size: 15px;" color="white" class="mr-1">phone_android</v-icon>
+                                <v-icon style="font-size: 15px;" color="white" class="mr-1">phone_iphone</v-icon>
                                 <span class="font-weight-light white--text"> (+639) 1597 52532 | (+639) 2054 14800</span>
                             </span>
                         </v-flex>
                         <v-flex xs12 style="margin-top: -1%;">
                             <span class="caption font-weight-light white--text"
                                 style="cursor: default;">
-                                <v-icon style="font-size: 15px;" color="white" class="mr-1">local_library</v-icon>
+                                <v-icon style="font-size: 15px;" color="white" class="mr-1">navigation</v-icon>
                                 536 Quirino Hwy, Novaliches, Quezon City, Metro Manila
                             </span>
                         </v-flex>
