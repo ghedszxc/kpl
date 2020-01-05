@@ -83,7 +83,7 @@ export default {
                 formData.append("description",self.form[index].description);
                 formData.append("category",self.form[index].category);
                 // multiform.push(formData)
-                self.$http.post("api/upload", formData, {
+                self.$http.post("api/item", formData, {
                     headers: {
                             "Content-Type": "multipart/form-data"
                         },

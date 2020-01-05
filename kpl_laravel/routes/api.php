@@ -31,6 +31,6 @@ Route::get('redis',function(){
 
 
 Route::resource("upload","ImageController");
-Route::get('image',function(){
-    return response()->file(storage_path('/app/public/hydax-items-full-range-500x500.jpeg'));
+Route::get('image/{id}',function($id){
+    return response()->file("storage/products/$id");
 });
