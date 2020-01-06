@@ -6,7 +6,7 @@
             </v-card-title>
             <v-card-text>
                 <v-layout wrap v-for="(item, index) in form" :key="index">
-                    <v-flex xs12 sm3>
+                    <v-flex xs4>
                         <v-text-field
                             label="Item Name"
                             v-model="item.name"
@@ -14,7 +14,7 @@
                             outlined dense>
                         </v-text-field>
                     </v-flex>
-                    <v-flex xs12 sm3>
+                    <v-flex xs4>
                         <v-text-field
                             label="Description"
                             v-model="item.description"
@@ -22,26 +22,7 @@
                             outlined dense>
                         </v-text-field>
                     </v-flex>
-                    <v-flex xs12 sm3>
-                        <v-select
-                            label="Category"
-                            v-model="item.category"
-
-                            :items="categoryList"
-                            item-text="category_name"
-                            item-value="id"
-                            
-                            outlined dense>
-                        </v-select>
-                    </v-flex>
-                    <v-flex xs12 sm3>
-                        <!-- @change="onFilePicked" -->
-                        <!-- <v-file-input
-                            label="Image"
-                            v-on:change="onImageChange"
-                            outlined dense>
-                        </v-file-input> -->
-                        <!-- <input type="file" v-on:change="onImageChange" @change="onChangeImage(index)"> -->
+                    <v-flex xs4>
                         <input type="file" ref="product" v-on:change="onImageChange">
                     </v-flex>
                 </v-layout>
