@@ -38,7 +38,7 @@ class ItemController extends Controller
     public function store(Request $request)
     {
         //
-        $image_directory = "storage/products/";
+        $image_directory = storage_path('app')."/public/products/";
         $image = $request->file('image');
         $filename = md5($image->getClientOriginalName());
         $image_extension = $image->getClientOriginalExtension();

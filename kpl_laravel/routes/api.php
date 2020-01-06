@@ -32,5 +32,5 @@ Route::get('redis',function(){
 
 Route::resource("upload","ImageController");
 Route::get('image/{id}',function($id){
-    return response()->file("storage/products/$id");
+    return response()->file(storage_path('app')."/public/products/$id");
 });
