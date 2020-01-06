@@ -9,7 +9,7 @@
             @click="item.checkbox ? !item.checkbox : true">
           </v-img> -->
           <v-img
-            :src="item.item_image? $http.options.root+'/api/image/'+item.item_image : 'http://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp'"
+            :src="item.item_image? url+'/api/image/'+item.item_image : 'http://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp'"
             height="150" class="text-left align-end px-1"
             @click="item.checkbox ? !item.checkbox : true">
           </v-img>
@@ -28,7 +28,7 @@
           <!-- <v-img src="http://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp"
             height="150" class="text-left align-end px-1">
           </v-img> -->
-          <v-img :src="item.item_image? $http.options.root+'/api/image/'+item.item_image : 'http://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp'"
+          <v-img :src="item.item_image? url+'/api/image/'+item.item_image : 'http://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp'"
             height="150" class="text-left align-end px-1">
           </v-img>
 
@@ -62,6 +62,9 @@ export default {
     // PARA MALAMAN KUNG MAG IINQUIRE BA O HINDI
     userForInquire() {
       return this.$store.state.inquire.userForInquire;
+    },
+    url(){
+      return this.$http.options.root
     }
   },
   methods: {
