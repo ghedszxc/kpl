@@ -11,7 +11,7 @@
     <span style="font-size: 18px;"> Inquired item:</span>
     <ol>
     @foreach ($checkbox as $item)
-        <li style="font-size: 18px;">{{$item['item_name']}} - {{$item['item_description']}}</li>
+        <li style="font-size: 18px;">{{$item['item_name']}}</li>
     @endforeach
     </ol>
 </div>

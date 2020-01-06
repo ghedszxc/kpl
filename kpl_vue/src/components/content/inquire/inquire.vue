@@ -138,14 +138,14 @@ export default {
             self.form.checkbox = data
             self.$http.post('api/inquire', self.form).then(response => {
                 console.log('send email', response.body)
-
-                self.$store.dispatch('global/removeAllCheckboxInProductList')
-                
                 self.onLoad = false;
                 self.$store.dispatch('inquire/showSnackbar',{
                     snackbar: true, timeout: 3000, color: 'success', y: 'top',
                     message: `Email Sent!`
                 })
+
+                self.$store.dispatch('global/removeAllCheckboxInProductList')
+                
 
                 
             });
