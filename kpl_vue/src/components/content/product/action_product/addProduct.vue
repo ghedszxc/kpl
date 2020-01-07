@@ -15,12 +15,16 @@
                         </v-text-field>
                     </v-flex>
                     <v-flex xs4>
-                        <v-text-field
-                            label="Description"
-                            v-model="item.description"
+                        <v-select
+                            label="Category"
+                            v-model="item.category"
+
+                            :items="categoryList"
+                            item-text="category_name"
+                            item-value="id"
                             
                             outlined dense>
-                        </v-text-field>
+                        </v-select>
                     </v-flex>
                     <v-flex xs4>
                         <input type="file" ref="product" v-on:change="onImageChange">
@@ -43,7 +47,6 @@ export default {
     data:() => ({
         form: [{
             name: '',
-            description: '',
             category: '',
             image_link: ''
         }],
@@ -53,7 +56,7 @@ export default {
         addRow(){
 
             const self = this;
-            self.form.push({ name: '', description: '', category: '', image_link: '', image: '' })
+            self.form.push({ name: '', category: '', image_link: '', image: '' })
         },
         addProudct(){
             const self = this;
@@ -61,7 +64,7 @@ export default {
                 let formData = new FormData();
                 formData.append("image",self.$refs.product[index].files[0]);
                 formData.append("name",self.form[index].name);
-                formData.append("description",self.form[index].description);
+                // formData.append("description",self.form[index].description);
                 formData.append("category",self.form[index].category);
                 // multiform.push(formData)
                 self.$http.post("api/item", formData, {
