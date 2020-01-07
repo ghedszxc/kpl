@@ -22,6 +22,8 @@ Route::resource("inquire","InquireController");
 
 Route::resource("item","ItemController");
 Route::get('item/filterByBrand/{id}','ItemController@filterByBrand');
+Route::get('item/getItemsForAdmin','ItemController@getItemsForAdmin');
+
 Route::resource("catergory","CategoryController");
 
 

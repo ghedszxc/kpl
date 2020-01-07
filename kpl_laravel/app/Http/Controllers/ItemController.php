@@ -18,6 +18,11 @@ class ItemController extends Controller
             'items.item_name', 'items.created_at as checkbox')
             ->paginate(20);
     }
+    
+    public function getItemsForAdmin()
+    {
+        return Item::select('items.id', 'items.category_id', 'items.item_image', 'items.item_name')->get();
+    }
 
     /**
      * Show the form for creating a new resource.

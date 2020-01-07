@@ -62,7 +62,6 @@ export default {
     }),
     methods: {
         addRow(){
-
             const self = this;
             self.form.push({ name: '', category: '', image_link: '', image: '' })
         },
@@ -72,49 +71,17 @@ export default {
                 let formData = new FormData();
                 formData.append("image",self.$refs.product[index].files[0]);
                 formData.append("name",self.form[index].name);
-                // formData.append("description",self.form[index].description);
                 formData.append("category",self.form[index].category);
+
                 // multiform.push(formData)
-                self.$http.post("api/item", formData, {
-                    headers: {
-                            "Content-Type": "multipart/form-data"
-                        },
-                    progress: (progress) => {
-                            console.log(`progress: ${(progress.loaded / progress.total * 100).toFixed(2)}%`)
-                        }
-                }).then(response => {
-                    console.log("response", response.data)
-                    // self.$store.dispatch('show_snackbar',{
-                    //     snackbar: true,
-                    //     message: 'Image successfully added',
-                    //     color: 'success',
-                    // });
-                    // self.dialog = false;
+                self.$http.post("api/item", formData, { headers: { "Content-Type": "multipart/form-data" },
+                    progress: (progress) => { console.log(`progress: ${(progress.loaded / progress.total * 100).toFixed(2)}%`) }
                 })
 
             });
             self.addProductDialog = false;
-            self.form = [{
-                name: '',
-                category: '',
-                image_link: ''
-            }]
-        },
-        
-        onImageChange(e) {
-            let files = e.target.files || e.dataTransfer.files;
-            if (!files.length)
-                return;
-            this.createImage(files[0]);
-        },
-        createImage(file) {
-            let reader = new FileReader();
-            let vm = this;
-            reader.onload = (e) => {
-                vm.image = e.target.result;
-            };
-            reader.readAsDataURL(file);
-        },
-    }
+            self.form = [{ name: '', category: '', image_link: '' }]
+        }
+    },
 }
 </script>
