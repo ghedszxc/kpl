@@ -11,8 +11,8 @@
                                 </v-img>
                             </v-list-item-avatar>
                             <v-list-item-content>
-                                <v-list-item-title class="headline">Headline 1</v-list-item-title>
-                                <v-list-item-subtitle class="overline">Greyhound divisely fonwderfully</v-list-item-subtitle>
+                                <v-list-item-title class="headline">Portable Fuel Dispenser</v-list-item-title>
+                                <v-list-item-subtitle class="overline">Eaglestar brand, single hose fuel dispenser, convenient to use anywhere</v-list-item-subtitle>
                             </v-list-item-content>
                         </v-list-item>
                     </v-card>
@@ -28,8 +28,8 @@
                                 </v-img>
                             </v-list-item-avatar>
                             <v-list-item-content>
-                                <v-list-item-title class="headline">Headline 2</v-list-item-title>
-                                <v-list-item-subtitle class="overline">Perdiet, felis eu hendrerit pretium</v-list-item-subtitle>
+                                <v-list-item-title class="headline">Six Hoses Fuel Dispenser</v-list-item-title>
+                                <v-list-item-subtitle class="overline">Eaglestar brand, six hoses fuel dispenser, cheapest and high-quality dispenser for gas stations</v-list-item-subtitle>
                             </v-list-item-content>
                         </v-list-item>
                     </v-card>
@@ -45,8 +45,8 @@
                                 </v-img>
                             </v-list-item-avatar>
                             <v-list-item-content>
-                                <v-list-item-title class="headline">Headline 3</v-list-item-title>
-                                <v-list-item-subtitle class="overline">Imperdiet pretium, sapien mauri</v-list-item-subtitle>
+                                <v-list-item-title class="headline">Dual Hose Fuel Dispenser</v-list-item-title>
+                                <v-list-item-subtitle class="overline">Eaglestar brand, dual hose fuel dispenser, cheapest and high-quality dispenser for gas stations</v-list-item-subtitle>
                             </v-list-item-content>
                         </v-list-item>
                     </v-card>
@@ -62,8 +62,8 @@
                                 </v-img>
                             </v-list-item-avatar>
                             <v-list-item-content>
-                                <v-list-item-title class="headline">Headline 4</v-list-item-title>
-                                <v-list-item-subtitle class="overline">Sapien mauri eu hendrerit</v-list-item-subtitle>
+                                <v-list-item-title class="headline">Hydraulic Hoses with Fittings</v-list-item-title>
+                                <v-list-item-subtitle class="overline">ready-to-use assembled hoses with fittings, high-quality brands and durable fittings</v-list-item-subtitle>
                             </v-list-item-content>
                         </v-list-item>
                     </v-card>
@@ -79,8 +79,8 @@
                                 </v-img>
                             </v-list-item-avatar>
                             <v-list-item-content>
-                                <v-list-item-title class="headline">Headline 5</v-list-item-title>
-                                <v-list-item-subtitle class="overline">Sapien mauri hendrerit</v-list-item-subtitle>
+                                <v-list-item-title class="headline">Kolor Kut Product Gauging Paste</v-list-item-title>
+                                <v-list-item-subtitle class="overline">Kolor Kut brand, gasoline gauging paste, used to measure the amount of product available in your tank</v-list-item-subtitle>
                             </v-list-item-content>
                         </v-list-item>
                     </v-card>
@@ -96,8 +96,8 @@
                                 </v-img>
                             </v-list-item-avatar>
                             <v-list-item-content>
-                                <v-list-item-title class="headline">Headline 6</v-list-item-title>
-                                <v-list-item-subtitle class="overline">Sapien hendrerit eu</v-list-item-subtitle>
+                                <v-list-item-title class="headline">Kolor Kut Water Finding Paste</v-list-item-title>
+                                <v-list-item-subtitle class="overline">Kolor Kut brand, water finding paste, used to measure the amount of water available in your tank</v-list-item-subtitle>
                             </v-list-item-content>
                         </v-list-item>
                     </v-card>
@@ -113,8 +113,8 @@
                                 </v-img>
                             </v-list-item-avatar>
                             <v-list-item-content>
-                                <v-list-item-title class="headline">Headline 6</v-list-item-title>
-                                <v-list-item-subtitle class="overline">Sapien hendrerit eu</v-list-item-subtitle>
+                                <v-list-item-title class="headline">Pneumatic and Hydraulic Fittings with Adaptors</v-list-item-title>
+                                <v-list-item-subtitle class="overline">Durable and high-quality fttings and adaptors, affordable price, available in various sizes and types</v-list-item-subtitle>
                             </v-list-item-content>
                         </v-list-item>
                     </v-card>
@@ -130,8 +130,8 @@
                                 </v-img>
                             </v-list-item-avatar>
                             <v-list-item-content>
-                                <v-list-item-title class="headline">Headline 6</v-list-item-title>
-                                <v-list-item-subtitle class="overline">Sapien hendrerit eu</v-list-item-subtitle>
+                                <v-list-item-title class="headline">Calibrating Bucket with DOST Certificate</v-list-item-title>
+                                <v-list-item-subtitle class="overline">galvanized calibrating bucket, 10 liters capacity,  with DOST certificate and conversion table</v-list-item-subtitle>
                             </v-list-item-content>
                         </v-list-item>
                     </v-card>
