@@ -23,7 +23,7 @@
                             </v-flex>
                             <v-flex xs12 class="subtitle-1 font-weight-medium grey--text text--darken-4 text-truncate">
                                 <v-icon small color="grey darken-4" class="mb-1">navigation</v-icon>
-                                536 Quirino Hwy, Novaliches, Quezon City, Metro Manila
+                                #536 Quirino Highway Brgy. Talipapa Novaliches, Quezon City
                             </v-flex>
                         </v-layout>
                     </v-card>
@@ -42,7 +42,7 @@
                             </v-flex>
                             <v-flex xs12 class="subtitle-1 font-weight-medium grey--text text--darken-4 text-truncate">
                                 <v-icon small color="grey darken-4" class="mb-1">navigation</v-icon>
-                                281 MacArthur Highway, Bocaue, 3018 Bulacan
+                                281 MacArthur Highway 1st Binang Bocaue bulacan
                             </v-flex>
                         </v-layout>
                     </v-card>

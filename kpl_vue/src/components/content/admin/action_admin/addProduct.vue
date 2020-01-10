@@ -6,13 +6,16 @@
                 <v-card-title>
                     <span>Add Product</span>
                     <v-spacer></v-spacer>
+                    <v-btn icon @click="addRow()">
+                        <v-icon color="primary">add</v-icon>
+                    </v-btn>
                     <v-btn icon @click="addProductDialog = false">
-                        <v-icon>close</v-icon>
+                        <v-icon color="black">close</v-icon>
                     </v-btn>
                 </v-card-title>
                 <v-card-text>
                     <v-layout wrap v-for="(item, index) in form" :key="index">
-                        <v-flex xs4>
+                        <v-flex xs4 class="px-1">
                             <v-text-field
                                 label="Item Name"
                                 v-model="item.name"
@@ -20,7 +23,7 @@
                                 outlined dense>
                             </v-text-field>
                         </v-flex>
-                        <v-flex xs4>
+                        <v-flex xs4 class="px-1">
                             <v-select
                                 label="Category"
                                 v-model="item.category"
@@ -32,19 +35,15 @@
                                 outlined dense>
                             </v-select>
                         </v-flex>
-                        <v-flex xs4>
-                            <input type="file" ref="product" v-on:change="onImageChange">
-                        </v-flex>
-                    </v-layout>
-                    <v-layout wrap>
-                        <v-flex xs12>
-                            <v-btn class="primary" @click="addRow()">Add Item</v-btn>
-                        </v-flex>
-                        <v-flex xs12>
-                            <v-btn class="success" @click="addProudct()">Submit</v-btn>
+                        <v-flex xs4 class="px-1">
+                            <input type="file" ref="product">
                         </v-flex>
                     </v-layout>
                 </v-card-text>
+                <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn class="success" @click="addProudct()">Submit</v-btn>
+                </v-card-actions>
             </v-card>
         </v-dialog>
     </div>
@@ -56,9 +55,10 @@ export default {
         form: [{
             name: '',
             category: '',
-            image_link: ''
+            image_link: '',
+            image: ''
         }],
-        image: ''
+        
     }),
     methods: {
         addRow(){
@@ -80,7 +80,7 @@ export default {
 
             });
             self.addProductDialog = false;
-            self.form = [{ name: '', category: '', image_link: '' }]
+            self.form = [{ name: '', category: '', image_link: '', image: '' }]
         }
     },
 }
