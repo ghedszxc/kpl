@@ -11,7 +11,7 @@
                     </v-flex>
                     <v-flex xs12 class="px-2 my-3 about_left">
                         <v-card flat style="border-radius: 0; height: 100%;">
-                            <v-img src="../../../public/team/our_team.jpg" height="430" width="100%"
+                            <v-img src="../../../public/team/our_team.jpg" :height="windowSize.x <= '500' ? 250 : 430" width="100%"
                                 aspect-ratio="1">
                             </v-img>
                         </v-card>
