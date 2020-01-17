@@ -2,7 +2,7 @@
   <div>
     <v-card flat tile>
       <v-carousel
-        cycle height="377"
+        cycle height="408"
         hide-delimiter-background
         show-arrows-on-hover>
         <v-carousel-item>
