@@ -79,7 +79,7 @@
                             </v-textarea>
                         </v-flex>
                         <v-flex xs12 class="px-2">
-                            <v-btn text tile class="success" @click="onSubmit()">
+                            <v-btn text tile class="success" @click="onSubmit(form)">
                                 Send Message
                             </v-btn>
                         </v-flex>
@@ -110,13 +110,15 @@ export default {
             const self = this;
             self.contact_dialog = true;
         },
-        onSubmit(){
+        onSubmit(form){
             const self = this;
 
             self.$validator.validateAll('add')
                 .then(result => {
                 if (result) {
-                    console.log(result)
+                    self.$http.post('api/contact',form).then((response) => {
+                        console.log('response',response.data)
+                    })
                 }
             });
         }

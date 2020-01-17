@@ -2,7 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
-
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactUs;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -33,4 +34,8 @@ Route::get('redis',function(){
 Route::resource("upload","ImageController");
 Route::get('image/{id}',function($id){
     return response()->file(storage_path('app')."/public/products/$id");
+});
+
+Route::post('contact',function(Request $request){
+    return Mail::to('gonzales.mardie@gmail.com')->send(new ContactUs($request->all()));
 });
