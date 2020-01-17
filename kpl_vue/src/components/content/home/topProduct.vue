@@ -1,7 +1,7 @@
 <template>
     <div>
         <v-layout wrap row>
-            <v-flex xs6 sm3 class="px-1 mt-2">
+            <v-flex xs12 sm4 class="px-1 mt-2">
                 <v-hover v-slot:default="{ hover }">
                     <v-card :elevation="hover ? 4 : 0">
                         <v-list-item three-line>
@@ -18,7 +18,7 @@
                     </v-card>
                 </v-hover>
             </v-flex>
-            <v-flex xs6 sm3 class="px-1 mt-2">
+            <v-flex xs12 sm4 class="px-1 mt-2">
                 <v-hover v-slot:default="{ hover }">
                     <v-card :elevation="hover ? 4 : 0">
                         <v-list-item three-line>
@@ -35,7 +35,7 @@
                     </v-card>
                 </v-hover>
             </v-flex>
-            <v-flex xs6 sm3 class="px-1 mt-2">
+            <v-flex xs12 sm4 class="px-1 mt-2">
                 <v-hover v-slot:default="{ hover }">
                     <v-card :elevation="hover ? 4 : 0">
                         <v-list-item three-line>
@@ -52,7 +52,7 @@
                     </v-card>
                 </v-hover>
             </v-flex>
-            <v-flex xs6 sm3 class="px-1 mt-2">
+            <v-flex xs12 sm4 class="px-1 mt-2">
                 <v-hover v-slot:default="{ hover }">
                     <v-card :elevation="hover ? 4 : 0">
                         <v-list-item three-line>
@@ -69,7 +69,7 @@
                     </v-card>
                 </v-hover>
             </v-flex>
-            <v-flex xs6 sm3 class="px-1 mt-2">
+            <v-flex xs12 sm4 class="px-1 mt-2">
                 <v-hover v-slot:default="{ hover }">
                     <v-card :elevation="hover ? 4 : 0">
                         <v-list-item three-line>
@@ -86,7 +86,7 @@
                     </v-card>
                 </v-hover>
             </v-flex>
-            <v-flex xs6 sm3 class="px-1 mt-2">
+            <v-flex xs12 sm4 class="px-1 mt-2">
                 <v-hover v-slot:default="{ hover }">
                     <v-card :elevation="hover ? 4 : 0">
                         <v-list-item three-line>
@@ -103,7 +103,7 @@
                     </v-card>
                 </v-hover>
             </v-flex>
-            <v-flex xs6 sm3 class="px-1 mt-2">
+            <!-- <v-flex xs12 sm4 class="px-1 mt-2">
                 <v-hover v-slot:default="{ hover }">
                     <v-card :elevation="hover ? 4 : 0">
                         <v-list-item three-line>
@@ -120,7 +120,7 @@
                     </v-card>
                 </v-hover>
             </v-flex>
-            <v-flex xs6 sm3 class="px-1 mt-2">
+            <v-flex xs12 sm4 class="px-1 mt-2">
                 <v-hover v-slot:default="{ hover }">
                     <v-card :elevation="hover ? 4 : 0">
                         <v-list-item three-line>
@@ -136,7 +136,7 @@
                         </v-list-item>
                     </v-card>
                 </v-hover>
-            </v-flex>
+            </v-flex> -->
         </v-layout>
     </div>
 </template>
