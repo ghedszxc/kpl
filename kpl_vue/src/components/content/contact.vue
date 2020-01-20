@@ -66,7 +66,7 @@
                             </v-text-field>
                         </v-flex>
                         <v-flex xs12 class="px-2">
-                            <v-textarea
+                            <v-text-field
                                 label="Write your message"
                                 v-model="form.message"
                                 outlined dense
@@ -76,7 +76,8 @@
                                 data-vv-name="message"
                                 :error-messages="errors.collect('add.message')"
                                 data-vv-validate-on="blur">
-                            </v-textarea>
+                                
+                            </v-text-field>
                         </v-flex>
                         <v-flex xs12 class="px-2">
                             <v-btn text tile class="success" @click="onSubmit(form)">

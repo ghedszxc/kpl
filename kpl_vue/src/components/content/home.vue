@@ -2,26 +2,6 @@
     <div class="animate_one">
         <v-card flat tile>
             <v-layout wrap row class="px-3">
-                <!-- <v-flex xs12 class="grey lighten-4 ma-1">
-                    <v-layout class="font-weight-bold text-uppercase subtitle-1 mt-1">
-                        <v-flex xs1>
-                            <span class="grey--text text--lighten-1 pl-3">
-                                Updates : 
-                            </span>
-                        </v-flex>
-                        <v-flex xs11>
-                            <marquee>
-                                <span class="blue--text text--darken-2">
-                                    sample news
-                                    sample news
-                                    sample news
-                                    sample news
-                                    sample news
-                                </span>
-                            </marquee>
-                        </v-flex>
-                    </v-layout>
-                </v-flex> -->
                 <v-flex class="hidden-md-and-down">
                     <glimpse-product></glimpse-product>
                 </v-flex>

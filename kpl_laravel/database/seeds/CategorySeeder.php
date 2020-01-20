@@ -14,50 +14,35 @@ class CategorySeeder extends Seeder
     {
         $category = [
             [
-                'category_name' => 'Ferrule, Plug & Cap'
-            ],
-            [
-                'category_name' => 'Flange'
-            ],
-            [
                 'category_name' => 'Fuel Dispenser'
             ],
             [
                 'category_name' => 'Gasoline Hanging Hardware'
             ],
             [
-                'category_name' => 'Hydraulic Adaptors'
+                'category_name' => 'Hose'
             ],
             [
-                'category_name' => 'Hydraulic Fittings'
+                'category_name' => 'Hydraulic Hose Fittings'
+            ],
+            [
+                'category_name' => 'Adaptors'
+            ],
+            [
+                'category_name' => 'Ferrule'
             ],
             [
                 'category_name' => 'Pneumatic Fittings'
             ],
-                // [
-                //     'category_name' => 'Soap',
-                // ],
-                // [
-                //     'category_name' => 'Shampoo',
-                // ],
-                // [
-                //     'category_name' => 'Toothpaste',
-                // ],
-                // [
-                //     'category_name' => 'Clothings',
-                // ],
-                // [
-                //     'category_name' => 'Shoes',
-                // ],
-                // [
-                //     'category_name' => 'Restaurant',
-                // ],
-                // [
-                //     'category_name' => 'Gadgets',
-                // ],
-                // [
-                //     'category_name' => 'Cafe',
-                // ]
+            [
+                'category_name' => 'Bandimex'
+            ],
+            [
+                'category_name' => 'Crimping Machine'
+            ],
+            [
+                'category_name' => 'Oil & Lubricant'
+            ],
             ];
             foreach ($category as $key => $value) {
                 Category::create($value);
