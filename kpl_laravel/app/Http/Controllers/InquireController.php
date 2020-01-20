@@ -37,7 +37,7 @@ class InquireController extends Controller
      */
     public function store(Request $request)
     {
-        return Mail::to('gonzales.mardie@gmail.com')->send(new SendMailable($request->all()));
+        return Mail::to('kpl.industrialsupplyandservices@yahoo.com.ph')->send(new SendMailable($request->all()));
         
     }
 

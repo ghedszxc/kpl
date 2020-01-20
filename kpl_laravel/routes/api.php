@@ -37,5 +37,5 @@ Route::get('image/{id}',function($id){
 });
 
 Route::post('contact',function(Request $request){
-    return Mail::to('gonzales.mardie@gmail.com')->send(new ContactUs($request->all()));
+    return Mail::to('kpl.industrialsupplyandservices@yahoo.com.ph')->send(new ContactUs($request->all()));
 });
