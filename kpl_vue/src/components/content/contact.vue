@@ -29,6 +29,7 @@
                             <v-text-field
                                 label="Name"
                                 v-model="form.name"
+                                :disabled="formDisable"
                                 outlined dense
 
                                 v-validate="'required'"
@@ -43,6 +44,7 @@
                             <v-text-field
                                 label="Contact Number"
                                 v-model="form.contact_number"
+                                :disabled="formDisable"
                                 outlined dense
 
                                 v-validate="'required|digits:11'"
@@ -56,6 +58,7 @@
                             <v-text-field
                                 label="Email Address"
                                 v-model="form.email_address"
+                                :disabled="formDisable"
                                 outlined dense
 
                                 v-validate="'required|email'"
@@ -69,6 +72,7 @@
                             <v-text-field
                                 label="Write your message"
                                 v-model="form.message"
+                                :disabled="formDisable"
                                 outlined dense
 
                                 v-validate="'required'"
@@ -80,7 +84,9 @@
                             </v-text-field>
                         </v-flex>
                         <v-flex xs12 class="px-2">
-                            <v-btn text tile class="success" @click="onSubmit(form)">
+                            <v-btn text tile class="success"
+                                :loading="onLoadButton"
+                                @click="onSubmit(form)">
                                 Send Message
                             </v-btn>
                         </v-flex>
@@ -94,6 +100,9 @@
 export default {
     data:() => ({
         contact_dialog: false,
+        formDisable: false,
+        onLoadButton: false,
+
         form: {
             name: '',
             contact_number: '',
@@ -113,12 +122,25 @@ export default {
         },
         onSubmit(form){
             const self = this;
-
+        
             self.$validator.validateAll('add')
                 .then(result => {
                 if (result) {
+                    self.onLoadButton = true;
+                    self.formDisable = true;
+
                     self.$http.post('api/contact',form).then((response) => {
                         console.log('response',response.data)
+                        
+                        self.$store.dispatch('inquire/showSnackbar',{
+                            snackbar: true, timeout: 3000, color: 'info', y: 'top',
+                            message: `Email Sent!` })
+
+                        self.form = { name: '', contact_number: '', email_address: '', message: '' }
+                        self.contact_dialog = false;
+                        
+                    self.onLoadButton = false;
+                    self.formDisable = false;
                     })
                 }
             });
