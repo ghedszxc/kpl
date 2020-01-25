@@ -2,7 +2,7 @@
   <div v-resize="onResize">
     <v-card flat tile>
       <v-carousel
-        cycle :height="windowSize.x >= 959 ? '453' : '100%'"
+        cycle :height="windowSize.x >= 959 ? '456' : '100%'"
         hide-delimiter-background
         show-arrows-on-hover>
         <v-carousel-item>
