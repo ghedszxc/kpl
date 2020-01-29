@@ -140,8 +140,8 @@ export default {
                 console.log('send email', response.body)
                 self.onLoad = false;
                 self.$store.dispatch('inquire/showSnackbar',{
-                    snackbar: true, timeout: 3000, color: 'success', y: 'top',
-                    message: `Email Sent!`
+                    snackbar: true, timeout: 3000, color: 'info', y: 'top',
+                    message: `Inquired item sent!`
                 })
 
                 self.$store.dispatch('global/removeAllCheckboxInProductList')

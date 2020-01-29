@@ -24,7 +24,7 @@ export default {
     background: #c6c7ca;
   }
   ::-webkit-scrollbar-thumb{
-    background:#C3C3C3;
+    background:#D3D3D3;
     border-radius: 4px;
   }
 

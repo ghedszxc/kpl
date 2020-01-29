@@ -1,6 +1,15 @@
 <template>
     <v-app class="grey lighten-3" v-resize="onResize">
         <tool-bar class="mb-2"></tool-bar>
+        <v-snackbar
+            :timeout="showSnackbar.timeout"
+            :top="showSnackbar.y === 'top'"
+            :multi-line="showSnackbar.mode === 'multi-line'"
+            :vertical="showSnackbar.mode === 'vertical'"
+            :color="showSnackbar.color"
+            v-model="showSnackbar.snackbar">
+            {{ showSnackbar.message }}
+        </v-snackbar>
         
         <div :style="{ 'margin-top': windowSize.x >= '960' ? '120px' : '60px' }">
             <router-view :style="{
@@ -26,6 +35,11 @@ export default {
     components: {
         'tool-bar': toolBar,
         'inquire-view': inquire
+    },
+    computed: {
+        showSnackbar(){
+            return this.$store.state.inquire.showSnackbar;
+        }
     },
     mounted() {
         const self = this;

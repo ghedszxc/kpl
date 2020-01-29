@@ -5,7 +5,7 @@
             <v-list dense class="transparent">
                 <v-list-item @click="onSelectProduct()">
                     <v-list-item-title>
-                        <v-icon small color="grey darken-2">list</v-icon>
+                        <v-icon color="grey darken-2">list</v-icon>
                         <span class="caption font-weight-medium grey--text text--darken-2 ml-2">Products</span>
                     </v-list-item-title>
                 </v-list-item>

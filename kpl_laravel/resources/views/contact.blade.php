@@ -7,5 +7,7 @@
     <br><br><br>
     <span style="font-size: 18px;"> Email: {{$email}} </span>
     <br><br><br>
+    <span style="font-size: 18px;"> Message: {{$message}} </span>
+    <br><br><br>
    
 </div>
