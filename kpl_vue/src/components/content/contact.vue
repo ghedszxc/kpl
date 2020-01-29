@@ -69,7 +69,7 @@
                             </v-text-field>
                         </v-flex>
                         <v-flex xs12 class="px-2">
-                            <v-text-field
+                            <v-textarea
                                 label="Write your message"
                                 v-model="form.message"
                                 :disabled="formDisable"
@@ -81,7 +81,7 @@
                                 :error-messages="errors.collect('add.message')"
                                 data-vv-validate-on="blur">
                                 
-                            </v-text-field>
+                            </v-textarea>
                         </v-flex>
                         <v-flex xs12 class="px-2">
                             <v-btn text tile class="success"

@@ -11,10 +11,8 @@ class ContactUs extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $name;
-    public $email;
     public $contact;
-    public $message;
+    
     /**
      * Create a new message instance.
      *
@@ -22,10 +20,8 @@ class ContactUs extends Mailable
      */
     public function __construct($contact)
     {
-        $this->name = $contact['name'];
-        $this->email = $contact['email_address'];
-        $this->contact = $contact['contact_number'];
-        $this->message = $contact['message'];
+        $this->contact = $contact;
+      
     }
 
     /**
