@@ -3,11 +3,6 @@
     <v-layout wrap row class="mt-1 mx-1">
       <v-flex xs12 sm6 md3 class="px-1 mt-2" v-for="(item, index) in productList.data" :key="index">
         <v-card tile @click="addToInquire(item)" v-if="userForInquire">
-          <!-- <v-img
-            src="http://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp"
-            height="150" class="text-left align-end px-1"
-            @click="item.checkbox ? !item.checkbox : true">
-          </v-img> -->
           <v-img
             :src="item.item_image? url+'/api/image/'+item.item_image : 'http://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp'"
             height="150" class="text-left align-end px-1"
@@ -25,11 +20,8 @@
         </v-card>
         
         <v-card v-else tile>
-          <!-- <v-img src="http://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp"
-            height="150" class="text-left align-end px-1">
-          </v-img> -->
           <v-img :src="item.item_image? url+'/api/image/'+item.item_image : 'http://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp'"
-            height="150" class="text-left align-end px-1">
+            height="250px" class="text-left align-end px-1">
           </v-img>
 
           <v-layout wrap row class="px-3 grey--text text--darken-1">
@@ -46,7 +38,6 @@
           v-model="productList.current_page"
           :length="productList.last_page"
           @input="onChangePage(productList.current_page)">
-          <!-- @input="showPage($http.options.root+'/api/item?page='+productList.current_page)" -->
         </v-pagination>
       </v-flex>
     </v-layout>

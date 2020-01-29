@@ -3,7 +3,7 @@
         <v-card flat tile :class="$route.path == '/branch' ? 'animate_one' : ''">
             <v-card-title class="text-center py-12">
                 <v-spacer></v-spacer>
-                <span class="display-2 black--text">OUR BRANCH</span>
+                <span class="display-2 black--text">OUR BRANCHES</span>
                 <v-spacer></v-spacer>
             </v-card-title>
 

@@ -5,21 +5,29 @@
             <v-card flat tile class="my-3 px-3">
                 <v-layout wrap>
                     <v-flex xs12 class="text-center mt-4 about_top">
-                        <span class="display-2 font-weight-bold black--text">
-                            Meet our Team
+                        <span class="display-2 black--text">
+                            MEET OUR TEAM
                         </span>
                     </v-flex>
                     <v-flex xs12 class="px-2 my-3 about_left">
                         <v-card flat style="border-radius: 0; height: 100%;">
-                            <v-img src="../../../public/team/our_team.jpg" :height="windowSize.x <= '500' ? 250 : 430" width="100%"
-                                aspect-ratio="1">
+                            <v-img src="../../../public/team/our_team.jpg" :height="windowSize.x <= '500' ? 250 : 500" width="100%"
+                                aspect-ratio="1" class="white--text align-end">
+
+                                <div style="background: rgba(0, 0, 0, 0.4); padding: 1%;" v-if="windowSize.x >= '500'">
+                                    <span class="subtitle-1">
+                                        <b>KPL Industrial Supply</b> was founded since 2012, started by well-trained people and number of years 
+                                        experienced before started in services industry. We are focusing on providing your needs and services 
+                                        with the highest level of customer satisfaction. And do everything to meet your expectations.
+                                    </span>
+                                </div>
                             </v-img>
                         </v-card>
                     </v-flex>
                 </v-layout>
             </v-card>
         </div>
-        <div class="text-center">
+        <div class="text-center" v-if="$route.path == '/' || windowSize.x <= '500'">
             <v-parallax :class="$route.path == '/about' ? 'about_top' : ''" height="400" src="http://www.collab2.co.za/wp-content/uploads/2017/06/contact-us-background.jpg">
                 <v-container fluid align="center" justify="center">
                     <v-card flat style="background: rgba(0, 0, 0, 0.3); border-radius: 0; padding: 5%;">
