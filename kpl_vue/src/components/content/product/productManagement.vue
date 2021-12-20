@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="mt-2">
         <v-layout wrap row class="hidden-md-and-down">
             <v-flex xs2 class="about_one">
                 <glimpse-product></glimpse-product>
@@ -18,8 +18,8 @@ import glimpseProduct from '../home/glimpseProduct'
 import productList from './productList'
 export default {
     components: {
-        'glimpse-product': glimpseProduct,
-        'product-list': productList
+        glimpseProduct,
+        productList
     },
     mounted() {
         const self = this;

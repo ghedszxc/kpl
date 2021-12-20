@@ -11,7 +11,7 @@
                     </v-flex>
                     <v-flex xs12 class="px-2 my-3 about_left">
                         <v-card flat style="border-radius: 0; height: 100%;">
-                            <v-img src="../../../public/team/our_team.jpg" :height="windowSize.x <= '500' ? 250 : 500" width="100%"
+                            <v-img src="../../../public/our_team.jpg" :height="windowSize.x <= '500' ? 250 : 500" width="100%"
                                 aspect-ratio="1" class="white--text align-end">
 
                                 <div style="background: rgba(0, 0, 0, 0.4); padding: 1%;" v-if="windowSize.x >= '500'">
@@ -28,11 +28,11 @@
             </v-card>
         </div>
         <div class="text-center" v-if="$route.path == '/' || windowSize.x <= '500'">
-            <v-parallax :class="$route.path == '/about' ? 'about_top' : ''" height="400" src="https://www.collab2.co.za/wp-content/uploads/2017/06/contact-us-background.jpg">
-                <v-container fluid align="center" justify="center">
-                    <v-card flat style="background: rgba(0, 0, 0, 0.3); border-radius: 0; padding: 5%;">
-                        <span class="display-2 white--text">ABOUT US</span>
-                        <div class="ml-12 mr-12">
+            <v-parallax :class="$route.path == '/about' ? 'about_top' : ''" height="400" src="../../../public/contact-us-background.jpg">
+                <v-container fluid align="center" justify="center" style="background: rgba(0, 0, 0, 0.4)">
+                    <v-card flat class="transparent pa-5">
+                        <span class="display-2 white--text font-weight-bold">ABOUT US</span>
+                        <div class="ml-12 mr-12 mt-2">
                             <span class="subtitle-1 font-italic white--text">
                                 <b>KPL Industrial Supply</b> was founded since 2012, started by well-trained people and number of years 
                                 experienced before started in services industry. We are focusing on providing your needs and services 
@@ -50,87 +50,40 @@
         </div>
         <div  v-if="$route.path == '/about'">
             <v-layout wrap class="text-center my-3">
-                <v-flex xs12 class="about_left">
-                    <v-card tile flat class="pa-4">
-                        <v-layout wrap style="background: rgba(0, 0, 0, 0.03);">
-                            <v-flex :class="windowSize.x >= 959 ? 'xs4' : 'xs12'">
-                                <v-row align="center" justify="center" :style="{ 'height': windowSize.x >= 959 ? '250px' : 'auto' }">
-                                    <v-icon color="green" :style="{ 'font-size': windowSize.x >= 959 ? '200px' : '100px' }">
-                                        supervised_user_circle
-                                    </v-icon>
-                                </v-row>
-                            </v-flex>
-                            <v-flex :class="windowSize.x >= 959 ? 'xs8' : 'xs12'">
-                                <v-row align="center" justify="center" :style="{ 'height': windowSize.x >= 959 ? '250px' : 'auto' }">
-                                    <v-layout wrap>
-                                        <v-flex xs12 class="display-1 font-weight-black black--text">
-                                            Vision
-                                        </v-flex>
-                                        <v-flex xs12 class="subtitle-1 font-weight-light black--text" style="padding-left: 10%; padding-right: 10%;">
-                                            To be the company that best understands and satisfies the product, service and self-fulfillment needs of our customers.
-                                        </v-flex>
-                                    </v-layout>
-                                </v-row>
-                            </v-flex>
-                        </v-layout>
+                <v-flex xs4 class="about_bottom">
+                    <v-card tile flat class="pa-4" :style="{ 'height': windowSize.x >= 959 ? '220px' : 'auto' }">
+                        <v-card-title class="display-1 font-weight-black black--text">
+                            <v-spacer></v-spacer>
+                            <v-icon color="green" size="50" class="mr-2">supervised_user_circle</v-icon> Vision
+                            <v-spacer></v-spacer>
+                        </v-card-title>
+                        <v-card-text class="subtitle-1 font-weight-light black--text">
+                            To be the company that best understands and satisfies the product, service and self-fulfillment needs of our customers.
+                        </v-card-text>
                     </v-card>
                 </v-flex>
-                <v-flex xs12 class="about_right">
-                    <v-card tile flat class="px-4">
-                        <v-layout wrap style="background: rgba(0, 0, 0, 0.03);">
-
-                            <v-flex xs12 v-if="windowSize.x <= 960">
-                                <v-row align="center" justify="center" :style="{ 'height': windowSize.x >= 959 ? '250px' : 'auto' }">
-                                    <v-icon color="green" :style="{ 'font-size': windowSize.x >= 959 ? '200px' : '100px' }">
-                                        language
-                                    </v-icon>
-                                </v-row>
-                            </v-flex>
-                            <v-flex :class="windowSize.x >= 959 ? 'xs8' : 'xs12'">
-                                <v-row align="center" justify="center" :style="{ 'height': windowSize.x >= 959 ? '250px' : 'auto' }">
-                                    <v-layout wrap>
-                                        <v-flex xs12 class="display-1 font-weight-black black--text">
-                                            Mission
-                                        </v-flex>
-                                        <v-flex xs12 class="subtitle-1 font-weight-light black--text" style="padding-left: 10%; padding-right: 10%;">
-                                            To provide each of our clients with the most satisfying products, services and supplies to their heart's content
-                                        </v-flex>
-                                    </v-layout>
-                                </v-row>
-                            </v-flex>
-                            <v-flex xs4 v-if="windowSize.x >= 959">
-                                <v-row align="center" justify="center" :style="{ 'height': windowSize.x >= 959 ? '250px' : 'auto' }">
-                                    <v-icon color="green" :style="{ 'font-size': windowSize.x >= 959 ? '200px' : '100px' }">
-                                        language
-                                    </v-icon>
-                                </v-row>
-                            </v-flex>
-                        </v-layout>
+                <v-flex xs4 class="about_bottom px-4">
+                    <v-card tile flat class="pa-4" :style="{ 'height': windowSize.x >= 959 ? '220px' : 'auto' }">
+                        <v-card-title class="display-1 font-weight-black black--text">
+                            <v-spacer></v-spacer>
+                            <v-icon color="green" size="50" class="mr-2">language</v-icon> Mission
+                            <v-spacer></v-spacer>
+                        </v-card-title>
+                        <v-card-text class="subtitle-1 font-weight-light black--text">
+                            To provide each of our clients with the most satisfying products, services and supplies to their heart's content
+                        </v-card-text>
                     </v-card>
                 </v-flex>
-                <v-flex xs12 class="about_left">
-                    <v-card tile flat class="pa-4">
-                        <v-layout wrap style="background: rgba(0, 0, 0, 0.03);">
-                            <v-flex :class="windowSize.x >= 959 ? 'xs4' : 'xs12'">
-                                <v-row align="center" justify="center" :style="{ 'height': windowSize.x >= 959 ? '250px' : 'auto' }">
-                                    <v-icon color="green" :style="{ 'font-size': windowSize.x >= 959 ? '200px' : '100px' }">
-                                        stars
-                                    </v-icon>
-                                </v-row>
-                            </v-flex>
-                            <v-flex :class="windowSize.x >= 959 ? 'xs8' : 'xs12'">
-                                <v-row align="center" justify="center" :style="{ 'height': windowSize.x >= 959 ? '250px' : 'auto' }">
-                                    <v-layout wrap>
-                                        <v-flex xs12 class="display-1 font-weight-black black--text">
-                                            Goal
-                                        </v-flex>
-                                        <v-flex xs12 class="subtitle-1 font-weight-light black--text" style="padding-left: 10%; padding-right: 10%;">
-                                            To product people who are willing to expand their knowledge in sales and services industry
-                                        </v-flex>
-                                    </v-layout>
-                                </v-row>
-                            </v-flex>
-                        </v-layout>
+                <v-flex xs4 class="about_bottom">
+                    <v-card tile flat class="pa-4" :style="{ 'height': windowSize.x >= 959 ? '220px' : 'auto' }">
+                        <v-card-title class="display-1 font-weight-black black--text">
+                            <v-spacer></v-spacer>
+                            <v-icon color="green" size="50" class="mr-2">stars</v-icon> Goal
+                            <v-spacer></v-spacer>
+                        </v-card-title>
+                        <v-card-text class="subtitle-1 font-weight-light black--text">
+                            To product people who are willing to expand their knowledge in sales and services industry
+                        </v-card-text>
                     </v-card>
                 </v-flex>
             </v-layout>
@@ -139,19 +92,11 @@
 </template>
 <script>
 export default {
-    data:() => ({
-        team: [
-            { name: 'Romy Galang', position: 'Proprietor', contact: '(02) 286-3632 / 0917 624 4069', link: '../../../public/team/romy.jpg' },
-            { name: 'Liza Manuel', position: 'Marketing Coordinator', contact: '(02) 952-4265 / 0942 464 3933', link: '../../../public/team/liza.jpg' },
-            { name: 'Jenny Ann Valenzuela', position: 'Secretary', contact: '0915 975 2532 / 0920 541 4800', link: '../../../public/team/jenny.jpg' }
-        ]
-    }),
     methods: {
         goTo(){
-            const self = this;
-            self.$router.push('/about')
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
+            this.$router.push('/about')
+            document.body.scrollTop = 0
+            document.documentElement.scrollTop = 0
         }
     }
 }
@@ -171,10 +116,6 @@ export default {
     0% { opacity: 0; transform: translateX(-20px); }
     100% { opacity: 1; transform: translateX(0); }
   }
-  @keyframes fadeInRight {
-    0% { opacity: 0; transform: translateX(20px); }
-    100% { opacity: 1; transform: translateX(0); }
-  }
   
   .about_top {
     animation-name: fadeInTop;
@@ -185,12 +126,7 @@ export default {
     animation-name: fadeInLeft;
     background-position: bottom top;
     animation-duration: 2s;
-  } 
-  .about_right {
-    animation-name: fadeInRight;
-    background-position: bottom top;
-    animation-duration: 2s;
-  } 
+  }
   .about_bottom {
     animation-name: fadeInBottom;
     background-position: bottom top;

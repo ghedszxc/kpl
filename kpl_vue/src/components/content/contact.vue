@@ -84,7 +84,7 @@
                             </v-textarea>
                         </v-flex>
                         <v-flex xs12 class="px-2">
-                            <v-btn text tile class="success"
+                            <v-btn text class="success"
                                 :loading="onLoadButton"
                                 @click="onSubmit(form)">
                                 Send Message

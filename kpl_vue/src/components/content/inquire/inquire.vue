@@ -53,7 +53,7 @@
                     </v-btn>
                 </v-card-title>
                 <v-card-text>
-                    <v-layout wrap row>
+                    <v-layout wrap>
                         <v-flex xs12 class="px-1">
                             <v-text-field
                                 label="Name"
@@ -79,7 +79,7 @@
                 </v-card-text>
                 <v-card-actions style="margin-top: -5%;">
                     <v-spacer></v-spacer>
-                    <v-btn text small tile class="green white--text mr-2"
+                    <v-btn text class="green white--text mr-2"
                         @click="onSubmit(form)">
                         Submit
                     </v-btn>
@@ -153,6 +153,3 @@ export default {
     }
 }
 </script>
-<style scoped>
-
-</style>

@@ -16,8 +16,8 @@
                 'height': '100%',
                 'overflow-y': 'hidden',
                 'overflow-x': 'hidden',
-                'margin-left': windowSize.x >= '960' ? '18%' : '',
-                'margin-right': windowSize.x >= '960' ? '18%' : '' }">
+                'margin-left': windowSize.x >= '960' ? '12%' : '',
+                'margin-right': windowSize.x >= '960' ? '12%' : '' }">
             </router-view>
         </div>
         <inquire-view v-if="$route.path == '/product'"></inquire-view>
