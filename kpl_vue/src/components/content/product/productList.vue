@@ -4,7 +4,7 @@
       <v-flex xs12 sm6 md3 class="px-1 mt-2" v-for="(item, index) in productList.data" :key="index">
         <v-card tile @click="addToInquire(item)" v-if="userForInquire">
           <v-img
-            :src="item.item_image? url+'/api/image/'+item.item_image : 'http://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp'"
+            :src="item.item_image? url+'/api/image/'+item.item_image : 'https://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp'"
             height="150" class="text-left align-end px-1"
             @click="item.checkbox ? !item.checkbox : true">
           </v-img>
@@ -20,7 +20,7 @@
         </v-card>
         
         <v-card v-else tile>
-          <v-img :src="item.item_image? url+'/api/image/'+item.item_image : 'http://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp'"
+          <v-img :src="item.item_image? url+'/api/image/'+item.item_image : 'https://sc02.alicdn.com/kf/HTB11nerKeuSBuNjSsziq6zq8pXaJ/High-Quality-Sublimation-8-in-1-Combo.jpg_220x220.jpg_.webp'"
             height="250px" class="text-left align-end px-1">
           </v-img>
 

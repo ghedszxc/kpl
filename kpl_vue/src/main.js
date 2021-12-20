@@ -20,7 +20,7 @@ Vue.use(VueGoogleMaps, {
   }
 });
 // Vue.http.options.root = "http://localhost:8000";
-Vue.http.options.root = "http://kplindustrialsupply.webstarterz.com";
+Vue.http.options.root = "https://app.kplindustrialsupply.com";
 
 Vue.mixin(resizing);
 Vue.mixin(product);

@@ -28,7 +28,7 @@
             </v-card>
         </div>
         <div class="text-center" v-if="$route.path == '/' || windowSize.x <= '500'">
-            <v-parallax :class="$route.path == '/about' ? 'about_top' : ''" height="400" src="http://www.collab2.co.za/wp-content/uploads/2017/06/contact-us-background.jpg">
+            <v-parallax :class="$route.path == '/about' ? 'about_top' : ''" height="400" src="https://www.collab2.co.za/wp-content/uploads/2017/06/contact-us-background.jpg">
                 <v-container fluid align="center" justify="center">
                     <v-card flat style="background: rgba(0, 0, 0, 0.3); border-radius: 0; padding: 5%;">
                         <span class="display-2 white--text">ABOUT US</span>
