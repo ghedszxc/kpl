@@ -1,36 +1,33 @@
 <template>
     <div>
-        <v-app-bar app flat clipped-left extended class="green hidden-sm-and-down"
-            style="padding-left: 18%; padding-right: 18%;">
+        <v-app-bar app flat clipped-left extended class="green hidden-sm-and-down" height="80"
+            style="padding-left: 12%; padding-right: 12%;">
 
             <v-layout>
-                <v-flex xs12 class="text-start pl-2">
+                <v-flex xs12>
                     <v-toolbar-title class="main_font hidden-sm-and-down">
-                        <img src="../../../public/home/final_kpl.png"
-                        alt="kpl" class="mt-2 mr-2" style="height: 60px;">
+                        <img src="../../../public/kpl_logo.png"
+                        alt="kpl" class="mt-2 mr-2" style="height: 70px;">
                     </v-toolbar-title>
                 </v-flex>
-                <v-flex xs12 class="text-end mt-1">
-                    <v-layout row>
+                <v-flex xs12 class="text-end mt-2">
+                    <v-layout wrap class="caption white--text">
                         <v-flex xs12>
-                            <span class="caption font-weight-bold white--text"
-                                style="cursor: default;">
+                            <span style="cursor: default;">
                                 <v-icon style="font-size: 15px;" color="white" class="mr-1">phone</v-icon>
-                                <span class="font-weight-light white--text"> (02) 8952 4265 | (02) 8294 4050</span>
+                                <span class=" white--text"> (02) 8952 4265 | (02) 8294 4050</span>
                             </span>
                         </v-flex>
-                        <v-flex xs12 style="margin-top: -1%;">
-                            <span class="caption font-weight-bold white--text"
-                                style="cursor: default;">
+                        <v-flex xs12 style="margin-top: -0.4%;">
+                            <span style="cursor: default;">
                                 <v-icon style="font-size: 15px;" color="white" class="mr-1">phone_iphone</v-icon>
-                                <span class="font-weight-light white--text"> (+639) 1597 52532 | (+639) 2054 14800</span>
+                                <span class=" white--text"> (+639) 1597 52532 | (+639) 2054 14800</span>
                             </span>
                         </v-flex>
-                        <v-flex xs12 style="margin-top: -1%;">
-                            <span class="caption font-weight-light white--text"
-                                style="cursor: default;">
+                        <v-flex xs12 style="margin-top: -0.5%;">
+                            <span style="cursor: default;">
                                 <v-icon style="font-size: 15px;" color="white" class="mr-1">navigation</v-icon>
-                                536 Quirino Hwy, Novaliches, Quezon City, Metro Manila
+                                526 Quirino Hwy, Novaliches, Quezon City, Metro Manila
                             </span>
                         </v-flex>
                     </v-layout>
@@ -38,8 +35,7 @@
             </v-layout>
 
             <template #extension>
-                <v-tabs background-color="green" dark height="40"
-                    style="position: absolute; bottom: -3px;">
+                <v-tabs background-color="green" dark height="40">
                     <v-tab v-for="(item, index) in items" :key="index"
                         :class="$route.path == item.link ? 'active-class' : ''"
                         @click="onSelectPage(item.link)">
@@ -55,7 +51,7 @@
             <v-app-bar-nav-icon color="white" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
             <v-spacer></v-spacer>
             <v-toolbar-title class="black--text font-weight-light">
-                <img src="../../../public/home/final_kpl.png"
+                <img src="../../../public/kpl_logo.png"
                 alt="kpl" class="mt-2 " style="height: 45px;">
             </v-toolbar-title>
         </v-app-bar>

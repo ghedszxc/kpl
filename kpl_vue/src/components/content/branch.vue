@@ -22,7 +22,7 @@
                             </v-flex>
                             <v-flex xs12 class="subtitle-1 font-weight-medium grey--text text--darken-4 text-truncate">
                                 <v-icon small color="red" class="mb-1">navigation</v-icon>
-                                536 Quirino Hwy, Novaliches, Quezon City, Metro Manila
+                                526 Quirino Hwy, Novaliches, Quezon City, Metro Manila
                             </v-flex>
                         </v-layout>
                     </v-card>
@@ -47,7 +47,7 @@
                     </v-card>
                 </v-flex>
                 <v-flex xs12 sm6 class="px-4">
-                    <v-card flat tile class="branch_two">
+                    <v-card flat tile class="branch_one">
                         <GmapMap style="width: 100%; height: 350px;"
                             :center="{lat:15.4454223, lng:120.5977456}" :zoom="18" map-type-id="terrain"
                             :options="googleMap">
@@ -61,6 +61,25 @@
                             <v-flex xs12 class="subtitle-1 font-weight-medium grey--text text--darken-4 text-truncate">
                                 <v-icon small color="red" class="mb-1">navigation</v-icon>
                                 #22 Mc Arthur Highway Brgy. Paraiso Tarlac City
+                            </v-flex>
+                        </v-layout>
+                    </v-card>
+                </v-flex>
+                <v-flex xs12 sm6 class="px-4">
+                    <v-card flat tile class="branch_two">
+                        <GmapMap style="width: 100%; height: 350px;"
+                            :center="{lat:15.4296148, lng:120.9385931}" :zoom="18" map-type-id="terrain"
+                            :options="googleMap">
+                            <gmap-marker :position="{lat:15.4296148, lng:120.9385931}">
+                            </gmap-marker>
+                        </GmapMap>
+                        <v-layout wrap class="px-4 pt-2">
+                            <v-flex xs12 class="headline font-weight-black">
+                                NUEVA ECIJA
+                            </v-flex>
+                            <v-flex xs12 class="subtitle-1 font-weight-medium grey--text text--darken-4 text-truncate">
+                                <v-icon small color="red" class="mb-1">navigation</v-icon>
+                                Maharlika Highway Valenzuela 3101 Sta Rosa Nueva Ecija
                             </v-flex>
                         </v-layout>
                     </v-card>

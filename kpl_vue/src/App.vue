@@ -14,6 +14,9 @@ export default {
 <style>
   /* SCROLLBAR */
   ::-webkit-scrollbar{
+    /* height:0px;
+    width:0px;
+    border-radius: 0px; */
     height:10px;
     width:6px;
     border-radius: 4px;
@@ -21,9 +24,12 @@ export default {
     transition: all 0.3s ease;
   }
   ::-webkit-scrollbar:hover{
+    /* background: transparent; */
     background: #c6c7ca;
   }
   ::-webkit-scrollbar-thumb{
+    
+    /* background: transparent; */
     background:#D3D3D3;
     border-radius: 4px;
   }
