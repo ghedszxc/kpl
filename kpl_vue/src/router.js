@@ -6,7 +6,7 @@ import Home from "./components/content/home";
 import About from "./components/content/about";
 import Branch from "./components/content/branch";
 import Product from "./components/content/product/productManagement";
-import adminProduct from "./components/content/admin/productManagement";
+// import adminProduct from "./components/content/admin/productManagement";
 
 Vue.use(Router);
 
@@ -37,10 +37,10 @@ export default new Router({
           path: "/branch",
           component: Branch
         },
-        {
-          path: "/sample",
-          component: adminProduct
-        }
+        // {
+        //   path: "/sample",
+        //   component: adminProduct
+        // }
       ]
     }
   ]

@@ -24,8 +24,8 @@
       </v-card-title>
 
       <v-card-text>
-        <v-layout wrap row class="mt-1 mx-1">
-          <v-flex xs12 sm6 md4 class="px-1 mt-2" v-for="(item, index) in filter_productList" :key="index">
+        <v-layout wrap>
+          <v-flex xs12 sm6 md3 class="px-1 mt-2" v-for="(item, index) in filter_productList" :key="index">
             <v-card flat outlined @click="addToInquire(item)" v-if="userForInquire">
               <v-card-text>
                 <v-img

@@ -28,18 +28,18 @@
             </v-card>
         </div>
         <div class="text-center" v-if="$route.path == '/' || windowSize.x <= '500'">
-            <v-parallax :class="$route.path == '/about' ? 'about_top' : ''" height="400" src="../../../public/contact-us-background.jpg">
-                <v-container fluid align="center" justify="center" style="background: rgba(0, 0, 0, 0.4)">
-                    <v-card flat class="transparent pa-5">
-                        <span class="display-2 white--text font-weight-bold">ABOUT US</span>
-                        <div class="ml-12 mr-12 mt-2">
+        <v-parallax height="400" src="../../../public/contact-us-background.jpg">
+                <v-container fluid align="center" justify="center">
+                    <v-card flat style="background: rgba(0, 0, 0, 0.4); border-radius: 0; padding: 5%;">
+                        <span class="display-2 white--text">ABOUT US</span>
+                        <div>
                             <span class="subtitle-1 font-italic white--text">
                                 <b>KPL Industrial Supply</b> was founded since 2012, started by well-trained people and number of years 
                                 experienced before started in services industry. We are focusing on providing your needs and services 
-                                with the highest level of customer satisfaction. And do everything to meet your expectations.
+                                with the highest level of customer satisfaction. And do everything to meet your expectations
                             </span>
                         </div>
-                        <v-btn outlined tile small color="white"
+                        <v-btn outlined small color="white"
                             v-if="$route.path == '/'"
                             @click="goTo()">
                             See More...
@@ -50,7 +50,7 @@
         </div>
         <div  v-if="$route.path == '/about'">
             <v-layout wrap class="text-center my-3">
-                <v-flex xs4 class="about_bottom">
+                <v-flex md4 xs12 class="about_bottom">
                     <v-card tile flat class="pa-4" :style="{ 'height': windowSize.x >= 959 ? '220px' : 'auto' }">
                         <v-card-title class="display-1 font-weight-black black--text">
                             <v-spacer></v-spacer>
@@ -62,7 +62,7 @@
                         </v-card-text>
                     </v-card>
                 </v-flex>
-                <v-flex xs4 class="about_bottom px-4">
+                <v-flex md4 xs12 class="about_bottom">
                     <v-card tile flat class="pa-4" :style="{ 'height': windowSize.x >= 959 ? '220px' : 'auto' }">
                         <v-card-title class="display-1 font-weight-black black--text">
                             <v-spacer></v-spacer>
@@ -74,7 +74,7 @@
                         </v-card-text>
                     </v-card>
                 </v-flex>
-                <v-flex xs4 class="about_bottom">
+                <v-flex md4 xs12 class="about_bottom">
                     <v-card tile flat class="pa-4" :style="{ 'height': windowSize.x >= 959 ? '220px' : 'auto' }">
                         <v-card-title class="display-1 font-weight-black black--text">
                             <v-spacer></v-spacer>

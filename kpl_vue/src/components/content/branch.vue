@@ -56,7 +56,7 @@
                         </v-card-actions>
                     </v-card>
                 </v-flex>
-                <v-flex xs12 sm6 class="pr-2">
+                <v-flex xs12 sm6 class="pr-2 pb-4">
                     <v-card flat tile class="branch_one">
                         <v-card-text>
                             <GmapMap style="width: 100%; height: 350px;"
@@ -79,7 +79,7 @@
                         </v-card-actions>
                     </v-card>
                 </v-flex>
-                <v-flex xs12 sm6 class="pl-2">
+                <v-flex xs12 sm6 class="pl-2 pb-4">
                     <v-card flat tile class="branch_two">
                         <v-card-text>
                             <GmapMap style="width: 100%; height: 350px;"

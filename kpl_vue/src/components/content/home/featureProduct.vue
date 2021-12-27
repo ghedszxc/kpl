@@ -1,7 +1,7 @@
 <template>
   <div v-resize="onResize">
     <v-card flat tile class="pa-2 mt-2">
-      <v-carousel cycle hide-delimiter-background show-arrows-on-hover>
+      <v-carousel cycle height="100%" hide-delimiter-background show-arrows-on-hover>
         <v-carousel-item>
           <v-sheet height="100%" tile>
             <v-img height="100%" class="white--text align-end"
