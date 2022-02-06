@@ -11,7 +11,7 @@
                     </v-flex>
                     <v-flex xs12 class="px-2 my-3 about_left">
                         <v-card flat style="border-radius: 0; height: 100%;">
-                            <v-img src="../../../public/our_team.jpg" :height="windowSize.x <= '500' ? 250 : 500" width="100%"
+                            <v-img src="../../../public/team_2022.jpg" :height="windowSize.x <= '500' ? 250 : 500" width="100%"
                                 aspect-ratio="1" class="white--text align-end">
 
                                 <div style="background: rgba(0, 0, 0, 0.4); padding: 1%;" v-if="windowSize.x >= '500'">
