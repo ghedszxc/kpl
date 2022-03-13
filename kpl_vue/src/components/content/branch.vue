@@ -14,9 +14,9 @@
                     <v-card flat tile class="branch_one">
                         <v-card-text>
                             <GmapMap style="width: 100%; height: 350px;"
-                                :center="{lat:14.6894942, lng:-238.972941}" :zoom="18" map-type-id="terrain"
+                                :center="{lat:14.6889476, lng:121.0266805}" :zoom="18" map-type-id="terrain"
                                 :options="googleMap">
-                                <gmap-marker :position="{lat:14.6894942, lng:-238.972941}">
+                                <gmap-marker :position="{lat:14.6889476, lng:121.0266805}">
                                 </gmap-marker>
                             </GmapMap>
                         </v-card-text>
